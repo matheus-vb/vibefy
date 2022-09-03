@@ -1,0 +1,6 @@
+framework module Pods_Vibefy {
+  umbrella header "Pods-Vibefy-umbrella.h"
+
+  export *
+  module * { export * }
+}
