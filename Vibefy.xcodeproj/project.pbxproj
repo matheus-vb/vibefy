@@ -10,7 +10,7 @@
 		0EA734AD52A3B8FA8B9C751F /* Pods_Vibefy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */; };
 		863376A128C3AF360031784D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A028C3AF360031784D /* AppDelegate.swift */; };
 		863376A328C3AF360031784D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A228C3AF360031784D /* SceneDelegate.swift */; };
-		863376A528C3AF360031784D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A428C3AF360031784D /* ViewController.swift */; };
+		863376A528C3AF360031784D /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A428C3AF360031784D /* homeViewController.swift */; };
 		863376A828C3AF360031784D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863376A628C3AF360031784D /* Main.storyboard */; };
 		863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 863376A928C3AF360031784D /* Vibefy.xcdatamodeld */; };
 		863376AD28C3AF370031784D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863376AC28C3AF370031784D /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 		8633769D28C3AF360031784D /* Vibefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863376A028C3AF360031784D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863376A228C3AF360031784D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		863376A428C3AF360031784D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		863376A428C3AF360031784D /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		863376A728C3AF360031784D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		863376AA28C3AF360031784D /* Vibefy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vibefy.xcdatamodel; sourceTree = "<group>"; };
 		863376AC28C3AF370031784D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,14 +67,46 @@
 			children = (
 				863376A028C3AF360031784D /* AppDelegate.swift */,
 				863376A228C3AF360031784D /* SceneDelegate.swift */,
-				863376A428C3AF360031784D /* ViewController.swift */,
-				863376A628C3AF360031784D /* Main.storyboard */,
-				863376AC28C3AF370031784D /* Assets.xcassets */,
-				863376AE28C3AF370031784D /* LaunchScreen.storyboard */,
-				863376B128C3AF370031784D /* Info.plist */,
-				863376A928C3AF360031784D /* Vibefy.xcdatamodeld */,
+				863376BA28C3B2160031784D /* SupportingFiles */,
+				863376B928C3B17D0031784D /* Controller */,
+				863376B828C3B1780031784D /* View */,
+				863376B728C3B1710031784D /* Model */,
 			);
 			path = Vibefy;
+			sourceTree = "<group>";
+		};
+		863376B728C3B1710031784D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		863376B828C3B1780031784D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		863376B928C3B17D0031784D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				863376A428C3AF360031784D /* homeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		863376BA28C3B2160031784D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				863376AC28C3AF370031784D /* Assets.xcassets */,
+				863376B128C3AF370031784D /* Info.plist */,
+				863376A928C3AF360031784D /* Vibefy.xcdatamodeld */,
+				863376A628C3AF360031784D /* Main.storyboard */,
+				863376AE28C3AF370031784D /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		A474B913F3E0E4DB7F12E0D2 /* Frameworks */ = {
@@ -91,7 +123,6 @@
 				95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */,
 				94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -193,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */,
-				863376A528C3AF360031784D /* ViewController.swift in Sources */,
+				863376A528C3AF360031784D /* homeViewController.swift in Sources */,
 				863376A128C3AF360031784D /* AppDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 			);
