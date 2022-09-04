@@ -13,17 +13,17 @@ class OnboardingViewController: UIPageViewController {
     let pageControl = UIPageControl()
     let initialPage = 0
     
-    override init(
-        transitionStyle style: UIPageViewController.TransitionStyle,
-        navigationOrientation: UIPageViewController.NavigationOrientation,
-        options: [UIPageViewController.OptionsKey : Any]? = nil
-    ){
-        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-    }
-    
-    required init?(coder: NSCoder){
-        super.init(coder: coder)
-    }
+//    override init(
+//        transitionStyle style: UIPageViewController.TransitionStyle,
+//        navigationOrientation: UIPageViewController.NavigationOrientation,
+//        options: [UIPageViewController.OptionsKey : Any]? = nil
+//    ){
+//        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+//    }
+//
+//    required init?(coder: NSCoder){
+//        super.init(coder: coder)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
