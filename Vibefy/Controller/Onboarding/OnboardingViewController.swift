@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  OnboardingViewController.swift
 //  Vibefy
 //
 //  Created by matheusvb on 03/09/22.
@@ -13,18 +13,8 @@ class OnboardingViewController: UIPageViewController {
     let pageControl = UIPageControl()
     let initialPage = 0
     
-//    override init(
-//        transitionStyle style: UIPageViewController.TransitionStyle,
-//        navigationOrientation: UIPageViewController.NavigationOrientation,
-//        options: [UIPageViewController.OptionsKey : Any]? = nil
-//    ){
-//        super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-//    }
-//
-//    required init?(coder: NSCoder){
-//        super.init(coder: coder)
-//    }
-    
+    var pageControlBottomAnchor: NSLayoutConstraint?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,10 +33,12 @@ class OnboardingViewController: UIPageViewController {
         let page1 = OnboardingPageOneViewController()
         let page2 = OnboardingPageTwoViewController()
         let page3 = OnboardingPageThreeViewController()
+        let page4 = OnboardingPageFourViewController()
         
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
+        pages.append(page4)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
     }
@@ -65,7 +57,11 @@ class OnboardingViewController: UIPageViewController {
         NSLayoutConstraint.activate([
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
             pageControl.heightAnchor.constraint(equalToConstant: 20),
-            view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 1)])
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
+        
+        pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
+        
+        pageControlBottomAnchor?.isActive = true
         
     }
     

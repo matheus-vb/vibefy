@@ -28,7 +28,7 @@ extension OnboardingViewController: UIPageViewControllerDataSource {
 
         if currentIdx < pages.count - 1 {
             return pages[currentIdx + 1]
-        }else{
+        } else {
             return pages.first
         }
         

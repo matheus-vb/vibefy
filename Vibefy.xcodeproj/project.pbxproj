@@ -21,6 +21,8 @@
 		8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */; };
 		8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */; };
 		8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */; };
+		86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */; };
+		86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
 		8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwoViewController.swift; sourceTree = "<group>"; };
+		86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageFourViewController.swift; sourceTree = "<group>"; };
+		86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
 		95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.debug.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.debug.xcconfig"; sourceTree = "<group>"; };
 		ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vibefy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +111,7 @@
 		863376B928C3B17D0031784D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				86E7CC3928C530DD00B23DC2 /* Home */,
 				8670E6AA28C3E3FD00D3A2F3 /* Onboarding */,
 			);
 			path = Controller;
@@ -127,12 +132,21 @@
 			children = (
 				863376A428C3AF360031784D /* OnboardingViewController.swift */,
 				8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */,
-				8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */,
 				8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */,
+				8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */,
+				86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */,
 				8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */,
 				8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		86E7CC3928C530DD00B23DC2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		A474B913F3E0E4DB7F12E0D2 /* Frameworks */ = {
@@ -259,6 +273,8 @@
 				863376BC28C3B3810031784D /* view.swift in Sources */,
 				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
+				86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */,
+				86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
