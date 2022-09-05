@@ -14,7 +14,7 @@ class OnboardingPageOneViewController: UIViewController {
         
         let title = UILabel()
         title.text = "Cansou dos mesmos roles?"
-        title.frame = CGRect(x: 0, y: 0, width: 296, height: 80)
+        title.frame = CGRect(x: 0, y: 0, width: 352, height: 80)
         title.center = lView.center
         title.font = UIFont(name: title.font.fontName, size: 40)
         title.textColor = .white
