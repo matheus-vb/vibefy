@@ -13,21 +13,33 @@ class OnboardingPageOneViewController: UIViewController {
         let img = UIImage(named: "onBoarding1")
         let imgV = UIImageView(image: img)
         imgV.frame = CGRect(x: 0 , y: 0, width: 300, height: 300)
+        imgV.translatesAutoresizingMaskIntoConstraints = false
         return imgV
     }()
     
+    private lazy var imageOneBG: UIImageView = {
+        let imageName = "BGOnboarding1.png"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image ?? UIImage())
+        imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-
-        setupPositions();
+        setupImages();
     }
     
-    func setupPositions(){
+    func setupImages(){
+        view.addSubview(imageOneBG)
+        view.bringSubviewToFront(imageOneBG)
         view.addSubview(imageOne)
         imageOne.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         imageOne.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        imageOne.translatesAutoresizingMaskIntoConstraints = false
+        imageOneBG.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        imageOneBG.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
+        imageOneBG.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        imageOneBG.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
     }
 }
