@@ -9,6 +9,21 @@ import UIKit
 
 class OnboardingPageOneViewController: UIViewController {
 
+    private lazy var labelView: UIView = {
+        let lView = UIView(frame: .zero)
+        
+        let title = UILabel()
+        title.text = "Cansou dos mesmos roles?"
+        title.frame = CGRect(x: 0, y: 0, width: 296, height: 80)
+        title.center = lView.center
+        title.font = UIFont(name: title.font.fontName, size: 40)
+        title.textColor = .white
+        lView.addSubview(title)
+        
+        return lView
+    }()
+    
+    
     private lazy var imageOne: UIImageView = {
         let img = UIImage(named: "onBoarding1")
         let imgV = UIImageView(image: img)
@@ -28,7 +43,8 @@ class OnboardingPageOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImages();
+        setupImages()
+        setupView()
     }
     
     func setupImages(){
@@ -42,4 +58,14 @@ class OnboardingPageOneViewController: UIViewController {
         imageOneBG.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         imageOneBG.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
     }
+    
+    func setupView(){
+        view.addSubview(labelView)
+        labelView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        //labelView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        labelView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
+        
+        labelView.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
 }
