@@ -64,6 +64,7 @@ class OnboardingPageOneViewController: UIViewController {
         labelView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         //labelView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         labelView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 60).isActive = true
+        labelView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         
         labelView.translatesAutoresizingMaskIntoConstraints = false
     }
