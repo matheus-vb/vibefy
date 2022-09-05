@@ -10,6 +10,19 @@ import UIKit
 class OnboardingPageThreeViewController: UIViewController {
     
     
+    var buttonBottomAnchor: NSLayoutConstraint?
+    
+    private var shareButton: UIButton {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 298, height: 52)
+        button.setTitle("Compartilhe sua localizacao", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.layer.cornerRadius = 20
+        
+        return button
+    }
+    
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Sugerimos locais para comer e beber"
@@ -42,8 +55,9 @@ class OnboardingPageThreeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImages();
+        setupImages()
         setupLabels()
+        setupButtons()
     }
     
     func setupImages(){
@@ -64,6 +78,12 @@ class OnboardingPageThreeViewController: UIViewController {
         subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0).isActive = true
         subTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 25).isActive = true
         subTitleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -25.0).isActive = true
+    }
+    
+    func setupButtons(){
+        view.addSubview(shareButton)
+        shareButton.center = self.view.center
+        
     }
     
 }
