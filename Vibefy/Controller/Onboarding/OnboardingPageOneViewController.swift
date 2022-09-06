@@ -102,7 +102,7 @@ class OnboardingPageOneViewController: UIViewController {
         stackView.addArrangedSubview(imageOneContainer)
         stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 130.0).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 86.0).isActive = true
     }
     
 }
