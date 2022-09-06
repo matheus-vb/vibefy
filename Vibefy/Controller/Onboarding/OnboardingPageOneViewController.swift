@@ -41,6 +41,7 @@ class OnboardingPageOneViewController: UIViewController {
         let imgV = UIImageView(image: img)
         imgV.frame = CGRect(x: 0 , y: 0, width: 300, height: 300)
         imgV.translatesAutoresizingMaskIntoConstraints = false
+        imgV.contentMode = .scaleAspectFit
         return imgV
     }()
     
@@ -85,7 +86,6 @@ class OnboardingPageOneViewController: UIViewController {
                                      subTitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41.0)
                                     ])
         NSLayoutConstraint.activate([imageOne.topAnchor.constraint(equalTo:imageOneContainer.topAnchor, constant: 8.0),
-                                     imageOne.bottomAnchor.constraint(equalTo:imageOneContainer.bottomAnchor, constant: 8.0),
                                      imageOne.leadingAnchor.constraint(equalTo:imageOneContainer.leadingAnchor, constant: 63.5),
                                      imageOne.trailingAnchor.constraint(equalTo: imageOneContainer.trailingAnchor, constant: -63.5)
                                     ])
