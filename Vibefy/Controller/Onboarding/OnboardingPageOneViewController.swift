@@ -8,11 +8,17 @@
 import UIKit
 
 class OnboardingPageOneViewController: UIViewController {
-
+    
+    let titleLabelContainer = UIView()
+    let subtitleLabelContainer = UIView()
+    let imageOneContainer = UIView()
+    let stackView = UIStackView()
+    
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
-        label.text = "Cansou dos mesmos roles?"
-        label.font = UIFont(name: label.font.fontName, size: 36)
+        label.text = "Cansou dos mesmos rolês?"
+        label.font = UIFont(name: label.font.fontName, size: 40)
+        label.font = .boldSystemFont(ofSize: 40)
         label.numberOfLines = 2
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -49,31 +55,54 @@ class OnboardingPageOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupImages()
-        setupLabels()
+        setupBackground()
+        setupContainers()
+        setupStack()
     }
     
-    func setupImages(){
+    func setupBackground(){
         view.addSubview(imageOneBG)
         view.bringSubviewToFront(imageOneBG)
-        view.addSubview(imageOne)
-        imageOne.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        imageOne.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         imageOneBG.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
         imageOneBG.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         imageOneBG.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         imageOneBG.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
     }
     
-    func setupLabels(){
-        view.addSubview(subTitleLabel)
-        view.addSubview(titleLabel)
-        titleLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 130.0).isActive = true
-        titleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 25).isActive = true
-        titleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -25.0).isActive = true
-        subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0).isActive = true
-        subTitleLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 25).isActive = true
-        subTitleLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -25.0).isActive = true
+    func setupContainers(){
+        titleLabelContainer.addSubview(titleLabel)
+        subtitleLabelContainer.addSubview(subTitleLabel)
+        imageOneContainer.addSubview(imageOne)
+        
+        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo:titleLabelContainer.topAnchor, constant: 8.0),
+                                     titleLabel.bottomAnchor.constraint(equalTo:titleLabelContainer.bottomAnchor, constant: 8.0),
+                                     titleLabel.leadingAnchor.constraint(equalTo:titleLabelContainer.leadingAnchor, constant: 16.0),
+                                     titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -41.0)
+                                    ])
+        NSLayoutConstraint.activate([subTitleLabel.topAnchor.constraint(equalTo:subtitleLabelContainer.topAnchor, constant: 8.0),
+                                     subTitleLabel.bottomAnchor.constraint(equalTo:subtitleLabelContainer.bottomAnchor, constant: 8.0),
+                                     subTitleLabel.leadingAnchor.constraint(equalTo:subtitleLabelContainer.leadingAnchor, constant: 16.0),
+                                     subTitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41.0)
+                                    ])
+        NSLayoutConstraint.activate([imageOne.topAnchor.constraint(equalTo:imageOneContainer.topAnchor, constant: 8.0),
+                                     imageOne.bottomAnchor.constraint(equalTo:imageOneContainer.bottomAnchor, constant: 8.0),
+                                     imageOne.leadingAnchor.constraint(equalTo:imageOneContainer.leadingAnchor, constant: 63.5),
+                                     imageOne.trailingAnchor.constraint(equalTo: imageOneContainer.trailingAnchor, constant: -63.5)
+                                    ])
+    }
+    
+    func setupStack(){
+        self.view.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.spacing = 8
+        stackView.addArrangedSubview(titleLabelContainer)
+        stackView.addArrangedSubview(subtitleLabelContainer)
+        stackView.addArrangedSubview(imageOneContainer)
+        stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 130.0).isActive = true
     }
     
 }
