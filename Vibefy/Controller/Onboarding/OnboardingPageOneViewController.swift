@@ -96,7 +96,7 @@ class OnboardingPageOneViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
-        stackView.spacing = 8
+        stackView.spacing = 16
         stackView.addArrangedSubview(titleLabelContainer)
         stackView.addArrangedSubview(subtitleLabelContainer)
         stackView.addArrangedSubview(imageOneContainer)
