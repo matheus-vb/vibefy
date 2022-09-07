@@ -13,6 +13,7 @@ class OnboardingPageTwoViewController: UIViewController {
     let subtitleLabelContainer = UIView()
     let imageTwoContainer = UIView()
     let bottomLabelContainer = UIView()
+    let labelStackView = UIStackView()
     let firstStackView = UIStackView()
     let secondStackView = UIStackView()
     
@@ -74,6 +75,7 @@ class OnboardingPageTwoViewController: UIViewController {
         
         setupBackground()
         setupContainers()
+        setupLabelStack()
         setupFirstStack()
         setupSecondStackView()
     }
@@ -123,15 +125,20 @@ class OnboardingPageTwoViewController: UIViewController {
         ])
     }
     
+    func setupLabelStack(){
+        labelStackView.axis = .vertical
+        labelStackView.alignment = .fill
+        labelStackView.spacing = 16
+        labelStackView.addArrangedSubview(titleLabelContainer)
+        labelStackView.addArrangedSubview(subtitleLabelContainer)
+    }
+    
     func setupFirstStack(){
-        self.view.addSubview(firstStackView)
-        firstStackView.translatesAutoresizingMaskIntoConstraints = false
         firstStackView.axis = .vertical
         firstStackView.alignment = .fill
-        firstStackView.spacing = 16
+        firstStackView.spacing = 44
         
-        firstStackView.addArrangedSubview(titleLabelContainer)
-        firstStackView.addArrangedSubview(subtitleLabelContainer)
+        firstStackView.addArrangedSubview(labelStackView)
         firstStackView.addArrangedSubview(imageTwoContainer)
     }
     
@@ -140,7 +147,7 @@ class OnboardingPageTwoViewController: UIViewController {
         secondStackView.translatesAutoresizingMaskIntoConstraints = false
         secondStackView.axis = .vertical
         secondStackView.alignment = .fill
-        secondStackView.spacing = 40
+        secondStackView.spacing = 62
         secondStackView.addArrangedSubview(firstStackView)
         secondStackView.addArrangedSubview(bottomLabelContainer)
         NSLayoutConstraint.activate([
