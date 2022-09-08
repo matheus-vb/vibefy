@@ -100,8 +100,8 @@ class OnboardingPageOneViewController: UIViewController {
         imageOneContainer.addSubview(imageOne)
         
 //        titleLabelContainer.backgroundColor = .red
-//        subtitleLabelContainer.backgroundColor = .blue
-//        imageOneContainer.backgroundColor = .green
+//        subtitleLabelContainer.backgroundColor = .green
+//        imageOneContainer.backgroundColor = .blue
         
         bottomLabelContainer.addSubview(bottomLabel)
     }
