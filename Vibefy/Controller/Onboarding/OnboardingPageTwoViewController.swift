@@ -88,7 +88,7 @@ class OnboardingPageTwoViewController: UIViewController {
         view.addSubview(imageTwoBG)
         view.addSubview(fullStackView)
         
-        upperStackView.addArrangedSubview(<#T##view: UIView##UIView#>)
+        //upperStackView.addArrangedSubview(<#T##view: UIView##UIView#>)
     }
     
     func setupViewAttributes() {
