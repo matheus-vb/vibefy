@@ -14,8 +14,8 @@ class OnboardingPageTwoViewController: UIViewController {
     let imageTwoContainer = UIView()
     let bottomLabelContainer = UIView()
     let labelStackView = UIStackView()
-    let firstStackView = UIStackView()
-    let secondStackView = UIStackView()
+    let upperStackView = UIStackView()
+    let fullStackView = UIStackView()
     
     
     private lazy var titleLabel: UILabel = {
@@ -33,7 +33,7 @@ class OnboardingPageTwoViewController: UIViewController {
         return label
     }()
     
-    private lazy var subTitleLabel: UILabel = {
+    private lazy var subtitleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Por isso, consultamos o que você ouve no Apple Music."
         label.font = UIFont.systemFont(ofSize: 24, weight: .light)
@@ -78,6 +78,25 @@ class OnboardingPageTwoViewController: UIViewController {
         setupLabelStack()
         setupFirstStack()
         setupSecondStackView()
+        
+//        setupViewHierarchy()
+//        setupViewAttributes()
+//        setupLayout()
+    }
+    
+    func setupViewHierarchy() {
+        view.addSubview(imageTwoBG)
+        view.addSubview(fullStackView)
+        
+        upperStackView.addArrangedSubview(<#T##view: UIView##UIView#>)
+    }
+    
+    func setupViewAttributes() {
+        
+    }
+    
+    func setupLayout() {
+        
     }
     
     func setupBackground(){
@@ -94,7 +113,7 @@ class OnboardingPageTwoViewController: UIViewController {
     
     func setupContainers(){
         titleLabelContainer.addSubview(titleLabel)
-        subtitleLabelContainer.addSubview(subTitleLabel)
+        subtitleLabelContainer.addSubview(subtitleLabel)
         imageTwoContainer.addSubview(imageTwo)
         bottomLabelContainer.addSubview(bottomLabel)
         
@@ -106,10 +125,10 @@ class OnboardingPageTwoViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            subTitleLabel.topAnchor.constraint(equalTo: subtitleLabelContainer.topAnchor, constant: 8),
-            subTitleLabel.bottomAnchor.constraint(equalTo: subtitleLabelContainer.bottomAnchor, constant: 8),
-            subTitleLabel.leadingAnchor.constraint(equalTo: subtitleLabelContainer.leadingAnchor, constant: 16),
-            subTitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41)
+            subtitleLabel.topAnchor.constraint(equalTo: subtitleLabelContainer.topAnchor, constant: 8),
+            subtitleLabel.bottomAnchor.constraint(equalTo: subtitleLabelContainer.bottomAnchor, constant: 8),
+            subtitleLabel.leadingAnchor.constraint(equalTo: subtitleLabelContainer.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41)
         ])
         
         NSLayoutConstraint.activate([
@@ -134,26 +153,26 @@ class OnboardingPageTwoViewController: UIViewController {
     }
     
     func setupFirstStack(){
-        firstStackView.axis = .vertical
-        firstStackView.alignment = .fill
-        firstStackView.spacing = 44
+        upperStackView.axis = .vertical
+        upperStackView.alignment = .fill
+        upperStackView.spacing = 44
         
-        firstStackView.addArrangedSubview(labelStackView)
-        firstStackView.addArrangedSubview(imageTwoContainer)
+        upperStackView.addArrangedSubview(labelStackView)
+        upperStackView.addArrangedSubview(imageTwoContainer)
     }
     
     func setupSecondStackView(){
-        self.view.addSubview(secondStackView)
-        secondStackView.translatesAutoresizingMaskIntoConstraints = false
-        secondStackView.axis = .vertical
-        secondStackView.alignment = .fill
-        secondStackView.spacing = 62
-        secondStackView.addArrangedSubview(firstStackView)
-        secondStackView.addArrangedSubview(bottomLabelContainer)
+        self.view.addSubview(fullStackView)
+        fullStackView.translatesAutoresizingMaskIntoConstraints = false
+        fullStackView.axis = .vertical
+        fullStackView.alignment = .fill
+        fullStackView.spacing = 62
+        fullStackView.addArrangedSubview(upperStackView)
+        fullStackView.addArrangedSubview(bottomLabelContainer)
         NSLayoutConstraint.activate([
-            secondStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            secondStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            secondStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 86)
+            fullStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            fullStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            fullStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 86)
         ])
     }
 }

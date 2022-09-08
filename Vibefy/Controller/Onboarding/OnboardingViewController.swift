@@ -22,7 +22,7 @@ class OnboardingViewController: UIPageViewController {
         style()
         layout()
     }
-
+    
 
     func setup() {
         delegate = self
@@ -45,10 +45,11 @@ class OnboardingViewController: UIPageViewController {
     
     func style() {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.currentPageIndicatorTintColor = .black
+        pageControl.currentPageIndicatorTintColor = .white
         pageControl.pageIndicatorTintColor = .systemGray2
         pageControl.numberOfPages = pages.count
         pageControl.currentPage = initialPage
+        pageControl.transform = CGAffineTransform(scaleX: 2, y: 2)
     }
     
     func layout() {
@@ -57,11 +58,12 @@ class OnboardingViewController: UIPageViewController {
         NSLayoutConstraint.activate([
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
             pageControl.heightAnchor.constraint(equalToConstant: 20),
-            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)])
         
-        pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
+        //pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
         
-        pageControlBottomAnchor?.isActive = true
+        //pageControlBottomAnchor?.isActive = true
         
     }
     

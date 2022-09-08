@@ -9,8 +9,10 @@ import UIKit
 
 class OnboardingPageThreeViewController: UIViewController {
     
-    
-    var buttonBottomAnchor: NSLayoutConstraint?
+    let shareButtonConteiner = UIView()
+    let titleLableConteiner = UIView()
+    let subTitleLabelConteiner = UIView()
+    let stackView = UIStackView()
     
     private var shareButton: UIButton {
         let button = UIButton()
@@ -58,6 +60,18 @@ class OnboardingPageThreeViewController: UIViewController {
         setupImages()
         setupLabels()
         setupButtons()
+    }
+    
+    func setupBackground(){
+        view.addSubview(imageThreeBG)
+        imageThreeBG.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            imageThreeBG.topAnchor.constraint(equalTo: self.view.topAnchor),
+            imageThreeBG.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            imageThreeBG.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            imageThreeBG.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+        ])
     }
     
     func setupImages(){

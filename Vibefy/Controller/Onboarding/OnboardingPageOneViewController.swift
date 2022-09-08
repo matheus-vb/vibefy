@@ -13,14 +13,14 @@ class OnboardingPageOneViewController: UIViewController {
     let subtitleLabelContainer = UIView()
     let imageOneContainer = UIView()
     let bottomLabelContainer = UIView()
-    let firstStackView = UIStackView()
-    let secondStackView = UIStackView()
+    let upperStackView = UIStackView()
+    let fullStackView = UIStackView()
     
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         let boldAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 36, weight: .bold)]
         let normalAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 36, weight: .light)]
-        let pieces = ["Cansou dos ", "mesmos ", "rolês"]
+        let pieces = ["Cansou dos ", "mesmos ", "rolês?"]
         let attributedPieces = NSMutableAttributedString(string: pieces[0], attributes: normalAttrs)
         attributedPieces.append(NSMutableAttributedString(string: pieces[1], attributes: boldAttrs))
         attributedPieces.append(NSMutableAttributedString(string: pieces[2], attributes: normalAttrs))
@@ -31,7 +31,7 @@ class OnboardingPageOneViewController: UIViewController {
         return label
     }()
     
-    private lazy var subTitleLabel: UILabel = {
+    private lazy var subtitleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Vibefy te leva a novos bares e restaurantes."
         label.font = UIFont.systemFont(ofSize: 24, weight: .light)
@@ -71,70 +71,96 @@ class OnboardingPageOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackground()
-        setupContainers()
-        setupFirstStack()
-        setupSecondStack()
-    }
-    
-    func setupBackground(){
-        view.addSubview(imageOneBG)
-        view.bringSubviewToFront(imageOneBG)
-        imageOneBG.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
-        imageOneBG.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
-        imageOneBG.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
-        imageOneBG.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-    }
-    
-    func setupContainers(){
-        titleLabelContainer.addSubview(titleLabel)
-        subtitleLabelContainer.addSubview(subTitleLabel)
-        imageOneContainer.addSubview(imageOne)
-        bottomLabelContainer.addSubview(bottomLabel)
+//        setupBackground()
+//        setupContainers()
+//        setupFirstStack()
+//        setupSecondStack()
         
-        NSLayoutConstraint.activate([titleLabel.topAnchor.constraint(equalTo:titleLabelContainer.topAnchor, constant: 8.0),
-                                     titleLabel.bottomAnchor.constraint(equalTo:titleLabelContainer.bottomAnchor, constant: 8.0),
+        setupViewHierarchy()
+        setupViewAttributes()
+        setupLayout()
+        
+        
+        
+    }
+    
+    func setupViewHierarchy() {
+        view.addSubview(imageOneBG)
+        view.addSubview(fullStackView)
+        
+        upperStackView.addArrangedSubview(titleLabelContainer)
+        upperStackView.addArrangedSubview(subtitleLabelContainer)
+        upperStackView.addArrangedSubview(imageOneContainer)
+        
+        fullStackView.addArrangedSubview(upperStackView)
+        fullStackView.addArrangedSubview(bottomLabelContainer)
+        
+        titleLabelContainer.addSubview(titleLabel)
+        subtitleLabelContainer.addSubview(subtitleLabel)
+        imageOneContainer.addSubview(imageOne)
+        
+//        titleLabelContainer.backgroundColor = .red
+//        subtitleLabelContainer.backgroundColor = .blue
+//        imageOneContainer.backgroundColor = .green
+        
+        bottomLabelContainer.addSubview(bottomLabel)
+    }
+    
+    func setupViewAttributes() {
+        upperStackView.axis = .vertical
+        upperStackView.alignment = .fill
+        upperStackView.spacing = 0
+        
+        fullStackView.axis = .vertical
+        fullStackView.alignment = .fill
+        fullStackView.spacing = 40
+        
+    }
+    
+    func setupLayout() {
+        
+        imageOneBG.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            imageOneBG.topAnchor.constraint(equalTo: view.topAnchor),
+            imageOneBG.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            imageOneBG.leftAnchor.constraint(equalTo: view.leftAnchor),
+            imageOneBG.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+        
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([//titleLabel.topAnchor.constraint(equalTo:titleLabelContainer.topAnchor, constant: 8.0),
+                                     //titleLabel.bottomAnchor.constraint(equalTo:titleLabelContainer.bottomAnchor, constant: 8.0),
+                                     titleLabel.centerYAnchor.constraint(equalTo: titleLabelContainer.centerYAnchor),
                                      titleLabel.leadingAnchor.constraint(equalTo:titleLabelContainer.leadingAnchor, constant: 16.0),
                                      titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -41.0)
                                     ])
-        NSLayoutConstraint.activate([subTitleLabel.topAnchor.constraint(equalTo:subtitleLabelContainer.topAnchor, constant: 8.0),
-                                     subTitleLabel.bottomAnchor.constraint(equalTo:subtitleLabelContainer.bottomAnchor, constant: 8.0),
-                                     subTitleLabel.leadingAnchor.constraint(equalTo:subtitleLabelContainer.leadingAnchor, constant: 16.0),
-                                     subTitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41.0)
+        
+        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo:subtitleLabelContainer.topAnchor, constant: -16),
+                                     subtitleLabel.bottomAnchor.constraint(equalTo:subtitleLabelContainer.bottomAnchor, constant: 0),
+                                     subtitleLabel.leadingAnchor.constraint(equalTo:subtitleLabelContainer.leadingAnchor, constant: 16.0),
+                                     subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41.0)
                                     ])
-        NSLayoutConstraint.activate(         [imageOne.topAnchor.constraint(equalTo:imageOneContainer.topAnchor, constant: 8.0),
+        
+        imageOne.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([imageOne.topAnchor.constraint(equalTo:imageOneContainer.topAnchor, constant: 8.0),
                                      imageOne.centerXAnchor.constraint(equalTo: imageOneContainer.centerXAnchor),
                                      imageOne.centerYAnchor.constraint(equalTo: imageOneContainer.centerYAnchor)
                                     ])
+        
+        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([bottomLabel.centerXAnchor.constraint(equalTo: bottomLabelContainer.centerXAnchor),
-                                     bottomLabel.centerYAnchor.constraint(equalTo: bottomLabelContainer.centerYAnchor),
-                                     bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor)
+                                     //bottomLabel.centerYAnchor.constraint(equalTo: bottomLabelContainer.centerYAnchor),
+                                     bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
+                                     bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor)
                                     ])
-    }
-    
-    func setupFirstStack(){
-        self.view.addSubview(firstStackView)
-        firstStackView.translatesAutoresizingMaskIntoConstraints = false
-        firstStackView.axis = .vertical
-        firstStackView.alignment = .fill
-        firstStackView.spacing = 16
-        firstStackView.addArrangedSubview(titleLabelContainer)
-        firstStackView.addArrangedSubview(subtitleLabelContainer)
-        firstStackView.addArrangedSubview(imageOneContainer)
-    }
-    
-    func setupSecondStack(){
-        self.view.addSubview(secondStackView)
-        secondStackView.translatesAutoresizingMaskIntoConstraints = false
-        secondStackView.axis = .vertical
-        secondStackView.alignment = .fill
-        secondStackView.spacing = 40
-        secondStackView.addArrangedSubview(firstStackView)
-        secondStackView.addArrangedSubview(bottomLabelContainer)
+        
+        fullStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            secondStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            secondStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            secondStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 86)
+            fullStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            fullStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            fullStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 140),
+            fullStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -160)
         ])
     }
 }
