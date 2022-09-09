@@ -13,8 +13,20 @@ class OnboardingPageOneViewController: UIViewController {
     let subtitleLabelContainer = UIView()
     let imageOneContainer = UIView()
     let bottomLabelContainer = UIView()
+    let skipButtonContainer = UIView()
+    
     let upperStackView = UIStackView()
     let fullStackView = UIStackView()
+    
+    
+    private var skipButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Pular", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        
+        return button
+    }()
     
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -71,23 +83,21 @@ class OnboardingPageOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupBackground()
-//        setupContainers()
-//        setupFirstStack()
-//        setupSecondStack()
         
         setupViewHierarchy()
         setupViewAttributes()
         setupLayout()
-        
-        
-        
     }
+    
+    
+    //MARK: - HIERARQUIA VIEWS
+    
     
     func setupViewHierarchy() {
         view.addSubview(imageOneBG)
         view.addSubview(fullStackView)
         
+        upperStackView.addArrangedSubview(skipButtonContainer)
         upperStackView.addArrangedSubview(titleLabelContainer)
         upperStackView.addArrangedSubview(subtitleLabelContainer)
         upperStackView.addArrangedSubview(imageOneContainer)
@@ -95,6 +105,7 @@ class OnboardingPageOneViewController: UIViewController {
         fullStackView.addArrangedSubview(upperStackView)
         fullStackView.addArrangedSubview(bottomLabelContainer)
         
+        skipButtonContainer.addSubview(skipButton)
         titleLabelContainer.addSubview(titleLabel)
         subtitleLabelContainer.addSubview(subtitleLabel)
         imageOneContainer.addSubview(imageOne)
@@ -105,6 +116,8 @@ class OnboardingPageOneViewController: UIViewController {
         
         bottomLabelContainer.addSubview(bottomLabel)
     }
+    
+    //MARK: - ATRIBUTOS STACKS
     
     func setupViewAttributes() {
         upperStackView.axis = .vertical
@@ -117,6 +130,8 @@ class OnboardingPageOneViewController: UIViewController {
         
     }
     
+    //MARK: - LAYOUT
+    
     func setupLayout() {
         
         imageOneBG.translatesAutoresizingMaskIntoConstraints = false
@@ -125,6 +140,13 @@ class OnboardingPageOneViewController: UIViewController {
             imageOneBG.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             imageOneBG.leftAnchor.constraint(equalTo: view.leftAnchor),
             imageOneBG.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+        
+        skipButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            skipButtonContainer.heightAnchor.constraint(equalToConstant: 140),
+            skipButton.centerXAnchor.constraint(equalTo: skipButtonContainer.centerXAnchor),
+            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor)
         ])
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -159,7 +181,7 @@ class OnboardingPageOneViewController: UIViewController {
         NSLayoutConstraint.activate([
             fullStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             fullStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            fullStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 140),
+            fullStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
             fullStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -160)
         ])
     }
