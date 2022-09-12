@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension OnboardingViewController: UIPageViewControllerDelegate{
+extension OnboardingViewController: UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
         guard let viewControllers = pageViewController.viewControllers else {return}
@@ -38,4 +38,15 @@ extension OnboardingViewController: UIPageViewControllerDelegate{
         pageControlBottomAnchor?.constant = 16
     }
     
+    @objc func pageControlTapped(_ sender: UIPageControl){
+        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
+    }
+    
+    @objc func skipTapped(_ sender: UIButton) {
+            let lastPage = pages.count - 1
+            pageControl.currentPage = lastPage
+            goToSpecificPage(index: lastPage, ofViewControllers: pages)
+            animateControls()
+        }
 }
+

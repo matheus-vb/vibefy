@@ -8,7 +8,7 @@
 import UIKit
 
 class OnboardingViewController: UIPageViewController {
-
+    
     var pages = [UIViewController]()
     let pageControl = UIPageControl()
     let initialPage = 0
@@ -41,6 +41,7 @@ class OnboardingViewController: UIPageViewController {
         pages.append(page4)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
+            
     }
     
     func style() {
@@ -63,8 +64,9 @@ class OnboardingViewController: UIPageViewController {
         
     }
     
-    @objc private func pageControlTapped(_ sender: UIPageControl){
-        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
-    }
+    func goToSpecificPage(index: Int, ofViewControllers pages: [UIViewController]) {
+            setViewControllers([pages[index]], direction: .forward, animated: true, completion: nil)
+        }
     
 }
+

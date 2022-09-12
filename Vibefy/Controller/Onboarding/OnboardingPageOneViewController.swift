@@ -18,13 +18,13 @@ class OnboardingPageOneViewController: UIViewController {
     let upperStackView = UIStackView()
     let fullStackView = UIStackView()
     
-    
-    private var skipButton: UIButton = {
+    let skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Pular", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-        
+
+
         return button
     }()
     
@@ -142,8 +142,11 @@ class OnboardingPageOneViewController: UIViewController {
         NSLayoutConstraint.activate([
             skipButtonContainer.heightAnchor.constraint(equalToConstant: 140),
             skipButton.centerXAnchor.constraint(equalTo: skipButtonContainer.centerXAnchor),
-            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor)
+            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor),
+            
+
         ])
+        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -179,4 +182,6 @@ class OnboardingPageOneViewController: UIViewController {
             fullStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -160)
         ])
     }
+    
 }
+

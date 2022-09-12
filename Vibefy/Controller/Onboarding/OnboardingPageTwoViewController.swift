@@ -13,8 +13,19 @@ class OnboardingPageTwoViewController: UIViewController {
     let subtitleLabelContainer = UIView()
     let imageOneContainer = UIView()
     let bottomLabelContainer = UIView()
+    let skipButtonContainer = UIView()
     let upperStackView = UIStackView()
     let fullStackView = UIStackView()
+    
+    let skipButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Pular", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+
+
+        return button
+    }()
     
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -80,7 +91,8 @@ class OnboardingPageTwoViewController: UIViewController {
     func setupViewHierarchy() {
         view.addSubview(imageTwoBG)
         view.addSubview(fullStackView)
-        
+    
+        upperStackView.addArrangedSubview(skipButtonContainer)
         upperStackView.addArrangedSubview(titleLabelContainer)
         upperStackView.addArrangedSubview(subtitleLabelContainer)
         upperStackView.addArrangedSubview(imageOneContainer)
@@ -88,6 +100,7 @@ class OnboardingPageTwoViewController: UIViewController {
         fullStackView.addArrangedSubview(upperStackView)
         fullStackView.addArrangedSubview(bottomLabelContainer)
         
+        skipButtonContainer.addSubview(skipButton)
         titleLabelContainer.addSubview(titleLabel)
         subtitleLabelContainer.addSubview(subtitleLabel)
         imageOneContainer.addSubview(imageTwo)
@@ -141,6 +154,14 @@ class OnboardingPageTwoViewController: UIViewController {
                                      bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
                                      bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor)
                                     ])
+        skipButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            skipButtonContainer.heightAnchor.constraint(equalToConstant: 140),
+            skipButton.centerXAnchor.constraint(equalTo: skipButtonContainer.centerXAnchor),
+            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor),
+        ])
+        
+        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
         
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -151,3 +172,5 @@ class OnboardingPageTwoViewController: UIViewController {
         ])
     }
 }
+
+
