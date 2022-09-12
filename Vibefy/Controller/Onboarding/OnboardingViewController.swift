@@ -61,10 +61,6 @@ class OnboardingViewController: UIPageViewController {
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)])
         
-        //pageControlBottomAnchor = view.bottomAnchor.constraint(equalToSystemSpacingBelow: pageControl.bottomAnchor, multiplier: 2)
-        
-        //pageControlBottomAnchor?.isActive = true
-        
     }
     
     @objc private func pageControlTapped(_ sender: UIPageControl){

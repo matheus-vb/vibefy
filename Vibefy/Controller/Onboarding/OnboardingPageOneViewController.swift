@@ -110,10 +110,6 @@ class OnboardingPageOneViewController: UIViewController {
         subtitleLabelContainer.addSubview(subtitleLabel)
         imageOneContainer.addSubview(imageOne)
         
-//        titleLabelContainer.backgroundColor = .red
-//        subtitleLabelContainer.backgroundColor = .green
-//        imageOneContainer.backgroundColor = .blue
-        
         bottomLabelContainer.addSubview(bottomLabel)
     }
     
@@ -150,8 +146,7 @@ class OnboardingPageOneViewController: UIViewController {
         ])
         
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([//titleLabel.topAnchor.constraint(equalTo:titleLabelContainer.topAnchor, constant: 8.0),
-                                     //titleLabel.bottomAnchor.constraint(equalTo:titleLabelContainer.bottomAnchor, constant: 8.0),
+        NSLayoutConstraint.activate([
                                      titleLabel.centerYAnchor.constraint(equalTo: titleLabelContainer.centerYAnchor),
                                      titleLabel.leadingAnchor.constraint(equalTo:titleLabelContainer.leadingAnchor, constant: 16.0),
                                      titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -41.0)
@@ -172,7 +167,6 @@ class OnboardingPageOneViewController: UIViewController {
         
         bottomLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([bottomLabel.centerXAnchor.constraint(equalTo: bottomLabelContainer.centerXAnchor),
-                                     //bottomLabel.centerYAnchor.constraint(equalTo: bottomLabelContainer.centerYAnchor),
                                      bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
                                      bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor)
                                     ])
