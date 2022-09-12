@@ -21,6 +21,8 @@
 		8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */; };
 		8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */; };
 		8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */; };
+		86BA6B6D28CFBAC000635C39 /* HomeViewController+Gesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA6B6C28CFBAC000635C39 /* HomeViewController+Gesture.swift */; };
+		86BA6B6F28CFCC3C00635C39 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA6B6E28CFCC3C00635C39 /* DragView.swift */; };
 		86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */; };
 		86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
 		8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwoViewController.swift; sourceTree = "<group>"; };
+		86BA6B6C28CFBAC000635C39 /* HomeViewController+Gesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Gesture.swift"; sourceTree = "<group>"; };
+		86BA6B6E28CFCC3C00635C39 /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageFourViewController.swift; sourceTree = "<group>"; };
 		86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */,
+				86BA6B6C28CFBAC000635C39 /* HomeViewController+Gesture.swift */,
+				86BA6B6E28CFCC3C00635C39 /* DragView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BA6B6D28CFBAC000635C39 /* HomeViewController+Gesture.swift in Sources */,
 				8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */,
 				863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */,
 				8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */,
@@ -275,6 +282,7 @@
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 				86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */,
 				86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */,
+				86BA6B6F28CFCC3C00635C39 /* DragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
