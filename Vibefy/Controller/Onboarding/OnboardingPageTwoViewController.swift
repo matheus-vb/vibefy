@@ -204,10 +204,10 @@ class OnboardingPageTwoViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            skipButton.widthAnchor.constraint(equalToConstant: 60),
             skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
             skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
             skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: 32),
-            skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 280.5)
         ])
 
         skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)

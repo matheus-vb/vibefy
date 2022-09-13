@@ -25,7 +25,7 @@ class OnboardingPageOneViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Pular", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.layer.frame = CGRect(x: 2.0, y: 0.0, width: 52, height: 24)
+        button.layer.frame = CGRect(x: 0.0, y: 0.0, width: 52, height: 24)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
 
@@ -204,10 +204,10 @@ class OnboardingPageOneViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
+            skipButton.widthAnchor.constraint(equalToConstant: 60),
             skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
             skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
             skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: 32),
-            skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 280.5)
         ])
 
         skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
