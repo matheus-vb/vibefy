@@ -13,19 +13,27 @@ class DragView: UIView {
     let popupStackView: UIStackView = UIStackView()
     let recentesCollectionViewContainer: UIView = UIView()
     
-    private let recentsCollectionView: UICollectionView = {
-        let viewLayout = UICollectionViewLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
-        collectionView.backgroundColor = .white
+    lazy var recentsCollectionView: UICollectionView = {
+        let viewLayout = UICollectionViewFlowLayout()
+        viewLayout.scrollDirection = .horizontal
+        viewLayout.itemSize = CGSize(width: 200, height: 170)
+        
+        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: viewLayout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(RecentsCollectionViewCell.self, forCellWithReuseIdentifier: RecentsCollectionViewCell.id)
+        collectionView.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.isUserInteractionEnabled = false
+        //collectionView.isUserInteractionEnabled = false
         return collectionView
     }()
         
     lazy var recentsLabel: UILabel = {
         let label: UILabel = UILabel()
         let boldAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .bold)]
-        let normalAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .light)]
+        let normalAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .semibold)]
         let pieces = ["Locais vistos"]
         let attributedPieces = NSMutableAttributedString(string: pieces[0], attributes: normalAttrs)
         label.attributedText = attributedPieces
@@ -53,6 +61,9 @@ class DragView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
             
+        recentsCollectionView.dataSource = self
+        recentsCollectionView.delegate = self
+        
         setupViewHierarchy()
         setupViewAttributes()
         setupLayout()
@@ -70,6 +81,8 @@ class DragView: UIView {
         
         self.recentsLabelContainer.addSubview(recentsLabel)
         self.recentesCollectionViewContainer.addSubview(recentsCollectionView)
+        
+        recentesCollectionViewContainer.backgroundColor = .red
     }
     
     func setupViewAttributes(){
@@ -80,7 +93,7 @@ class DragView: UIView {
         
         self.popupStackView.axis = .vertical
         self.popupStackView.alignment = .fill
-        self.popupStackView.distribution = .fill
+        //self.popupStackView.distribution = .fill
         self.popupStackView.spacing = 16
      }
     
@@ -98,18 +111,20 @@ class DragView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            recentsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            recentsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
-            recentsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            recentsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
+            recentsLabel.leadingAnchor.constraint(equalTo: recentsLabelContainer.leadingAnchor, constant: 16),
+            recentsLabel.topAnchor.constraint(equalTo: recentsLabelContainer.topAnchor, constant: 32),
+            recentsLabel.trailingAnchor.constraint(equalTo: recentsLabelContainer.trailingAnchor, constant: -16),
+            recentsLabel.bottomAnchor.constraint(equalTo: recentsLabelContainer.bottomAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
-            recentsCollectionView.leadingAnchor.constraint(equalTo: self.recentesCollectionViewContainer.leadingAnchor, constant: 0),
-            recentsCollectionView.topAnchor.constraint(equalTo: self.recentsCollectionView.topAnchor, constant: 0),
-            recentsCollectionView.trailingAnchor.constraint(equalTo: self.recentsCollectionView.trailingAnchor, constant: 0),
-            recentsCollectionView.bottomAnchor.constraint(equalTo: self.recentsCollectionView.bottomAnchor, constant: 0),
-            recentsCollectionView.heightAnchor.constraint(equalToConstant: 150)
+            recentsCollectionView.topAnchor.constraint(equalTo: recentesCollectionViewContainer.topAnchor),
+            recentsCollectionView.bottomAnchor.constraint(equalTo: recentesCollectionViewContainer.bottomAnchor),
+            recentsCollectionView.leadingAnchor.constraint(equalTo: recentesCollectionViewContainer.leadingAnchor),
+            recentsCollectionView.trailingAnchor.constraint(equalTo: recentesCollectionViewContainer.trailingAnchor),
+            recentesCollectionViewContainer.heightAnchor.constraint(equalToConstant: 150),
+            recentesCollectionViewContainer.widthAnchor.constraint(equalTo: widthAnchor),
+            recentesCollectionViewContainer.topAnchor.constraint(equalTo: topAnchor, constant: 92)
         ])
     }
 }
