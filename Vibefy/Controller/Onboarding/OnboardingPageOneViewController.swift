@@ -13,17 +13,21 @@ class OnboardingPageOneViewController: UIViewController {
     let subtitleLabelContainer = UIView()
     let imageOneContainer = UIView()
     let bottomLabelContainer = UIView()
-    let skipButtonContainer = UIView()
     
+    let labelsStackView = UIStackView()
     let upperStackView = UIStackView()
+    
+    let labelsContainer = UIView()
+    
     let fullStackView = UIStackView()
     
     let skipButton: UIButton = {
         let button = UIButton()
         button.setTitle("Pular", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-
+        button.layer.frame = CGRect(x: 2.0, y: 0.0, width: 52, height: 24)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+        button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
     }()
@@ -38,6 +42,7 @@ class OnboardingPageOneViewController: UIViewController {
         attributedPieces.append(NSMutableAttributedString(string: pieces[2], attributes: normalAttrs))
         label.attributedText = attributedPieces
         label.numberOfLines = 2
+        label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -46,7 +51,7 @@ class OnboardingPageOneViewController: UIViewController {
     private lazy var subtitleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Vibefy te leva a novos bares e restaurantes."
-        label.font = UIFont.systemFont(ofSize: 24, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 28, weight: .light)
         label.numberOfLines = 2
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +61,7 @@ class OnboardingPageOneViewController: UIViewController {
     private lazy var bottomLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "deslize para o lado"
-        label.font = UIFont.systemFont(ofSize: 24, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
         label.numberOfLines = 1
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -95,40 +100,55 @@ class OnboardingPageOneViewController: UIViewController {
     
     func setupViewHierarchy() {
         view.addSubview(imageOneBG)
+        view.addSubview(skipButton)
         view.addSubview(fullStackView)
-        
-        upperStackView.addArrangedSubview(skipButtonContainer)
-        upperStackView.addArrangedSubview(titleLabelContainer)
-        upperStackView.addArrangedSubview(subtitleLabelContainer)
-        upperStackView.addArrangedSubview(imageOneContainer)
         
         fullStackView.addArrangedSubview(upperStackView)
         fullStackView.addArrangedSubview(bottomLabelContainer)
+                
+        upperStackView.addArrangedSubview(labelsContainer)
+        upperStackView.addArrangedSubview(imageOneContainer)
         
-        skipButtonContainer.addSubview(skipButton)
+        labelsStackView.addArrangedSubview(titleLabelContainer)
+        labelsStackView.addArrangedSubview(subtitleLabelContainer)
+        
+        imageOneContainer.addSubview(imageOne)
         titleLabelContainer.addSubview(titleLabel)
         subtitleLabelContainer.addSubview(subtitleLabel)
-        imageOneContainer.addSubview(imageOne)
-        
         bottomLabelContainer.addSubview(bottomLabel)
+        
+        labelsContainer.addSubview(labelsStackView)
+        
+        
     }
     
     //MARK: - ATRIBUTOS STACKS
     
     func setupViewAttributes() {
+        
         upperStackView.axis = .vertical
         upperStackView.alignment = .fill
-        upperStackView.spacing = 0
+        upperStackView.distribution = .fill
+        upperStackView.spacing = 8
+        
+        labelsStackView.axis = .vertical
+        labelsStackView.alignment = .fill
+        labelsStackView.distribution = .fill
+        labelsStackView.spacing = 0
+        
+        imageOneContainer.contentMode = .scaleAspectFit
         
         fullStackView.axis = .vertical
         fullStackView.alignment = .fill
-        fullStackView.spacing = 40
+        fullStackView.distribution = .fill
+        fullStackView.spacing = 40/812*self.view.frame.height
         
     }
     
     //MARK: - LAYOUT
     
     func setupLayout() {
+        
         
         imageOneBG.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -138,49 +158,61 @@ class OnboardingPageOneViewController: UIViewController {
             imageOneBG.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
         
-        skipButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            skipButtonContainer.heightAnchor.constraint(equalToConstant: 140),
-            skipButton.centerXAnchor.constraint(equalTo: skipButtonContainer.centerXAnchor),
-            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor),
-            
-
-        ])
-        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
+            titleLabel.topAnchor.constraint(equalTo: titleLabelContainer.topAnchor, constant: 8),
+            titleLabel.bottomAnchor.constraint(equalTo: titleLabelContainer.bottomAnchor, constant: -8),
+            titleLabel.leadingAnchor.constraint(equalTo: titleLabelContainer.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -16)])
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-                                     titleLabel.centerYAnchor.constraint(equalTo: titleLabelContainer.centerYAnchor),
-                                     titleLabel.leadingAnchor.constraint(equalTo:titleLabelContainer.leadingAnchor, constant: 16.0),
-                                     titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -41.0)
-                                    ])
+            subtitleLabel.topAnchor.constraint(equalTo: subtitleLabelContainer.topAnchor),
+            subtitleLabel.bottomAnchor.constraint(equalTo: subtitleLabelContainer.bottomAnchor),
+            subtitleLabel.leadingAnchor.constraint(equalTo: subtitleLabelContainer.leadingAnchor, constant: 16),
+            subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -16)])
+                
+        NSLayoutConstraint.activate([
+            imageOne.topAnchor.constraint(equalTo: imageOneContainer.topAnchor),
+            imageOne.bottomAnchor.constraint(equalTo: imageOneContainer.bottomAnchor),
+            imageOne.leadingAnchor.constraint(equalTo: imageOneContainer.leadingAnchor, constant: 52),
+            imageOne.trailingAnchor.constraint(equalTo: imageOneContainer.trailingAnchor, constant: -52)
+            ])
         
-        subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo:subtitleLabelContainer.topAnchor, constant: -16),
-                                     subtitleLabel.bottomAnchor.constraint(equalTo:subtitleLabelContainer.bottomAnchor, constant: 0),
-                                     subtitleLabel.leadingAnchor.constraint(equalTo:subtitleLabelContainer.leadingAnchor, constant: 16.0),
-                                     subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41.0)
-                                    ])
+        imageOneContainer.translatesAutoresizingMaskIntoConstraints = false
         
-        imageOne.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([imageOne.topAnchor.constraint(equalTo:imageOneContainer.topAnchor, constant: 8.0),
-                                     imageOne.centerXAnchor.constraint(equalTo: imageOneContainer.centerXAnchor),
-                                     imageOne.centerYAnchor.constraint(equalTo: imageOneContainer.centerYAnchor)
-                                    ])
-        
-        bottomLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([bottomLabel.centerXAnchor.constraint(equalTo: bottomLabelContainer.centerXAnchor),
-                                     bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
-                                     bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor)
-                                    ])
+        upperStackView.translatesAutoresizingMaskIntoConstraints = false
         
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
-            fullStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            fullStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            fullStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0),
-            fullStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -160)
+            fullStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: (90/812)*self.view.safeAreaLayoutGuide.layoutFrame.height),
+            fullStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 11.5),
+            fullStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -11.5)])
+        
+        labelsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            labelsStackView.topAnchor.constraint(equalTo: labelsContainer.topAnchor),
+            labelsStackView.bottomAnchor.constraint(equalTo: labelsContainer.bottomAnchor),
+            labelsStackView.leadingAnchor.constraint(equalTo: labelsContainer.leadingAnchor),
+            labelsStackView.trailingAnchor.constraint(equalTo: labelsContainer.trailingAnchor)
+            ])
+    
+        NSLayoutConstraint.activate([
+            bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
+            bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor),
+            bottomLabel.centerXAnchor.constraint(equalTo: bottomLabelContainer.centerXAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
+            skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
+            skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: 32),
+            skipButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 280.5)
+        ])
+
+        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
+//
+//
     }
     
 }

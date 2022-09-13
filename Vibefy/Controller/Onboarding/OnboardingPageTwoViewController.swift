@@ -129,6 +129,15 @@ class OnboardingPageTwoViewController: UIViewController {
             imageTwoBG.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
         
+        skipButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            skipButtonContainer.heightAnchor.constraint(equalToConstant: 140),
+            skipButton.centerXAnchor.constraint(equalTo: skipButtonContainer.centerXAnchor),
+            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor),
+        ])
+        
+        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
                                      titleLabel.centerYAnchor.constraint(equalTo: titleLabelContainer.centerYAnchor),
@@ -137,7 +146,7 @@ class OnboardingPageTwoViewController: UIViewController {
                                     ])
         
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo:subtitleLabelContainer.topAnchor, constant: -16),
+        NSLayoutConstraint.activate([subtitleLabel.topAnchor.constraint(equalTo:subtitleLabelContainer.topAnchor, constant: 164),
                                      subtitleLabel.bottomAnchor.constraint(equalTo:subtitleLabelContainer.bottomAnchor, constant: 0),
                                      subtitleLabel.leadingAnchor.constraint(equalTo:subtitleLabelContainer.leadingAnchor, constant: 16.0),
                                      subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -41.0)
@@ -154,14 +163,6 @@ class OnboardingPageTwoViewController: UIViewController {
                                      bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
                                      bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor)
                                     ])
-        skipButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            skipButtonContainer.heightAnchor.constraint(equalToConstant: 140),
-            skipButton.centerXAnchor.constraint(equalTo: skipButtonContainer.centerXAnchor),
-            skipButton.centerYAnchor.constraint(equalTo: skipButtonContainer.centerYAnchor),
-        ])
-        
-        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
         
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
