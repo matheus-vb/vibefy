@@ -87,7 +87,9 @@ class HomeViewController: UIViewController {
     func setupViewAttributes() {
         stackView.axis = .vertical
         stackView.alignment = .fill
+        stackView.distribution = .fill
         stackView.spacing = 40
+        
     }
     
     func setupLayout() {
@@ -99,15 +101,11 @@ class HomeViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            homeButton.leadingAnchor.constraint(equalTo: buttonContainer.leadingAnchor, constant: 59.5),
-            homeButton.trailingAnchor.constraint(equalTo: buttonContainer.trailingAnchor, constant: -59.5),
-        ])
-        
-        NSLayoutConstraint.activate([
+            
+            titleLabel.topAnchor.constraint(equalTo: titleLabelContainer.topAnchor, constant: 8),
+            titleLabel.bottomAnchor.constraint(equalTo: titleLabelContainer.bottomAnchor, constant: -8),
             titleLabel.leadingAnchor.constraint(equalTo: titleLabelContainer.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -41),
-            titleLabel.centerYAnchor.constraint(equalTo: titleLabelContainer.centerYAnchor),
-            titleLabelContainer.heightAnchor.constraint(equalToConstant: 98)
+            titleLabel.trailingAnchor.constraint(equalTo: titleLabelContainer.trailingAnchor, constant: -32),
         ])
         
         NSLayoutConstraint.activate([
@@ -116,12 +114,17 @@ class HomeViewController: UIViewController {
             self.dragView.heightAnchor.constraint(equalToConstant: 466)
         ])
         
+        NSLayoutConstraint.activate([
+            self.homeButton.centerXAnchor.constraint(equalTo: self.buttonContainer.centerXAnchor),
+            self.homeButton.centerYAnchor.constraint(equalTo: self.buttonContainer.centerYAnchor)
+        ])
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 134),
-            stackView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            stackView.rightAnchor.constraint(equalTo: view.rightAnchor)
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 134/812 * self.view.frame.height),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -285/812 * self.view.frame.height),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)
         ])
     }
     

@@ -10,6 +10,9 @@ import UIKit
 class DragView: UIView {
     
     let recentsLabelContainer: UIView = UIView()
+    let popupStackView: UIStackView = UIStackView()
+    let recentesCollectionViewContainer: UIView = UIView()
+    
     private let recentsCollectionView: UICollectionView = {
         let viewLayout = UICollectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
@@ -60,10 +63,13 @@ class DragView: UIView {
     }
     
     func setupViewHierarchy(){
-        self.recentsLabelContainer.addSubview(recentsLabel)
+        self.addSubview(popupStackView)
         
-        self.addSubview(recentsLabelContainer)
-        self.addSubview(recentsCollectionView)
+        self.popupStackView.addSubview(recentsLabelContainer)
+        self.popupStackView.addSubview(recentesCollectionViewContainer)
+        
+        self.recentsLabelContainer.addSubview(recentsLabel)
+        self.recentesCollectionViewContainer.addSubview(recentsCollectionView)
     }
     
     func setupViewAttributes(){
@@ -72,28 +78,37 @@ class DragView: UIView {
         self.layer.cornerRadius = 40
         self.isUserInteractionEnabled = true
         
-    }
+        self.popupStackView.axis = .vertical
+        self.popupStackView.alignment = .fill
+        self.popupStackView.distribution = .fill
+        self.popupStackView.spacing = 16
+     }
     
     func setupLayout(){
         
-        
+        popupStackView.translatesAutoresizingMaskIntoConstraints = false
         recentsLabelContainer.translatesAutoresizingMaskIntoConstraints = false
+        recentesCollectionViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            recentsLabelContainer.heightAnchor.constraint(equalTo: self.recentsLabel.heightAnchor),
-            recentsLabelContainer.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -113),
-            recentsLabelContainer.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            recentsLabelContainer.topAnchor.constraint(equalTo: self.topAnchor, constant: 54)
+            popupStackView.topAnchor.constraint(equalTo: self.topAnchor),
+            popupStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            popupStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            popupStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            recentsLabel.leadingAnchor.constraint(equalTo: self.recentsLabelContainer.leadingAnchor, constant: 24),
-            recentsLabel.trailingAnchor.constraint(equalTo: self.recentsLabelContainer.trailingAnchor, constant: -16),
+            recentsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            recentsLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
+            recentsLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            recentsLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
-            recentsCollectionView.leadingAnchor.constraint(equalTo:  self.leadingAnchor, constant: 24),
-            recentsCollectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            recentsCollectionView.topAnchor.constraint(equalTo: self.recentsLabelContainer.bottomAnchor, constant: 8),
+            recentsCollectionView.leadingAnchor.constraint(equalTo: self.recentesCollectionViewContainer.leadingAnchor, constant: 0),
+            recentsCollectionView.topAnchor.constraint(equalTo: self.recentsCollectionView.topAnchor, constant: 0),
+            recentsCollectionView.trailingAnchor.constraint(equalTo: self.recentsCollectionView.trailingAnchor, constant: 0),
+            recentsCollectionView.bottomAnchor.constraint(equalTo: self.recentsCollectionView.bottomAnchor, constant: 0),
             recentsCollectionView.heightAnchor.constraint(equalToConstant: 150)
         ])
     }
