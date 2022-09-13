@@ -51,7 +51,7 @@ class OnboardingPageOneViewController: UIViewController {
     private lazy var subtitleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Vibefy te leva a novos bares e restaurantes."
-        label.font = UIFont.systemFont(ofSize: 28, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .light)
         label.numberOfLines = 2
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -184,7 +184,7 @@ class OnboardingPageOneViewController: UIViewController {
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            fullStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: (90/812)*self.view.safeAreaLayoutGuide.layoutFrame.height),
+            fullStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             fullStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 11.5),
             fullStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -11.5)])
         
