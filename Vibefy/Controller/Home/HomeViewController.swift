@@ -13,8 +13,6 @@ class HomeViewController: UIViewController {
     let buttonContainer = UIView()
     
     let stackView = UIStackView()
-    
-    //let dragView = UIView()
     let dragView = DragView()
     
     
@@ -63,9 +61,11 @@ class HomeViewController: UIViewController {
         
         setupViewHierarchy()
         setupViewAttributes()
-        setupLayout()
         dragViewSetup()
+        dragView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture)))
+        setupLayout()
     }
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -82,9 +82,6 @@ class HomeViewController: UIViewController {
         titleLabelContainer.addSubview(titleLabel)
         buttonContainer.addSubview(homeButton)
         
-//        titleLabelContainer.backgroundColor = .red
-//        buttonContainer.backgroundColor = .green
-//        stackView.backgroundColor = .link
     }
     
     func setupViewAttributes() {
@@ -113,6 +110,12 @@ class HomeViewController: UIViewController {
             titleLabelContainer.heightAnchor.constraint(equalToConstant: 98)
         ])
         
+        NSLayoutConstraint.activate([
+            self.dragView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            self.dragView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.dragView.heightAnchor.constraint(equalToConstant: 466)
+        ])
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 134),
@@ -128,5 +131,17 @@ class HomeViewController: UIViewController {
         dragView.layer.cornerRadius = 40
         view.addSubview(dragView)
         
+    }
+    
+    @objc func handlePanGesture(gesture:UIPanGestureRecognizer) {
+        
+        if gesture.state == .began {
+            print("Began")
+        }else if gesture.state == .changed {
+            let translation = gesture.translation(in: self.view)
+            dragView.transform = CGAffineTransform(translationX: 0.0, y: translation.y)
+        }else if gesture.state == .ended {
+            print("ended")
+        }
     }
 }
