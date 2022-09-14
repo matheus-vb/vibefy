@@ -14,6 +14,15 @@ class DragView: UIView {
     let popupStackView: UIStackView = UIStackView()
     let recentesCollectionViewContainer: UIView = UIView()
     
+    private lazy var barImg: UIImageView = {
+        let img = UIImage(named: "dragBar")
+        let imgV = UIImageView(image: img)
+        imgV.translatesAutoresizingMaskIntoConstraints = false
+        imgV.contentMode = .scaleAspectFit
+
+        return imgV
+    }()
+    
     lazy var recentsCollectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .horizontal
