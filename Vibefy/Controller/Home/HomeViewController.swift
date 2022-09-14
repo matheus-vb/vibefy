@@ -62,15 +62,12 @@ class HomeViewController: UIViewController {
         setupViewHierarchy()
         setupViewAttributes()
         dragViewSetup()
-        dragView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture)))
+        let gestureRegocnizer = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture))
+        gestureRegocnizer.cancelsTouchesInView = false
+        dragView.addGestureRecognizer(gestureRegocnizer)
         setupLayout()
     }
-    
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        dragView.center = view.center
-    }
+
     
     func setupViewHierarchy() {
         view.addSubview(homeBG)
@@ -109,12 +106,6 @@ class HomeViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            self.dragView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-            self.dragView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.dragView.heightAnchor.constraint(equalToConstant: 466)
-        ])
-        
-        NSLayoutConstraint.activate([
             self.homeButton.centerXAnchor.constraint(equalTo: self.buttonContainer.centerXAnchor),
             self.homeButton.centerYAnchor.constraint(equalTo: self.buttonContainer.centerYAnchor)
         ])
@@ -126,6 +117,13 @@ class HomeViewController: UIViewController {
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -285/812 * self.view.frame.height),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12)
         ])
+        
+        NSLayoutConstraint.activate([
+            self.dragView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            self.dragView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.dragView.heightAnchor.constraint(equalToConstant: 466),
+            self.dragView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height - 130)
+        ])
     }
     
     func dragViewSetup() {
@@ -133,7 +131,6 @@ class HomeViewController: UIViewController {
         dragView.center = view.center
         dragView.layer.cornerRadius = 40
         view.addSubview(dragView)
-        
     }
     
     @objc func handlePanGesture(gesture:UIPanGestureRecognizer) {
@@ -141,8 +138,7 @@ class HomeViewController: UIViewController {
         if gesture.state == .began {
             print("Began")
         }else if gesture.state == .changed {
-            let translation = gesture.translation(in: self.view)
-            dragView.transform = CGAffineTransform(translationX: 0.0, y: translation.y)
+            print("Nao vai")
         }else if gesture.state == .ended {
             print("")
         }

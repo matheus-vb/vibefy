@@ -29,8 +29,8 @@ class DragView: UIView {
         viewLayout.itemSize = CGSize(width: 200, height: 170)
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: viewLayout)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 4.5, bottom: 0, right: 0)
         collectionView.showsHorizontalScrollIndicator = false
         

@@ -11,6 +11,18 @@ class RecentsCollectionViewCell: UICollectionViewCell {
     
     static let id = "RecentsCell"
     
+    private lazy var homeButton: UIButton = {
+        let button = UIButton()
+        let bgImage = UIImage(named: "favorite")
+        let bgImageView = UIImageView(image: bgImage)
+        button.setBackgroundImage(UIImage(named: "favorite"), for: .normal)
+        button.layer.frame = CGRect(x: 0.0, y: 0.0, width: bgImageView.frame.width, height: bgImageView.frame.height)
+        button.contentMode = .scaleAspectFit
+        button.addTarget(self, action: #selector(tapFavorite), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private lazy var imageOne: UIImageView = {
         let img = UIImage(named: "liamba")
         let imgV = UIImageView(image: img)
@@ -62,7 +74,7 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         addSubview(imageOne)
         addSubview(titleLabel)
         addSubview(subLabel)
-        addSubview(favImg)
+        addSubview(homeButton)
         
     }
     
@@ -75,23 +87,30 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         
      
         imageOne.frame = CGRect(x: 11.5, y: 0, width: 177, height: 108)
-        favImg.frame = CGRect(x: 158, y: 116, width: 30, height: 30)
+        homeButton.frame = CGRect(x: 158, y: 116, width: homeButton.frame.width, height: homeButton.frame.height)
         titleLabel.frame = CGRect(x: 11.5, y: 110, width: 170, height: 30)
         subLabel.frame = CGRect(x: 11.5, y: 134, width: 170, height: 20)
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        
-        let loc = touch.location(in: favImg)
-        
-        if favImg.bounds.contains(loc) {
-            favImg.image = UIImage(named: "favoriteFill")
-        }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let touch = touches.first else {
+//            return
+//        }
+//
+//        let loc = touch.location(in: favImg)
+//
+//        if favImg.bounds.contains(loc) {
+//            favImg.image = UIImage(named: "favoriteFill")
+//        }
+//    }
+    
+    @objc func tapFavorite() {
+        print("OOOOi")
+        homeButton.setImage(UIImage(named: "favoriteFill"), for: .normal)
     }
+    
+    
     
     
 }

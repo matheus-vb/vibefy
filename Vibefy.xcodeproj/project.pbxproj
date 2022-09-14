@@ -19,6 +19,7 @@
 		8664228928D0F768007C954A /* DragView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228828D0F768007C954A /* DragView+UICollectionViewDataSource.swift */; };
 		8664228B28D0F779007C954A /* DragView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228A28D0F779007C954A /* DragView+UICollectionViewDelegate.swift */; };
 		8664228D28D0FA68007C954A /* RecentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228C28D0FA68007C954A /* RecentsCollectionViewCell.swift */; };
+		8664228F28D25509007C954A /* DragViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228E28D25509007C954A /* DragViewDelegate.swift */; };
 		8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */; };
 		8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
 		8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */; };
@@ -43,6 +44,7 @@
 		8664228828D0F768007C954A /* DragView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8664228A28D0F779007C954A /* DragView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8664228C28D0FA68007C954A /* RecentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		8664228E28D25509007C954A /* DragViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragViewDelegate.swift; sourceTree = "<group>"; };
 		8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThreeViewController.swift; sourceTree = "<group>"; };
 		8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
 		8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				8664228C28D0FA68007C954A /* RecentsCollectionViewCell.swift */,
 				8664228828D0F768007C954A /* DragView+UICollectionViewDataSource.swift */,
 				8664228A28D0F779007C954A /* DragView+UICollectionViewDelegate.swift */,
+				8664228E28D25509007C954A /* DragViewDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				863376BC28C3B3810031784D /* view.swift in Sources */,
 				8664228D28D0FA68007C954A /* RecentsCollectionViewCell.swift in Sources */,
 				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
+				8664228F28D25509007C954A /* DragViewDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 				86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */,
 				86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */,
@@ -435,6 +439,7 @@
 				INFOPLIST_FILE = Vibefy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,6 +468,7 @@
 				INFOPLIST_FILE = Vibefy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
