@@ -10,6 +10,7 @@ import UIKit
 class DragView: UIView {
     
     let recentsLabelContainer: UIView = UIView()
+    let favoritesLabelContainer: UIView = UIView()
     let popupStackView: UIStackView = UIStackView()
     let recentesCollectionViewContainer: UIView = UIView()
     
@@ -21,6 +22,8 @@ class DragView: UIView {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: viewLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 4.5, bottom: 0, right: 0)
+        collectionView.showsHorizontalScrollIndicator = false
         
         collectionView.register(RecentsCollectionViewCell.self, forCellWithReuseIdentifier: RecentsCollectionViewCell.id)
         collectionView.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
@@ -47,7 +50,7 @@ class DragView: UIView {
     lazy var favoritesLabel: UILabel = {
         let label = UILabel()
         let boldAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .bold)]
-        let normalAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .light)]
+        let normalAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 24, weight: .semibold)]
         let pieces = ["Favoritos"]
         let attributedPieces = NSMutableAttributedString(string: pieces[0], attributes: normalAttrs)
         label.attributedText = attributedPieces
@@ -64,6 +67,8 @@ class DragView: UIView {
         recentsCollectionView.dataSource = self
         recentsCollectionView.delegate = self
         
+        
+        
         setupViewHierarchy()
         setupViewAttributes()
         setupLayout()
@@ -78,9 +83,13 @@ class DragView: UIView {
         
         self.popupStackView.addSubview(recentsLabelContainer)
         self.popupStackView.addSubview(recentesCollectionViewContainer)
+        popupStackView.addArrangedSubview(favoritesLabelContainer)
+        
+        popupStackView.bringSubviewToFront(recentesCollectionViewContainer)
         
         self.recentsLabelContainer.addSubview(recentsLabel)
         self.recentesCollectionViewContainer.addSubview(recentsCollectionView)
+        favoritesLabelContainer.addSubview(favoritesLabel)
         
         recentesCollectionViewContainer.backgroundColor = .red
     }
@@ -126,5 +135,11 @@ class DragView: UIView {
             recentesCollectionViewContainer.widthAnchor.constraint(equalTo: widthAnchor),
             recentesCollectionViewContainer.topAnchor.constraint(equalTo: topAnchor, constant: 92)
         ])
+        
+        NSLayoutConstraint.activate([
+            favoritesLabel.leadingAnchor.constraint(equalTo: favoritesLabelContainer.leadingAnchor, constant: 16),
+            favoritesLabel.topAnchor.constraint(equalTo: favoritesLabelContainer.topAnchor, constant: 72),
+            favoritesLabel.trailingAnchor.constraint(equalTo: favoritesLabelContainer.trailingAnchor, constant: -16),
+            favoritesLabel.bottomAnchor.constraint(equalTo: favoritesLabelContainer.bottomAnchor, constant: -5)])
     }
 }

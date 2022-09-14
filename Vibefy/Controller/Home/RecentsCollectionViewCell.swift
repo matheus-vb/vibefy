@@ -42,16 +42,27 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private lazy var favImg: UIImageView = {
+        let img = UIImage(named: "favorite")
+        let imgV = UIImageView(image: img)
+        imgV.translatesAutoresizingMaskIntoConstraints = false
+        imgV.contentMode = .scaleAspectFit
+
+        
+        return imgV
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        //contentView.backgroundColor = .green
+        //contentView.backgroundColor = .purple
         
         imageOne.contentMode = .scaleAspectFit
         
         addSubview(imageOne)
         addSubview(titleLabel)
         addSubview(subLabel)
+        addSubview(favImg)
         
     }
     
@@ -63,10 +74,23 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
      
-        imageOne.frame = CGRect(x: 0, y: 0, width: 170, height: 96)
-        titleLabel.frame = CGRect(x: 8, y: 96, width: 170, height: 30)
-        subLabel.frame = CGRect(x: 8, y: 120, width: 170, height: 20)
+        imageOne.frame = CGRect(x: 11.5, y: 0, width: 177, height: 108)
+        favImg.frame = CGRect(x: 158, y: 116, width: 30, height: 30)
+        titleLabel.frame = CGRect(x: 11.5, y: 110, width: 170, height: 30)
+        subLabel.frame = CGRect(x: 11.5, y: 134, width: 170, height: 20)
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        
+        let loc = touch.location(in: favImg)
+        
+        if favImg.bounds.contains(loc) {
+            favImg.image = UIImage(named: "favoriteFill")
+        }
     }
     
     

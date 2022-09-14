@@ -144,7 +144,7 @@ class HomeViewController: UIViewController {
             let translation = gesture.translation(in: self.view)
             dragView.transform = CGAffineTransform(translationX: 0.0, y: translation.y)
         }else if gesture.state == .ended {
-            print("ended")
+            print("")
         }
     }
 }
