@@ -43,6 +43,9 @@ class OnboardingPageThreeViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.frame = CGRect(x: 2.0, y: 0.0, width: 52, height: 32)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = 14
+        button.layer.borderColor = UIColor(red: 238/255,green: 238/255, blue: 238/55, alpha: 1.0).cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
@@ -60,7 +63,7 @@ class OnboardingPageThreeViewController: UIViewController {
         attributedPieces.append(NSMutableAttributedString(string: pieces[2], attributes: normalAttrs))
         attributedPieces.append(NSMutableAttributedString(string: pieces[3], attributes: boldAttrs))
         label.attributedText = attributedPieces
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +74,7 @@ class OnboardingPageThreeViewController: UIViewController {
         let label: UILabel = UILabel()
         label.text = "Sempre com sua Vibe musical."
         label.font = UIFont.systemFont(ofSize: 24, weight: .light)
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -199,6 +202,10 @@ class OnboardingPageThreeViewController: UIViewController {
                         
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         
+        NSLayoutConstraint.activate([
+            upperStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+        
 
         NSLayoutConstraint.activate([
             fullStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
@@ -219,6 +226,7 @@ class OnboardingPageThreeViewController: UIViewController {
         NSLayoutConstraint.activate([
             buttonsStackView.leadingAnchor.constraint(equalTo: fullStackView.leadingAnchor, constant: 27),
             buttonsStackView.trailingAnchor.constraint(equalTo: fullStackView.trailingAnchor, constant: -27)
+            
         ])
         
         NSLayoutConstraint.activate([
@@ -226,8 +234,8 @@ class OnboardingPageThreeViewController: UIViewController {
             allowButton.topAnchor.constraint(equalTo: buttonsStackView.topAnchor),
             allowButton.trailingAnchor.constraint(equalTo: buttonsStackView.trailingAnchor),
             allowButton.leadingAnchor.constraint(equalTo: buttonsStackView.leadingAnchor),
-            allowButton.heightAnchor.constraint(equalToConstant: 52)
-
+            allowButton.heightAnchor.constraint(equalToConstant: 52),
+            dontAllowButton.heightAnchor.constraint(equalToConstant: 52)
         ])
     
     }

@@ -58,9 +58,9 @@ class OnboardingViewController: UIPageViewController {
         
         NSLayoutConstraint.activate([
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20),
+            pageControl.heightAnchor.constraint(equalToConstant: 16),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)])
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -72)])
         
     }
     

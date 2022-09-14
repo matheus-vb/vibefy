@@ -177,6 +177,10 @@ class OnboardingPageOneViewController: UIViewController {
             imageOne.trailingAnchor.constraint(equalTo: imageOneContainer.trailingAnchor, constant: -52)
             ])
         
+        NSLayoutConstraint.activate([
+            bottomLabelContainer.bottomAnchor.constraint(equalTo: fullStackView.bottomAnchor)
+        ])
+        
         imageOneContainer.translatesAutoresizingMaskIntoConstraints = false
         
         upperStackView.translatesAutoresizingMaskIntoConstraints = false

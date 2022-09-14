@@ -40,7 +40,7 @@ class OnboardingPageTwoViewController: UIViewController {
         attributedPieces.append(NSMutableAttributedString(string: pieces[1], attributes: boldAttrs))
         attributedPieces.append(NSMutableAttributedString(string: pieces[2], attributes: normalAttrs))
         label.attributedText = attributedPieces
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
