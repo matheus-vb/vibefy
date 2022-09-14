@@ -61,7 +61,7 @@ class OnboardingPageOneViewController: UIViewController {
     private lazy var bottomLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "deslize para o lado"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
         label.numberOfLines = 1
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -205,9 +205,9 @@ class OnboardingPageOneViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             skipButton.widthAnchor.constraint(equalToConstant: 60),
-            skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
+            skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: (80/812)*self.view.frame.height),
+            skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: (-30/812)*self.view.frame.height),
             skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
-            skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: 32),
         ])
 
         skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)

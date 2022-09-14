@@ -12,7 +12,6 @@ class OnboardingPageTwoViewController: UIViewController {
     let titleLabelContainer = UIView()
     let subtitleLabelContainer = UIView()
     let imageOneContainer = UIView()
-    let bottomLabelContainer = UIView()
     
     let labelsStackView = UIStackView()
     let upperStackView = UIStackView()
@@ -58,16 +57,6 @@ class OnboardingPageTwoViewController: UIViewController {
         return label
     }()
     
-    private lazy var bottomLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.text = "deslize para o lado"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        label.numberOfLines = 1
-        label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private lazy var imageOne: UIImageView = {
         let img = UIImage(named: "onBoarding2")
         let imgV = UIImageView(image: img)
@@ -104,7 +93,6 @@ class OnboardingPageTwoViewController: UIViewController {
         view.addSubview(fullStackView)
         
         fullStackView.addArrangedSubview(upperStackView)
-        fullStackView.addArrangedSubview(bottomLabelContainer)
                 
         upperStackView.addArrangedSubview(labelsContainer)
         upperStackView.addArrangedSubview(imageOneContainer)
@@ -115,7 +103,6 @@ class OnboardingPageTwoViewController: UIViewController {
         imageOneContainer.addSubview(imageOne)
         titleLabelContainer.addSubview(titleLabel)
         subtitleLabelContainer.addSubview(subtitleLabel)
-        bottomLabelContainer.addSubview(bottomLabel)
         
         labelsContainer.addSubview(labelsStackView)
         
@@ -197,17 +184,12 @@ class OnboardingPageTwoViewController: UIViewController {
             labelsStackView.trailingAnchor.constraint(equalTo: labelsContainer.trailingAnchor)
             ])
     
-        NSLayoutConstraint.activate([
-            bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
-            bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor),
-            bottomLabel.centerXAnchor.constraint(equalTo: bottomLabelContainer.centerXAnchor)
-        ])
         
         NSLayoutConstraint.activate([
             skipButton.widthAnchor.constraint(equalToConstant: 60),
-            skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
+            skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: (80/812)*self.view.frame.height),
+            skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: (-30/812)*self.view.frame.height),
             skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
-            skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: 32),
         ])
 
         skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)

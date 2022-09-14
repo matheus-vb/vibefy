@@ -12,26 +12,44 @@ class OnboardingPageThreeViewController: UIViewController {
     let titleLabelContainer = UIView()
     let subtitleLabelContainer = UIView()
     let imageOneContainer = UIView()
-    let bottomLabelContainer = UIView()
     
     let labelsStackView = UIStackView()
     let upperStackView = UIStackView()
+    let buttonsStackView = UIStackView()
     
     let labelsContainer = UIView()
     
     let fullStackView = UIStackView()
     
-    let skipButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Pular", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.layer.frame = CGRect(x: 2.0, y: 0.0, width: 52, height: 32)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
+    // MARK: -BOTÕES
+    
+    
+    let allowButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.setTitle("Compartilhe sua localização", for: .normal)
+        button.setTitleColor(UIColor(red: 53/255, green: 49/255, blue: 189/255, alpha: 1.0), for: .normal)
+        button.backgroundColor = UIColor(red: 230/255, green: 242/255, blue: 255/255, alpha: 1.0)
+        button.layer.frame = CGRect(x: 2.0, y: 0.0, width: 298, height: 52)
+        button.layer.cornerRadius = 14
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
 
         return button
     }()
     
+    let dontAllowButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Não compartilhar", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.layer.frame = CGRect(x: 2.0, y: 0.0, width: 52, height: 32)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
+    
+    // MARK: -LABELS
+
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         let boldAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 36, weight: .bold)]
@@ -52,18 +70,8 @@ class OnboardingPageThreeViewController: UIViewController {
     private lazy var subtitleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Sempre com sua Vibe musical."
-        label.font = UIFont.systemFont(ofSize: 28, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .light)
         label.numberOfLines = 2
-        label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private lazy var bottomLabel: UILabel = {
-        let label: UILabel = UILabel()
-        label.text = "deslize para o lado"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .light)
-        label.numberOfLines = 1
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -101,11 +109,10 @@ class OnboardingPageThreeViewController: UIViewController {
     
     func setupViewHierarchy() {
         view.addSubview(imageOneBG)
-        view.addSubview(skipButton)
         view.addSubview(fullStackView)
         
         fullStackView.addArrangedSubview(upperStackView)
-        fullStackView.addArrangedSubview(bottomLabelContainer)
+        fullStackView.addArrangedSubview(buttonsStackView)
                 
         upperStackView.addArrangedSubview(labelsContainer)
         upperStackView.addArrangedSubview(imageOneContainer)
@@ -113,10 +120,12 @@ class OnboardingPageThreeViewController: UIViewController {
         labelsStackView.addArrangedSubview(titleLabelContainer)
         labelsStackView.addArrangedSubview(subtitleLabelContainer)
         
+        buttonsStackView.addArrangedSubview(allowButton)
+        buttonsStackView.addArrangedSubview(dontAllowButton)
+        
         imageOneContainer.addSubview(imageOne)
         titleLabelContainer.addSubview(titleLabel)
         subtitleLabelContainer.addSubview(subtitleLabel)
-        bottomLabelContainer.addSubview(bottomLabel)
         
         labelsContainer.addSubview(labelsStackView)
         
@@ -139,6 +148,11 @@ class OnboardingPageThreeViewController: UIViewController {
         
         imageOneContainer.contentMode = .scaleAspectFit
         
+        buttonsStackView.axis = .vertical
+        buttonsStackView.alignment = .fill
+        buttonsStackView.distribution = .fill
+        buttonsStackView.spacing = 8
+        
         fullStackView.axis = .vertical
         fullStackView.alignment = .fill
         fullStackView.distribution = .fill
@@ -150,8 +164,10 @@ class OnboardingPageThreeViewController: UIViewController {
     
     func setupLayout() {
         
-        
+        upperStackView.translatesAutoresizingMaskIntoConstraints = false
+
         imageOneBG.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             imageOneBG.topAnchor.constraint(equalTo: view.topAnchor),
             imageOneBG.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -170,6 +186,9 @@ class OnboardingPageThreeViewController: UIViewController {
             subtitleLabel.bottomAnchor.constraint(equalTo: subtitleLabelContainer.bottomAnchor),
             subtitleLabel.leadingAnchor.constraint(equalTo: subtitleLabelContainer.leadingAnchor, constant: 16),
             subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -16)])
+        
+        imageOneContainer.translatesAutoresizingMaskIntoConstraints = false
+
                 
         NSLayoutConstraint.activate([
             imageOne.topAnchor.constraint(equalTo: imageOneContainer.topAnchor),
@@ -177,12 +196,9 @@ class OnboardingPageThreeViewController: UIViewController {
             imageOne.leadingAnchor.constraint(equalTo: imageOneContainer.leadingAnchor, constant: 52),
             imageOne.trailingAnchor.constraint(equalTo: imageOneContainer.trailingAnchor, constant: -52)
             ])
-        
-        imageOneContainer.translatesAutoresizingMaskIntoConstraints = false
-        
-        upperStackView.translatesAutoresizingMaskIntoConstraints = false
-        
+                        
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
+        
 
         NSLayoutConstraint.activate([
             fullStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
@@ -197,23 +213,23 @@ class OnboardingPageThreeViewController: UIViewController {
             labelsStackView.leadingAnchor.constraint(equalTo: labelsContainer.leadingAnchor),
             labelsStackView.trailingAnchor.constraint(equalTo: labelsContainer.trailingAnchor)
             ])
-    
+        
+        buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            bottomLabel.topAnchor.constraint(equalTo: bottomLabelContainer.topAnchor),
-            bottomLabel.bottomAnchor.constraint(equalTo: bottomLabelContainer.bottomAnchor),
-            bottomLabel.centerXAnchor.constraint(equalTo: bottomLabelContainer.centerXAnchor)
+            buttonsStackView.leadingAnchor.constraint(equalTo: fullStackView.leadingAnchor, constant: 27),
+            buttonsStackView.trailingAnchor.constraint(equalTo: fullStackView.trailingAnchor, constant: -27)
         ])
         
         NSLayoutConstraint.activate([
-            skipButton.widthAnchor.constraint(equalToConstant: 60),
-            skipButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 37),
-            skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
-            skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: 32),
-        ])
+            allowButton.centerXAnchor.constraint(equalTo: buttonsStackView.centerXAnchor),
+            allowButton.topAnchor.constraint(equalTo: buttonsStackView.topAnchor),
+            allowButton.trailingAnchor.constraint(equalTo: buttonsStackView.trailingAnchor),
+            allowButton.leadingAnchor.constraint(equalTo: buttonsStackView.leadingAnchor),
+            allowButton.heightAnchor.constraint(equalToConstant: 52)
 
-        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
-//
-//
+        ])
+    
     }
     
 }

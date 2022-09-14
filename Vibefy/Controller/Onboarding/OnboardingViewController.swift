@@ -60,7 +60,7 @@ class OnboardingViewController: UIPageViewController {
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
             pageControl.heightAnchor.constraint(equalToConstant: 20),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)])
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80)])
         
     }
     
