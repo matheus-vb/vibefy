@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class OnboardingPageThreeViewController: UIViewController {
     
@@ -21,6 +22,19 @@ class OnboardingPageThreeViewController: UIViewController {
     
     let fullStackView = UIStackView()
     
+    var locationManager = CLLocationManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViewHierarchy()
+        setupViewAttributes()
+        setupLayout()
+        locationManager.delegate = self
+        
+    }
+    
+    
     // MARK: -BOTÕES
     
     
@@ -33,7 +47,8 @@ class OnboardingPageThreeViewController: UIViewController {
         button.layer.cornerRadius = 14
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        button.addTarget(self, action: #selector(getLocation), for: .touchUpInside)
+        
         return button
     }()
     
@@ -47,12 +62,14 @@ class OnboardingPageThreeViewController: UIViewController {
         button.layer.cornerRadius = 14
         button.layer.borderColor = UIColor(red: 238/255,green: 238/255, blue: 238/55, alpha: 1.0).cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        button.addTarget(self, action: #selector(didNotAllow), for: .touchUpInside)
+        
+        
         return button
     }()
     
     // MARK: -LABELS
-
+    
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         let boldAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 36, weight: .bold)]
@@ -98,14 +115,6 @@ class OnboardingPageThreeViewController: UIViewController {
         return imageView
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        setupViewHierarchy()
-        setupViewAttributes()
-        setupLayout()
-    }
-    
     
     //MARK: - HIERARQUIA VIEWS
     
@@ -116,7 +125,7 @@ class OnboardingPageThreeViewController: UIViewController {
         
         fullStackView.addArrangedSubview(upperStackView)
         fullStackView.addArrangedSubview(buttonsStackView)
-                
+        
         upperStackView.addArrangedSubview(labelsContainer)
         upperStackView.addArrangedSubview(imageOneContainer)
         
@@ -168,7 +177,7 @@ class OnboardingPageThreeViewController: UIViewController {
     func setupLayout() {
         
         upperStackView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         imageOneBG.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -191,22 +200,22 @@ class OnboardingPageThreeViewController: UIViewController {
             subtitleLabel.trailingAnchor.constraint(equalTo: subtitleLabelContainer.trailingAnchor, constant: -16)])
         
         imageOneContainer.translatesAutoresizingMaskIntoConstraints = false
-
-                
+        
+        
         NSLayoutConstraint.activate([
             imageOne.topAnchor.constraint(equalTo: imageOneContainer.topAnchor),
             imageOne.bottomAnchor.constraint(equalTo: imageOneContainer.bottomAnchor),
             imageOne.leadingAnchor.constraint(equalTo: imageOneContainer.leadingAnchor, constant: 52),
             imageOne.trailingAnchor.constraint(equalTo: imageOneContainer.trailingAnchor, constant: -52)
-            ])
-                        
+        ])
+        
         fullStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             upperStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
         
-
+        
         NSLayoutConstraint.activate([
             fullStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             fullStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 11.5),
@@ -219,13 +228,14 @@ class OnboardingPageThreeViewController: UIViewController {
             labelsStackView.bottomAnchor.constraint(equalTo: labelsContainer.bottomAnchor),
             labelsStackView.leadingAnchor.constraint(equalTo: labelsContainer.leadingAnchor),
             labelsStackView.trailingAnchor.constraint(equalTo: labelsContainer.trailingAnchor)
-            ])
+        ])
         
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             buttonsStackView.leadingAnchor.constraint(equalTo: fullStackView.leadingAnchor, constant: 27),
-            buttonsStackView.trailingAnchor.constraint(equalTo: fullStackView.trailingAnchor, constant: -27)
+            buttonsStackView.trailingAnchor.constraint(equalTo: fullStackView.trailingAnchor, constant: -27),
+            buttonsStackView.topAnchor.constraint(equalTo: upperStackView.bottomAnchor, constant: -(32/926)*self.view.frame.height)
             
         ])
         
@@ -237,7 +247,59 @@ class OnboardingPageThreeViewController: UIViewController {
             allowButton.heightAnchor.constraint(equalToConstant: 52),
             dontAllowButton.heightAnchor.constraint(equalToConstant: 52)
         ])
+        
+        allowButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
+        
+    }
+    
+    //MARK: -ação de botões
+    @objc private func didNotAllow(){
+        let rootViewController = HomeViewController()
+        
+        let nav = UINavigationController(rootViewController: rootViewController)
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
+    }
+    
+    @objc private func getLocation() {
+        self.locationManager.requestWhenInUseAuthorization()
+    }
+}
+
+extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .denied:
+            print("Denied")
+        case .notDetermined:
+            print("not determined")
+            locationManager.requestLocation()
+        case .authorizedWhenInUse:
+            print("authorizedWhenInUse")
+            locationManager.requestLocation()
+        case .authorizedAlways:
+            print("authorizedAlways")
+            locationManager.requestLocation()
+        case .restricted:
+            print("LocationManager didChangeAuthorization restricted")
+        default:
+            print("LocationManager didChangeAuthorization")
+        }
     
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("LocationManager didFailWithError \(error.localizedDescription)")
+        if let error = error as? CLError, error.code == .denied {
+           locationManager.stopMonitoringSignificantLocationChanges()
+           return
+        }
+      }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("didUpdateLocation")
+        }
+
 }

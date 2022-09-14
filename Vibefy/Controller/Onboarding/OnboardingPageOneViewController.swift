@@ -213,10 +213,9 @@ class OnboardingPageOneViewController: UIViewController {
             skipButton.bottomAnchor.constraint(equalTo: fullStackView.topAnchor, constant: (-30/812)*self.view.frame.height),
             skipButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -51.5),
         ])
+        
+        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .touchUpInside)
 
-        skipButton.addTarget(self.parent, action: #selector(OnboardingViewController.skipTapped(_:)), for: .primaryActionTriggered)
-//
-//
     }
     
 }

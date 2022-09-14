@@ -41,7 +41,6 @@ extension OnboardingViewController: UIPageViewControllerDelegate {
     @objc func pageControlTapped(_ sender: UIPageControl){
         setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
     }
-    
     @objc func skipTapped(_ sender: UIButton) {
             let lastPage = pages.count - 1
             pageControl.currentPage = lastPage
