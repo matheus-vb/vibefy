@@ -264,6 +264,12 @@ class OnboardingPageThreeViewController: UIViewController {
     
     @objc private func getLocation() {
         self.locationManager.requestWhenInUseAuthorization()
+        let rootViewController = HomeViewController()
+        
+        let nav = UINavigationController(rootViewController: rootViewController)
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
     }
 }
 
