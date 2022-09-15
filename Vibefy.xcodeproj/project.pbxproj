@@ -27,6 +27,7 @@
 		86E2A29528D3A09300194373 /* RecentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */; };
 		86E2A29628D3A09300194373 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29028D3A09300194373 /* DragView.swift */; };
 		86E2A29728D3A09300194373 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29128D3A09300194373 /* HomeViewController.swift */; };
+		86E2A29928D3AC5B00194373 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29828D3AC5B00194373 /* FavoritesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		86E2A29028D3A09300194373 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		86E2A29128D3A09300194373 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		86E2A29828D3AC5B00194373 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
 		95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.debug.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.debug.xcconfig"; sourceTree = "<group>"; };
 		ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vibefy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				86E2A28D28D3A09300194373 /* DragView+UICollectionViewDelegate.swift */,
 				86E2A28E28D3A09300194373 /* DragViewDelegate.swift */,
 				86E2A29128D3A09300194373 /* HomeViewController.swift */,
+				86E2A29828D3AC5B00194373 /* FavoritesCollectionViewCell.swift */,
 				86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */,
 			);
 			path = Home;
@@ -276,6 +279,7 @@
 			files = (
 				8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */,
 				86E2A29428D3A09300194373 /* DragViewDelegate.swift in Sources */,
+				86E2A29928D3AC5B00194373 /* FavoritesCollectionViewCell.swift in Sources */,
 				86E2A29628D3A09300194373 /* DragView.swift in Sources */,
 				86E2A29728D3A09300194373 /* HomeViewController.swift in Sources */,
 				86E2A29528D3A09300194373 /* RecentsCollectionViewCell.swift in Sources */,
