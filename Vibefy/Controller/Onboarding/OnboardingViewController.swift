@@ -33,12 +33,10 @@ class OnboardingViewController: UIPageViewController {
         let page1 = OnboardingPageOneViewController()
         let page2 = OnboardingPageTwoViewController()
         let page3 = OnboardingPageThreeViewController()
-        let page4 = OnboardingPageFourViewController()
         
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
-        pages.append(page4)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
             
