@@ -58,7 +58,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViewHierarchy()
         setupViewAttributes()
         dragViewSetup()
@@ -136,11 +135,25 @@ class HomeViewController: UIViewController {
     @objc func handlePanGesture(gesture:UIPanGestureRecognizer) {
         
         if gesture.state == .began {
+            print(dragView.center.y)
             print("Began")
         }else if gesture.state == .changed {
-            print("Nao vai")
+            let translation = gesture.translation(in: self.view)
+            if((dragView.center.y < 706 && translation.y < 0) || (dragView.center.y > 1029.0 && translation.y > 0)) || (dragView.center.y + translation.y >= 1029.0 || dragView.center.y + translation.y <= 475){
+                print("Block")
+            }else{
+                gesture.view!.center = CGPoint(x: gesture.view!.center.x, y: gesture.view!.center.y + translation.y)
+                gesture.setTranslation(CGPoint.zero, in: self.view)
+            }
+            if(dragView.center.y < 706){
+                dragView.center.y = 706
+            }
+            if(dragView.center.y > 1029){
+                dragView.center.y = 1029
+            }
         }else if gesture.state == .ended {
-            print("")
+            gesture.view?.center = CGPoint(x: self.dragView.center.x, y: self.dragView.center.y)
+            print("ended")
         }
     }
 }
