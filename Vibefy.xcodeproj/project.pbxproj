@@ -16,17 +16,11 @@
 		863376B028C3AF370031784D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863376AE28C3AF370031784D /* LaunchScreen.storyboard */; };
 		863376BC28C3B3810031784D /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376BB28C3B3810031784D /* view.swift */; };
 		863376BE28C3B38A0031784D /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376BD28C3B38A0031784D /* model.swift */; };
-		8664228928D0F768007C954A /* DragView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228828D0F768007C954A /* DragView+UICollectionViewDataSource.swift */; };
-		8664228B28D0F779007C954A /* DragView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228A28D0F779007C954A /* DragView+UICollectionViewDelegate.swift */; };
-		8664228D28D0FA68007C954A /* RecentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228C28D0FA68007C954A /* RecentsCollectionViewCell.swift */; };
-		8664228F28D25509007C954A /* DragViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8664228E28D25509007C954A /* DragViewDelegate.swift */; };
 		8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */; };
 		8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
 		8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */; };
 		8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */; };
 		8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */; };
-		86BA6B6F28CFCC3C00635C39 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BA6B6E28CFCC3C00635C39 /* DragView.swift */; };
-		86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */; };
 		86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,17 +35,11 @@
 		863376B128C3AF370031784D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		863376BB28C3B3810031784D /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
 		863376BD28C3B38A0031784D /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
-		8664228828D0F768007C954A /* DragView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		8664228A28D0F779007C954A /* DragView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		8664228C28D0FA68007C954A /* RecentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentsCollectionViewCell.swift; sourceTree = "<group>"; };
-		8664228E28D25509007C954A /* DragViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragViewDelegate.swift; sourceTree = "<group>"; };
 		8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThreeViewController.swift; sourceTree = "<group>"; };
 		8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
 		8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
 		8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwoViewController.swift; sourceTree = "<group>"; };
-		86BA6B6E28CFCC3C00635C39 /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
-		86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageFourViewController.swift; sourceTree = "<group>"; };
 		86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
 		95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.debug.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +132,6 @@
 				8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */,
 				8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */,
 				8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */,
-				86E7CC3A28C530EB00B23DC2 /* OnboardingPageFourViewController.swift */,
 				8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */,
 				8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */,
 			);
@@ -155,11 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				86E7CC3C28C536BD00B23DC2 /* HomeViewController.swift */,
-				86BA6B6E28CFCC3C00635C39 /* DragView.swift */,
-				8664228C28D0FA68007C954A /* RecentsCollectionViewCell.swift */,
-				8664228828D0F768007C954A /* DragView+UICollectionViewDataSource.swift */,
-				8664228A28D0F779007C954A /* DragView+UICollectionViewDelegate.swift */,
-				8664228E28D25509007C954A /* DragViewDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -279,22 +261,16 @@
 			files = (
 				8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */,
 				863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */,
-				8664228928D0F768007C954A /* DragView+UICollectionViewDataSource.swift in Sources */,
 				8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */,
 				8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */,
 				8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */,
-				8664228B28D0F779007C954A /* DragView+UICollectionViewDelegate.swift in Sources */,
 				863376BE28C3B38A0031784D /* model.swift in Sources */,
 				863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */,
 				863376A128C3AF360031784D /* AppDelegate.swift in Sources */,
 				863376BC28C3B3810031784D /* view.swift in Sources */,
-				8664228D28D0FA68007C954A /* RecentsCollectionViewCell.swift in Sources */,
 				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
-				8664228F28D25509007C954A /* DragViewDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 				86E7CC3D28C536BD00B23DC2 /* HomeViewController.swift in Sources */,
-				86E7CC3B28C530EB00B23DC2 /* OnboardingPageFourViewController.swift in Sources */,
-				86BA6B6F28CFCC3C00635C39 /* DragView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +415,6 @@
 				INFOPLIST_FILE = Vibefy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +443,6 @@
 				INFOPLIST_FILE = Vibefy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

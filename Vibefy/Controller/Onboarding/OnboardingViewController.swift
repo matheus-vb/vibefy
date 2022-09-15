@@ -8,7 +8,7 @@
 import UIKit
 
 class OnboardingViewController: UIPageViewController {
-
+    
     var pages = [UIViewController]()
     let pageControl = UIPageControl()
     let initialPage = 0
@@ -33,14 +33,13 @@ class OnboardingViewController: UIPageViewController {
         let page1 = OnboardingPageOneViewController()
         let page2 = OnboardingPageTwoViewController()
         let page3 = OnboardingPageThreeViewController()
-        let page4 = OnboardingPageFourViewController()
         
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
-        pages.append(page4)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
+            
     }
     
     func style() {
@@ -57,14 +56,15 @@ class OnboardingViewController: UIPageViewController {
         
         NSLayoutConstraint.activate([
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
-            pageControl.heightAnchor.constraint(equalToConstant: 20),
+            pageControl.heightAnchor.constraint(equalToConstant: 16),
             pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)])
+            pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -56)])
         
     }
     
-    @objc private func pageControlTapped(_ sender: UIPageControl){
-        setViewControllers([pages[sender.currentPage]], direction: .forward, animated: true, completion: nil)
-    }
+    func goToSpecificPage(index: Int, ofViewControllers pages: [UIViewController]) {
+            setViewControllers([pages[index]], direction: .forward, animated: true, completion: nil)
+        }
     
 }
+
