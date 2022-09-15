@@ -134,26 +134,39 @@ class HomeViewController: UIViewController {
     
     @objc func handlePanGesture(gesture:UIPanGestureRecognizer) {
         
+        print(self.view.frame.height - 1029)
+        print(self.view.frame.height - 706)
+        print(self.view.frame.height - 950)
+
         if gesture.state == .began {
             print(dragView.center.y)
             print("Began")
         }else if gesture.state == .changed {
             let translation = gesture.translation(in: self.view)
-            if((dragView.center.y < 706 && translation.y < 0) || (dragView.center.y > 1029.0 && translation.y > 0)) || (dragView.center.y + translation.y >= 1029.0 || dragView.center.y + translation.y <= 475){
+            if((self.view.frame.height - dragView.center.y > 220 && translation.y < 0) || (self.view.frame.height - dragView.center.y < -103 && translation.y > 0)){
                 print("Block")
             }else{
                 gesture.view!.center = CGPoint(x: gesture.view!.center.x, y: gesture.view!.center.y + translation.y)
                 gesture.setTranslation(CGPoint.zero, in: self.view)
             }
-            if(dragView.center.y < 706){
-                dragView.center.y = 706
+            if(self.view.frame.height - dragView.center.y > 220){
+                dragView.center.y = self.view.frame.height - 220
             }
-            if(dragView.center.y > 1029){
-                dragView.center.y = 1029
+            if(self.view.frame.height - dragView.center.y < -103){
+                dragView.center.y = self.view.frame.height + 103
             }
         }else if gesture.state == .ended {
             gesture.view?.center = CGPoint(x: self.dragView.center.x, y: self.dragView.center.y)
             print("ended")
+            UIView.animate(withDuration: 0.15, animations: {
+                if(self.view.frame.height -  self.dragView.center.y < -24){
+                    self.dragView.center.y = self.view.frame.height + 103
+                    print("Vai para a origem")
+                }else{
+                    self.dragView.center.y = self.view.frame.height - 220
+                    print("Vai pra cima")
+                }
+            })
         }
     }
 }
