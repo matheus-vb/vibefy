@@ -7,10 +7,9 @@
 
 import UIKit
 import CoreData
-import CoreLocation
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
