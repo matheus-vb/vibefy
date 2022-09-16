@@ -19,20 +19,9 @@ extension DragView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == recentsCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentsCollectionViewCell.id, for: indexPath) as! RecentsCollectionViewCell
-            //cell.backgroundColor = .cyan
-            return cell
-        }
-        
-        if collectionView == favoritesCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavoritesCollectionViewCell.id, for: indexPath) as! FavoritesCollectionViewCell
-            //cell.backgroundColor = .cyan
-            return cell
-        } else {
-            return UICollectionViewCell()            
-        }
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecentsCollectionViewCell.id, for: indexPath) as! RecentsCollectionViewCell
+        //cell.backgroundColor = .cyan
+        return cell
     }
     
     

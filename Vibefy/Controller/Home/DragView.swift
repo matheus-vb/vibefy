@@ -13,8 +13,6 @@ class DragView: UIView {
     let favoritesLabelContainer: UIView = UIView()
     let popupStackView: UIStackView = UIStackView()
     let recentesCollectionViewContainer: UIView = UIView()
-    let favoriteCollecitonViewContainer: UIView = UIView()
-    let barContainer: UIView = UIView()
     
     private lazy var barImg: UIImageView = {
         let img = UIImage(named: "dragBar")
@@ -29,35 +27,14 @@ class DragView: UIView {
         let viewLayout = UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .horizontal
         viewLayout.itemSize = CGSize(width: 200, height: 170)
-        viewLayout.minimumLineSpacing = 0
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: viewLayout)
 //        collectionView.delegate = self
 //        collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20.5, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 4.5, bottom: 0, right: 0)
         collectionView.showsHorizontalScrollIndicator = false
         
         collectionView.register(RecentsCollectionViewCell.self, forCellWithReuseIdentifier: RecentsCollectionViewCell.id)
-        collectionView.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
-        
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        //collectionView.isUserInteractionEnabled = false
-        return collectionView
-    }()
-    
-    lazy var favoritesCollectionView: UICollectionView = {
-        let viewLayout = UICollectionViewFlowLayout()
-        viewLayout.scrollDirection = .horizontal
-        viewLayout.itemSize = CGSize(width: 100, height: 100)
-        viewLayout.minimumLineSpacing = 20
-        
-        let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: viewLayout)
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 0)
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        collectionView.register(FavoritesCollectionViewCell.self, forCellWithReuseIdentifier: FavoritesCollectionViewCell.id)
         collectionView.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,8 +75,6 @@ class DragView: UIView {
             
         recentsCollectionView.dataSource = self
         recentsCollectionView.delegate = self
-        favoritesCollectionView.dataSource = self
-        favoritesCollectionView.delegate = self
         
         
         
@@ -113,41 +88,31 @@ class DragView: UIView {
     }
     
     func setupViewHierarchy(){
-        
         self.addSubview(popupStackView)
         
-        popupStackView.addSubview(barContainer)
-        popupStackView.addSubview(recentsLabelContainer)
-        popupStackView.addSubview(recentesCollectionViewContainer)
+        self.popupStackView.addSubview(recentsLabelContainer)
+        self.popupStackView.addSubview(recentesCollectionViewContainer)
         popupStackView.addArrangedSubview(favoritesLabelContainer)
-        popupStackView.addArrangedSubview(favoriteCollecitonViewContainer)
-        
         
         popupStackView.bringSubviewToFront(recentesCollectionViewContainer)
-        popupStackView.bringSubviewToFront(favoriteCollecitonViewContainer)
         
-        barContainer.addSubview(barImg)
         self.recentsLabelContainer.addSubview(recentsLabel)
         self.recentesCollectionViewContainer.addSubview(recentsCollectionView)
         favoritesLabelContainer.addSubview(favoritesLabel)
-        favoriteCollecitonViewContainer.addSubview(favoritesCollectionView)
         
-//        favoritesLabelContainer.backgroundColor = .green
-//        favoriteCollecitonViewContainer.backgroundColor = .cyan
-        
+        recentesCollectionViewContainer.backgroundColor = .red
     }
     
     func setupViewAttributes(){
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        self.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
         self.layer.cornerRadius = 40
         self.isUserInteractionEnabled = true
         
         self.popupStackView.axis = .vertical
         self.popupStackView.alignment = .fill
         //self.popupStackView.distribution = .fill
-        self.popupStackView.spacing = 0
-        
+        self.popupStackView.spacing = 16
      }
     
     func setupLayout(){
@@ -157,11 +122,6 @@ class DragView: UIView {
         recentesCollectionViewContainer.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            barImg.centerXAnchor.constraint(equalTo: centerXAnchor),
-            barImg.topAnchor.constraint(equalTo: barContainer.topAnchor, constant: 16)
-        ])
-        
-        NSLayoutConstraint.activate([
             popupStackView.topAnchor.constraint(equalTo: self.topAnchor),
             popupStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             popupStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
@@ -169,10 +129,10 @@ class DragView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            recentsLabel.leadingAnchor.constraint(equalTo: recentsLabelContainer.leadingAnchor, constant: 32),
-            recentsLabel.topAnchor.constraint(equalTo: recentsLabelContainer.topAnchor, constant: 54),
+            recentsLabel.leadingAnchor.constraint(equalTo: recentsLabelContainer.leadingAnchor, constant: 16),
+            recentsLabel.topAnchor.constraint(equalTo: recentsLabelContainer.topAnchor, constant: 32),
             recentsLabel.trailingAnchor.constraint(equalTo: recentsLabelContainer.trailingAnchor, constant: -16),
-            recentsLabel.bottomAnchor.constraint(equalTo: recentsLabelContainer.bottomAnchor, constant: 20)
+            recentsLabel.bottomAnchor.constraint(equalTo: recentsLabelContainer.bottomAnchor, constant: -5)
         ])
         
         NSLayoutConstraint.activate([
@@ -182,24 +142,13 @@ class DragView: UIView {
             recentsCollectionView.trailingAnchor.constraint(equalTo: recentesCollectionViewContainer.trailingAnchor),
             recentesCollectionViewContainer.heightAnchor.constraint(equalToConstant: 150),
             recentesCollectionViewContainer.widthAnchor.constraint(equalTo: widthAnchor),
-            recentesCollectionViewContainer.topAnchor.constraint(equalTo: topAnchor, constant: 96)
+            recentesCollectionViewContainer.topAnchor.constraint(equalTo: topAnchor, constant: 92)
         ])
         
         NSLayoutConstraint.activate([
-            favoritesLabelContainer.heightAnchor.constraint(equalToConstant: 40),
-            favoritesLabelContainer.widthAnchor.constraint(equalTo: widthAnchor),
-            favoritesLabelContainer.topAnchor.constraint(equalTo: topAnchor, constant: 250),
-            favoritesLabel.leadingAnchor.constraint(equalTo: favoritesLabelContainer.leadingAnchor, constant: 32),
+            favoritesLabel.leadingAnchor.constraint(equalTo: favoritesLabelContainer.leadingAnchor, constant: 16),
+            favoritesLabel.topAnchor.constraint(equalTo: favoritesLabelContainer.topAnchor, constant: 72),
             favoritesLabel.trailingAnchor.constraint(equalTo: favoritesLabelContainer.trailingAnchor, constant: -16),
-            favoritesLabel.centerYAnchor.constraint(equalTo: favoritesLabelContainer.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            favoritesCollectionView.topAnchor.constraint(equalTo: favoriteCollecitonViewContainer.topAnchor),
-            favoritesCollectionView.leadingAnchor.constraint(equalTo: favoriteCollecitonViewContainer.leadingAnchor),
-            favoritesCollectionView.trailingAnchor.constraint(equalTo: favoriteCollecitonViewContainer.trailingAnchor),
-            favoritesCollectionView.bottomAnchor.constraint(equalTo: favoriteCollecitonViewContainer.bottomAnchor),
-            favoriteCollecitonViewContainer.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -60)
-        ])
+            favoritesLabel.bottomAnchor.constraint(equalTo: favoritesLabelContainer.bottomAnchor, constant: -5)])
     }
 }
