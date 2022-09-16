@@ -169,4 +169,22 @@ class HomeViewController: UIViewController {
             })
         }
     }
+    
+    @objc func chamaAPI(){
+        let teste = AppleMusicAPI()
+        SKCloudServiceController.requestAuthorization { status in
+            if status == .authorized {
+                let api = AppleMusicAPI()
+                api.getUserToken { userToken in
+                    guard let userToken = userToken else {
+                        return
+                    }
+
+                    api.fetchStorefrontID(userToken: userToken) { data in
+                        print(data)
+                    }
+                }
+            }
+        }
+    }
 }

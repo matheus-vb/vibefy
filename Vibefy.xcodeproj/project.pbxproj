@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EA734AD52A3B8FA8B9C751F /* Pods_Vibefy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */; };
+		273B649628D509E000A2371B /* SongAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B649528D509E000A2371B /* SongAPI.swift */; };
 		863376A128C3AF360031784D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A028C3AF360031784D /* AppDelegate.swift */; };
 		863376A328C3AF360031784D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A228C3AF360031784D /* SceneDelegate.swift */; };
 		863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A428C3AF360031784D /* OnboardingViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		273B649528D509E000A2371B /* SongAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongAPI.swift; sourceTree = "<group>"; };
 		8633769D28C3AF360031784D /* Vibefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863376A028C3AF360031784D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863376A228C3AF360031784D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		863376B728C3B1710031784D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				273B649528D509E000A2371B /* SongAPI.swift */,
 				C028887C28D3A3BC002BEA6C /* RestByMood.swift */,
 				C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */,
 			);
@@ -297,6 +300,7 @@
 				86E2A29228D3A09300194373 /* DragView+UICollectionViewDataSource.swift in Sources */,
 				863376BC28C3B3810031784D /* view.swift in Sources */,
 				C028887E28D3A3BC002BEA6C /* RestByMood.swift in Sources */,
+				273B649628D509E000A2371B /* SongAPI.swift in Sources */,
 				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 			);
