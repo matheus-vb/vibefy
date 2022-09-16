@@ -21,8 +21,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else {return}
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = OnboardingViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        window?.makeKeyAndVisible()
+        
+        if (UserDefaults.standard.object(forKey: "FirstLogin") == nil){
+            UserDefaults.standard.set(false, forKey: "FirstLogin")
+            window?.rootViewController = OnboardingViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+            window?.makeKeyAndVisible()
+        }else{
+            window?.rootViewController = HomeViewController()
+            window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

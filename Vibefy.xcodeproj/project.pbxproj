@@ -15,7 +15,6 @@
 		863376AD28C3AF370031784D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863376AC28C3AF370031784D /* Assets.xcassets */; };
 		863376B028C3AF370031784D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863376AE28C3AF370031784D /* LaunchScreen.storyboard */; };
 		863376BC28C3B3810031784D /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376BB28C3B3810031784D /* view.swift */; };
-		863376BE28C3B38A0031784D /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376BD28C3B38A0031784D /* model.swift */; };
 		8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */; };
 		8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
 		8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */; };
@@ -27,7 +26,10 @@
 		86E2A29528D3A09300194373 /* RecentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */; };
 		86E2A29628D3A09300194373 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29028D3A09300194373 /* DragView.swift */; };
 		86E2A29728D3A09300194373 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29128D3A09300194373 /* HomeViewController.swift */; };
-		86E2A29928D3AC5B00194373 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29828D3AC5B00194373 /* FavoritesCollectionViewCell.swift */; };
+
+		C028887E28D3A3BC002BEA6C /* RestByMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028887C28D3A3BC002BEA6C /* RestByMood.swift */; };
+		C028887F28D3A3BC002BEA6C /* RestByMood+Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,6 @@
 		863376AF28C3AF370031784D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		863376B128C3AF370031784D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		863376BB28C3B3810031784D /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
-		863376BD28C3B38A0031784D /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
 		8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThreeViewController.swift; sourceTree = "<group>"; };
 		8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
 		8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +56,8 @@
 		86E2A29828D3AC5B00194373 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
 		95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.debug.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.debug.xcconfig"; sourceTree = "<group>"; };
+		C028887C28D3A3BC002BEA6C /* RestByMood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestByMood.swift; sourceTree = "<group>"; };
+		C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestByMood+Restaurants.swift"; sourceTree = "<group>"; };
 		ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vibefy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,7 +108,8 @@
 		863376B728C3B1710031784D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				863376BD28C3B38A0031784D /* model.swift */,
+				C028887C28D3A3BC002BEA6C /* RestByMood.swift */,
+				C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,13 +290,14 @@
 				863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */,
 				8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */,
 				8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */,
+				C028887F28D3A3BC002BEA6C /* RestByMood+Restaurants.swift in Sources */,
 				8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */,
-				863376BE28C3B38A0031784D /* model.swift in Sources */,
 				863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */,
 				863376A128C3AF360031784D /* AppDelegate.swift in Sources */,
 				86E2A29328D3A09300194373 /* DragView+UICollectionViewDelegate.swift in Sources */,
 				86E2A29228D3A09300194373 /* DragView+UICollectionViewDataSource.swift in Sources */,
 				863376BC28C3B3810031784D /* view.swift in Sources */,
+				C028887E28D3A3BC002BEA6C /* RestByMood.swift in Sources */,
 				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 			);
