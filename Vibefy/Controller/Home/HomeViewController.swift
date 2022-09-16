@@ -159,7 +159,7 @@ class HomeViewController: UIViewController {
             gesture.view?.center = CGPoint(x: self.dragView.center.x, y: self.dragView.center.y)
             print("ended")
             UIView.animate(withDuration: 0.15, animations: {
-                if(self.view.frame.height -  self.dragView.center.y < 20){
+                if(self.view.frame.height -  self.dragView.center.y < -24){
                     self.dragView.center.y = self.view.frame.height + 103
                     print("Vai para a origem")
                 }else{
