@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import StoreKit
 class HomeViewController: UIViewController {
     
     let titleLabelContainer = UIView()
@@ -39,6 +39,7 @@ class HomeViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "ButtonHome"), for: .normal)
         button.layer.frame = CGRect(x: 0.0, y: 0.0, width: bgImageView.frame.width, height: bgImageView.frame.height)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(chamaAPI), for: .touchUpInside)
         return button
     }()
     

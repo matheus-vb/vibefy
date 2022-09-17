@@ -24,25 +24,6 @@ struct Song: Codable {
     }
 }
 
-struct GenreResponse: Codable {
-    let data: [Datum]
-}
-
-// MARK: - Datum
-struct Datum: Codable {
-    let id: String
-    let type: String
-    let href: String
-    let attributes: Attributes
-}
-
-// MARK: - Attributes
-struct Attributes: Codable {
-    let name: String
-    let parentName: String?
-    let parentID: String?
-}
-
 struct resultado: Codable{
     
     let teste: [Song]
@@ -78,10 +59,8 @@ class AppleMusicAPI {
         }
     }
     
-    func fetchStorefrontID(userToken: String, completion: @escaping(String) -> [Datum]) {
+    func fetchStorefrontID(userToken: String, completion: @escaping(String) -> Void) {
         var storefrontID: String! = ""
-        var genre: [Datum] = []
-        
         
         let musicURL = URL(string: "https://api.music.apple.com/v1/me/recent/played/tracks")!
         var musicRequest = URLRequest(url: musicURL)
@@ -92,21 +71,13 @@ class AppleMusicAPI {
         URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
             guard error == nil else { return }
             
-            let decoder = JSONDecoder()
-            let genreResult = try decoder.decode(GenreResponse.self, from: data)
-            
-            genre = genreResult.data
-            
-            print (genre.count)
-            
-            
-//            if let json = try? JSON(data: data!) {
-//                let result = (json["data"]).array!
-//                print(result)
-//                let id = (result[0].dictionaryValue)["id"]!
-//                storefrontID = id.stringValue
-//                completion(storefrontID)
-//            }
+            if let json = try? JSON(data: data!) {
+                let result = (json["data"]).array!
+                print(result)
+                let id = (result[0].dictionaryValue)["id"]!
+                storefrontID = id.stringValue
+                completion(storefrontID)
+            }
         }.resume()
     }
 }
