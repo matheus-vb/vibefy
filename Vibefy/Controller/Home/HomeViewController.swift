@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     let stackView = UIStackView()
     let dragView = DragView()
     
+    var songs = [Song]()
     
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -173,6 +174,7 @@ class HomeViewController: UIViewController {
     
     @objc func chamaAPI(){
         let teste = AppleMusicAPI()
+        
         SKCloudServiceController.requestAuthorization { status in
             if status == .authorized {
                 let api = AppleMusicAPI()
@@ -181,8 +183,20 @@ class HomeViewController: UIViewController {
                         return
                     }
 
-                    api.fetchStorefrontID(userToken: userToken) { data in
-                        print(data)
+                    Task {
+                        var Songs = await api.fetchStorefrontID(userToken: userToken)
+                        self.songs = Songs
+                        print(self.songs.count)
+                    
+                        print("--------------------")
+                        
+                        for song in self.songs {
+                            print("\(song.attributes.name): \(song.attributes.artistName)")
+                            for name in song.attributes.genreNames! {
+                                print(name)
+                            }
+                            print("--------------------")
+                        }
                     }
                 }
             }

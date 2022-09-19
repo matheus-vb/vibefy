@@ -9,30 +9,51 @@ import StoreKit
 import UIKit
 import SwiftUI
 
+// MARK: - Welcome
+struct SongResponse: Codable {
+    let data: [Song]
+}
+
+// MARK: - WelcomeDatum
 struct Song: Codable {
-    
-    var id: String
-    var name: String
-    var artistName: String
-    var artworkURL: String
-    
-    init(id: String, name: String, artistName: String, artworkURL: String) {
-        self.id = id
-        self.name = name
-        self.artworkURL = artworkURL
-        self.artistName = artistName
-    }
+    let id: String
+    let attributes: SongAttributes
 }
 
-struct resultado: Codable{
-    
-    let teste: [Song]
-    
+struct SongAttributes: Codable {
+    let name: String
+    let artistName: String
+    let genreNames: [String]?
 }
 
+
+
+var songResult = SongResponse(data: [])
+
+
+
+// MARK: - Welcome
+struct GenreResponse: Codable {
+    let data: [Genre]
+}
+
+// MARK: - Datum
+struct Genre: Codable {
+    let id: String
+    let type: String
+    let href: String
+    let attributes: GenreAttributes
+}
+
+// MARK: - Attributes
+struct GenreAttributes: Codable {
+    let name: String
+    let parentName: String?
+    let parentID: String?
+}
 
 class AppleMusicAPI {
-    let developerToken = ""
+    let developerToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkpaODQ2VldWODcifQ.eyJpc3MiOiJMM1pXNVNBMzI4IiwiZXhwIjoxNjc4OTQ4NjM2LCJpYXQiOjE2NjMxODA2MzZ9.T_SPHZqFbqYRmomaKt5kiBDbyTo6FdPlu5abhxGexBEglV4RB0iNsJquuF0xOCTza3NrbmaiFvbjZSmeq4AfgAs"
     
     func getUserToken() -> String {
         var userToken = String()
@@ -59,7 +80,7 @@ class AppleMusicAPI {
         }
     }
     
-    func fetchStorefrontID(userToken: String, completion: @escaping(String) -> Void) {
+    func fetchStorefrontID(userToken: String) async -> [Song] {
         var storefrontID: String! = ""
         
         let musicURL = URL(string: "https://api.music.apple.com/v1/me/recent/played/tracks")!
@@ -67,18 +88,28 @@ class AppleMusicAPI {
         musicRequest.httpMethod = "GET"
         musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
         musicRequest.addValue(userToken, forHTTPHeaderField: "Music-User-Token")
+                
+        let semaphore = DispatchSemaphore(value: 0)
         
-        URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: musicRequest) { (data, response, error)  in
             guard error == nil else { return }
             
-            if let json = try? JSON(data: data!) {
-                let result = (json["data"]).array!
-                print(result)
-                let id = (result[0].dictionaryValue)["id"]!
-                storefrontID = id.stringValue
-                completion(storefrontID)
+            do {
+                let decoder = JSONDecoder()
+                songResult = try decoder.decode(SongResponse.self, from: data!)
+                print(songResult.data.count)
+                semaphore.signal()
+                
+            } catch {
+                print (error)
             }
+
         }.resume()
+        
+        semaphore.wait()
+        print("Count: \(songResult.data.count)")
+        return songResult.data
+
     }
 }
 
