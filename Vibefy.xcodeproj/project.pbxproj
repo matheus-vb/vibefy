@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		0EA734AD52A3B8FA8B9C751F /* Pods_Vibefy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */; };
 		273B649628D509E000A2371B /* SongAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B649528D509E000A2371B /* SongAPI.swift */; };
+		27D3D5C428DA32C900E63156 /* ChooseMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5C328DA32C900E63156 /* ChooseMethodViewController.swift */; };
+		27D3D5C728DA35CB00E63156 /* LoadingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5C628DA35CB00E63156 /* LoadingPageViewController.swift */; };
+		27D3D5CF28DA3AE200E63156 /* ChoiceView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5C928DA3AE200E63156 /* ChoiceView+UICollectionViewDelegate.swift */; };
+		27D3D5D028DA3AE200E63156 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5CA28DA3AE200E63156 /* ChoiceViewController.swift */; };
+		27D3D5D128DA3AE200E63156 /* ChoiceView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5CB28DA3AE200E63156 /* ChoiceView+UICollectionViewDataSource.swift */; };
+		27D3D5D228DA3AE200E63156 /* AlbunsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5CC28DA3AE200E63156 /* AlbunsCollectionViewCell.swift */; };
+		27D3D5D328DA3AE200E63156 /* ArtistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5CD28DA3AE200E63156 /* ArtistsCollectionViewCell.swift */; };
+		27D3D5D428DA3AE200E63156 /* PlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D3D5CE28DA3AE200E63156 /* PlaylistsCollectionViewCell.swift */; };
 		863376A128C3AF360031784D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A028C3AF360031784D /* AppDelegate.swift */; };
 		863376A328C3AF360031784D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A228C3AF360031784D /* SceneDelegate.swift */; };
 		863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A428C3AF360031784D /* OnboardingViewController.swift */; };
@@ -34,6 +42,14 @@
 
 /* Begin PBXFileReference section */
 		273B649528D509E000A2371B /* SongAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongAPI.swift; sourceTree = "<group>"; };
+		27D3D5C328DA32C900E63156 /* ChooseMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMethodViewController.swift; sourceTree = "<group>"; };
+		27D3D5C628DA35CB00E63156 /* LoadingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPageViewController.swift; sourceTree = "<group>"; };
+		27D3D5C928DA3AE200E63156 /* ChoiceView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChoiceView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		27D3D5CA28DA3AE200E63156 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
+		27D3D5CB28DA3AE200E63156 /* ChoiceView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChoiceView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		27D3D5CC28DA3AE200E63156 /* AlbunsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbunsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27D3D5CD28DA3AE200E63156 /* ArtistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27D3D5CE28DA3AE200E63156 /* PlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
 		8633769D28C3AF360031784D /* Vibefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863376A028C3AF360031784D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863376A228C3AF360031784D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +90,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27D3D5C228DA32BB00E63156 /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				27D3D5C328DA32C900E63156 /* ChooseMethodViewController.swift */,
+			);
+			path = Choose;
+			sourceTree = "<group>";
+		};
+		27D3D5C528DA35BA00E63156 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				27D3D5C628DA35CB00E63156 /* LoadingPageViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		27D3D5C828DA3ACF00E63156 /* Choice */ = {
+			isa = PBXGroup;
+			children = (
+				27D3D5CC28DA3AE200E63156 /* AlbunsCollectionViewCell.swift */,
+				27D3D5CD28DA3AE200E63156 /* ArtistsCollectionViewCell.swift */,
+				27D3D5CB28DA3AE200E63156 /* ChoiceView+UICollectionViewDataSource.swift */,
+				27D3D5C928DA3AE200E63156 /* ChoiceView+UICollectionViewDelegate.swift */,
+				27D3D5CA28DA3AE200E63156 /* ChoiceViewController.swift */,
+				27D3D5CE28DA3AE200E63156 /* PlaylistsCollectionViewCell.swift */,
+			);
+			path = Choice;
+			sourceTree = "<group>";
+		};
 		8633769428C3AF360031784D = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +172,9 @@
 		863376B928C3B17D0031784D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27D3D5C828DA3ACF00E63156 /* Choice */,
+				27D3D5C528DA35BA00E63156 /* Loading */,
+				27D3D5C228DA32BB00E63156 /* Choose */,
 				86E7CC3928C530DD00B23DC2 /* Home */,
 				8670E6AA28C3E3FD00D3A2F3 /* Onboarding */,
 			);
@@ -284,25 +332,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */,
+				27D3D5D128DA3AE200E63156 /* ChoiceView+UICollectionViewDataSource.swift in Sources */,
 				86E2A29428D3A09300194373 /* DragViewDelegate.swift in Sources */,
 				86E2A29628D3A09300194373 /* DragView.swift in Sources */,
 				86E2A29728D3A09300194373 /* HomeViewController.swift in Sources */,
 				86E2A29528D3A09300194373 /* RecentsCollectionViewCell.swift in Sources */,
 				863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */,
 				8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */,
+				27D3D5D428DA3AE200E63156 /* PlaylistsCollectionViewCell.swift in Sources */,
 				8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */,
 				C028887F28D3A3BC002BEA6C /* RestByMood+Restaurants.swift in Sources */,
+				27D3D5D328DA3AE200E63156 /* ArtistsCollectionViewCell.swift in Sources */,
 				8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */,
+				27D3D5C428DA32C900E63156 /* ChooseMethodViewController.swift in Sources */,
 				863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */,
 				86E2A29B28D4E1EA00194373 /* FavoritesCollectionViewCell.swift in Sources */,
 				863376A128C3AF360031784D /* AppDelegate.swift in Sources */,
 				86E2A29328D3A09300194373 /* DragView+UICollectionViewDelegate.swift in Sources */,
+				27D3D5D028DA3AE200E63156 /* ChoiceViewController.swift in Sources */,
 				86E2A29228D3A09300194373 /* DragView+UICollectionViewDataSource.swift in Sources */,
 				863376BC28C3B3810031784D /* view.swift in Sources */,
+				27D3D5CF28DA3AE200E63156 /* ChoiceView+UICollectionViewDelegate.swift in Sources */,
 				C028887E28D3A3BC002BEA6C /* RestByMood.swift in Sources */,
 				273B649628D509E000A2371B /* SongAPI.swift in Sources */,
 				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
+				27D3D5C728DA35CB00E63156 /* LoadingPageViewController.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
+				27D3D5D228DA3AE200E63156 /* AlbunsCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

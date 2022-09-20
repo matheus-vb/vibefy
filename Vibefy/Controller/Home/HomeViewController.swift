@@ -83,6 +83,9 @@ class HomeViewController: UIViewController {
     }
     
     func setupViewAttributes() {
+        
+        homeButton.addTarget(self, action: #selector(vibefyButton(_:)), for: .touchUpInside)
+
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fill
@@ -172,9 +175,17 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @objc func vibefyButton(_ sender: UIButton) {
+        let rootViewController = ChooseMethodViewController()
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.pushViewController(rootViewController, animated: true)
+    }
+    
     @objc func chamaAPI(){
         let teste = AppleMusicAPI()
-        
+
         SKCloudServiceController.requestAuthorization { status in
             if status == .authorized {
                 let api = AppleMusicAPI()
@@ -187,9 +198,9 @@ class HomeViewController: UIViewController {
                         var Songs = await api.fetchStorefrontID(userToken: userToken)
                         self.songs = Songs
                         print(self.songs.count)
-                    
+
                         print("--------------------")
-                        
+
                         for song in self.songs {
                             print("\(song.attributes.name): \(song.attributes.artistName)")
                             for name in song.attributes.genreNames! {
