@@ -24,7 +24,6 @@
 		27EA1C5528DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */; };
 		27EA1C5628DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */; };
 		27EA1C5728DA4BC50011EED3 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5028DA4BC50011EED3 /* DragView.swift */; };
-		27EA1C5928DA4BD30011EED3 /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5828DA4BD30011EED3 /* view.swift */; };
 		27EA1C5B28DA4BED0011EED3 /* ChooseMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */; };
 		27EA1C5D28DA4BFF0011EED3 /* LoadingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */; };
 		27EA1C6428DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5E28DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift */; };
@@ -57,7 +56,6 @@
 		27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		27EA1C5028DA4BC50011EED3 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
-		27EA1C5828DA4BD30011EED3 /* view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = view.swift; path = ../../../../vibefy/Vibefy/View/view.swift; sourceTree = "<group>"; };
 		27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMethodViewController.swift; sourceTree = "<group>"; };
 		27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPageViewController.swift; sourceTree = "<group>"; };
 		27EA1C5E28DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbunsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				863376B128C3AF370031784D /* Info.plist */,
 				863376BA28C3B2160031784D /* SupportingFiles */,
 				863376B928C3B17D0031784D /* Controller */,
-				863376B828C3B1780031784D /* View */,
 				863376B728C3B1710031784D /* Model */,
 			);
 			path = Vibefy;
@@ -186,14 +183,6 @@
 				27EA1C1B28DA4B2A0011EED3 /* SongAPI.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		863376B828C3B1780031784D /* View */ = {
-			isa = PBXGroup;
-			children = (
-				27EA1C5828DA4BD30011EED3 /* view.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		863376B928C3B17D0031784D /* Controller */ = {
@@ -332,7 +321,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27EA1C4928DA4BB40011EED3 /* OnboardingViewController.swift in Sources */,
-				27EA1C5928DA4BD30011EED3 /* view.swift in Sources */,
 				27EA1C1E28DA4B2A0011EED3 /* SongAPI.swift in Sources */,
 				27EA1C6828DA4C0D0011EED3 /* PlaylistsCollectionViewCell.swift in Sources */,
 				27EA1C5628DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift in Sources */,
