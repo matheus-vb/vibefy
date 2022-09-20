@@ -8,57 +8,73 @@
 
 /* Begin PBXBuildFile section */
 		0EA734AD52A3B8FA8B9C751F /* Pods_Vibefy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */; };
-		273B649628D509E000A2371B /* SongAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B649528D509E000A2371B /* SongAPI.swift */; };
+		27EA1C1E28DA4B2A0011EED3 /* SongAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1B28DA4B2A0011EED3 /* SongAPI.swift */; };
+		27EA1C1F28DA4B2A0011EED3 /* RestByMood+Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */; };
+		27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */; };
+		27EA1C4428DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
+		27EA1C4528DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C3F28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */; };
+		27EA1C4628DA4BB40011EED3 /* OnboardingPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4028DA4BB40011EED3 /* OnboardingPageTwoViewController.swift */; };
+		27EA1C4728DA4BB40011EED3 /* OnboardingPageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4128DA4BB40011EED3 /* OnboardingPageThreeViewController.swift */; };
+		27EA1C4828DA4BB40011EED3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4228DA4BB40011EED3 /* OnboardingPageOneViewController.swift */; };
+		27EA1C4928DA4BB40011EED3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4328DA4BB40011EED3 /* OnboardingViewController.swift */; };
+		27EA1C5128DA4BC50011EED3 /* RecentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4A28DA4BC50011EED3 /* RecentsCollectionViewCell.swift */; };
+		27EA1C5228DA4BC50011EED3 /* DragViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4B28DA4BC50011EED3 /* DragViewDelegate.swift */; };
+		27EA1C5328DA4BC50011EED3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4C28DA4BC50011EED3 /* HomeViewController.swift */; };
+		27EA1C5428DA4BC50011EED3 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4D28DA4BC50011EED3 /* FavoritesCollectionViewCell.swift */; };
+		27EA1C5528DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */; };
+		27EA1C5628DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */; };
+		27EA1C5728DA4BC50011EED3 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5028DA4BC50011EED3 /* DragView.swift */; };
+		27EA1C5928DA4BD30011EED3 /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5828DA4BD30011EED3 /* view.swift */; };
+		27EA1C5B28DA4BED0011EED3 /* ChooseMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */; };
+		27EA1C5D28DA4BFF0011EED3 /* LoadingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */; };
+		27EA1C6428DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5E28DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift */; };
+		27EA1C6528DA4C0D0011EED3 /* ArtistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5F28DA4C0D0011EED3 /* ArtistsCollectionViewCell.swift */; };
+		27EA1C6628DA4C0D0011EED3 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C6028DA4C0D0011EED3 /* ChoiceViewController.swift */; };
+		27EA1C6728DA4C0D0011EED3 /* ChoiceView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C6128DA4C0D0011EED3 /* ChoiceView+UICollectionViewDelegate.swift */; };
+		27EA1C6828DA4C0D0011EED3 /* PlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C6228DA4C0D0011EED3 /* PlaylistsCollectionViewCell.swift */; };
+		27EA1C6928DA4C0D0011EED3 /* ChoiceView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C6328DA4C0D0011EED3 /* ChoiceView+UICollectionViewDataSource.swift */; };
 		863376A128C3AF360031784D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A028C3AF360031784D /* AppDelegate.swift */; };
 		863376A328C3AF360031784D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A228C3AF360031784D /* SceneDelegate.swift */; };
-		863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A428C3AF360031784D /* OnboardingViewController.swift */; };
 		863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 863376A928C3AF360031784D /* Vibefy.xcdatamodeld */; };
 		863376AD28C3AF370031784D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863376AC28C3AF370031784D /* Assets.xcassets */; };
 		863376B028C3AF370031784D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863376AE28C3AF370031784D /* LaunchScreen.storyboard */; };
-		863376BC28C3B3810031784D /* view.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376BB28C3B3810031784D /* view.swift */; };
-		8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */; };
-		8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
-		8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */; };
-		8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */; };
-		8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */; };
-		86E2A29228D3A09300194373 /* DragView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A28C28D3A09300194373 /* DragView+UICollectionViewDataSource.swift */; };
-		86E2A29328D3A09300194373 /* DragView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A28D28D3A09300194373 /* DragView+UICollectionViewDelegate.swift */; };
-		86E2A29428D3A09300194373 /* DragViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A28E28D3A09300194373 /* DragViewDelegate.swift */; };
-		86E2A29528D3A09300194373 /* RecentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */; };
-		86E2A29628D3A09300194373 /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29028D3A09300194373 /* DragView.swift */; };
-		86E2A29728D3A09300194373 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29128D3A09300194373 /* HomeViewController.swift */; };
-		86E2A29B28D4E1EA00194373 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E2A29A28D4E1EA00194373 /* FavoritesCollectionViewCell.swift */; };
-		C028887E28D3A3BC002BEA6C /* RestByMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028887C28D3A3BC002BEA6C /* RestByMood.swift */; };
-		C028887F28D3A3BC002BEA6C /* RestByMood+Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		273B649528D509E000A2371B /* SongAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongAPI.swift; sourceTree = "<group>"; };
+		27EA1C1B28DA4B2A0011EED3 /* SongAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongAPI.swift; sourceTree = "<group>"; };
+		27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestByMood+Restaurants.swift"; sourceTree = "<group>"; };
+		27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestByMood.swift; sourceTree = "<group>"; };
+		27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
+		27EA1C3F28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
+		27EA1C4028DA4BB40011EED3 /* OnboardingPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwoViewController.swift; sourceTree = "<group>"; };
+		27EA1C4128DA4BB40011EED3 /* OnboardingPageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThreeViewController.swift; sourceTree = "<group>"; };
+		27EA1C4228DA4BB40011EED3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
+		27EA1C4328DA4BB40011EED3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		27EA1C4A28DA4BC50011EED3 /* RecentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27EA1C4B28DA4BC50011EED3 /* DragViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragViewDelegate.swift; sourceTree = "<group>"; };
+		27EA1C4C28DA4BC50011EED3 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		27EA1C4D28DA4BC50011EED3 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
+		27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		27EA1C5028DA4BC50011EED3 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		27EA1C5828DA4BD30011EED3 /* view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = view.swift; path = ../../../../vibefy/Vibefy/View/view.swift; sourceTree = "<group>"; };
+		27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMethodViewController.swift; sourceTree = "<group>"; };
+		27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPageViewController.swift; sourceTree = "<group>"; };
+		27EA1C5E28DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbunsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27EA1C5F28DA4C0D0011EED3 /* ArtistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27EA1C6028DA4C0D0011EED3 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
+		27EA1C6128DA4C0D0011EED3 /* ChoiceView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChoiceView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		27EA1C6228DA4C0D0011EED3 /* PlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27EA1C6328DA4C0D0011EED3 /* ChoiceView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChoiceView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8633769D28C3AF360031784D /* Vibefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863376A028C3AF360031784D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863376A228C3AF360031784D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		863376A428C3AF360031784D /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		863376AA28C3AF360031784D /* Vibefy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vibefy.xcdatamodel; sourceTree = "<group>"; };
 		863376AC28C3AF370031784D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		863376AF28C3AF370031784D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		863376B128C3AF370031784D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		863376BB28C3B3810031784D /* view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = view.swift; sourceTree = "<group>"; };
-		8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageThreeViewController.swift; sourceTree = "<group>"; };
-		8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
-		8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageOneViewController.swift; sourceTree = "<group>"; };
-		8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDelegate.swift"; sourceTree = "<group>"; };
-		8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingPageTwoViewController.swift; sourceTree = "<group>"; };
-		86E2A28C28D3A09300194373 /* DragView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
-		86E2A28D28D3A09300194373 /* DragView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DragView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		86E2A28E28D3A09300194373 /* DragViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragViewDelegate.swift; sourceTree = "<group>"; };
-		86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsCollectionViewCell.swift; sourceTree = "<group>"; };
-		86E2A29028D3A09300194373 /* DragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
-		86E2A29128D3A09300194373 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		86E2A29A28D4E1EA00194373 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
 		95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.debug.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.debug.xcconfig"; sourceTree = "<group>"; };
-		C028887C28D3A3BC002BEA6C /* RestByMood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestByMood.swift; sourceTree = "<group>"; };
-		C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestByMood+Restaurants.swift"; sourceTree = "<group>"; };
 		ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vibefy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +90,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27EA1C3928DA4B840011EED3 /* Choice */ = {
+			isa = PBXGroup;
+			children = (
+				27EA1C5E28DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift */,
+				27EA1C5F28DA4C0D0011EED3 /* ArtistsCollectionViewCell.swift */,
+				27EA1C6328DA4C0D0011EED3 /* ChoiceView+UICollectionViewDataSource.swift */,
+				27EA1C6128DA4C0D0011EED3 /* ChoiceView+UICollectionViewDelegate.swift */,
+				27EA1C6028DA4C0D0011EED3 /* ChoiceViewController.swift */,
+				27EA1C6228DA4C0D0011EED3 /* PlaylistsCollectionViewCell.swift */,
+			);
+			path = Choice;
+			sourceTree = "<group>";
+		};
+		27EA1C3A28DA4B8E0011EED3 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		27EA1C3B28DA4B940011EED3 /* Choose */ = {
+			isa = PBXGroup;
+			children = (
+				27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */,
+			);
+			path = Choose;
+			sourceTree = "<group>";
+		};
+		27EA1C3C28DA4B9B0011EED3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				27EA1C5028DA4BC50011EED3 /* DragView.swift */,
+				27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */,
+				27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */,
+				27EA1C4B28DA4BC50011EED3 /* DragViewDelegate.swift */,
+				27EA1C4D28DA4BC50011EED3 /* FavoritesCollectionViewCell.swift */,
+				27EA1C4C28DA4BC50011EED3 /* HomeViewController.swift */,
+				27EA1C4A28DA4BC50011EED3 /* RecentsCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		27EA1C3D28DA4BA20011EED3 /* onBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				27EA1C4228DA4BB40011EED3 /* OnboardingPageOneViewController.swift */,
+				27EA1C4128DA4BB40011EED3 /* OnboardingPageThreeViewController.swift */,
+				27EA1C4028DA4BB40011EED3 /* OnboardingPageTwoViewController.swift */,
+				27EA1C4328DA4BB40011EED3 /* OnboardingViewController.swift */,
+				27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */,
+				27EA1C3F28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */,
+			);
+			path = onBoarding;
+			sourceTree = "<group>";
+		};
 		8633769428C3AF360031784D = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +181,9 @@
 		863376B728C3B1710031784D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				273B649528D509E000A2371B /* SongAPI.swift */,
-				C028887C28D3A3BC002BEA6C /* RestByMood.swift */,
-				C028887D28D3A3BC002BEA6C /* RestByMood+Restaurants.swift */,
+				27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */,
+				27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */,
+				27EA1C1B28DA4B2A0011EED3 /* SongAPI.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,7 +191,7 @@
 		863376B828C3B1780031784D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				863376BB28C3B3810031784D /* view.swift */,
+				27EA1C5828DA4BD30011EED3 /* view.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,8 +199,11 @@
 		863376B928C3B17D0031784D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				86E7CC3928C530DD00B23DC2 /* Home */,
-				8670E6AA28C3E3FD00D3A2F3 /* Onboarding */,
+				27EA1C3D28DA4BA20011EED3 /* onBoarding */,
+				27EA1C3C28DA4B9B0011EED3 /* Home */,
+				27EA1C3B28DA4B940011EED3 /* Choose */,
+				27EA1C3A28DA4B8E0011EED3 /* Loading */,
+				27EA1C3928DA4B840011EED3 /* Choice */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -141,33 +216,6 @@
 				863376AE28C3AF370031784D /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		8670E6AA28C3E3FD00D3A2F3 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				863376A428C3AF360031784D /* OnboardingViewController.swift */,
-				8670E6AD28C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift */,
-				8670E6AF28C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift */,
-				8670E6AB28C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift */,
-				8670E6AC28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */,
-				8670E6AE28C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		86E7CC3928C530DD00B23DC2 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				86E2A29028D3A09300194373 /* DragView.swift */,
-				86E2A28C28D3A09300194373 /* DragView+UICollectionViewDataSource.swift */,
-				86E2A28D28D3A09300194373 /* DragView+UICollectionViewDelegate.swift */,
-				86E2A28E28D3A09300194373 /* DragViewDelegate.swift */,
-				86E2A29128D3A09300194373 /* HomeViewController.swift */,
-				86E2A28F28D3A09300194373 /* RecentsCollectionViewCell.swift */,
-				86E2A29A28D4E1EA00194373 /* FavoritesCollectionViewCell.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		A474B913F3E0E4DB7F12E0D2 /* Frameworks */ = {
@@ -283,25 +331,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8670E6B228C3E43D00D3A2F3 /* OnboardingPageOneViewController.swift in Sources */,
-				86E2A29428D3A09300194373 /* DragViewDelegate.swift in Sources */,
-				86E2A29628D3A09300194373 /* DragView.swift in Sources */,
-				86E2A29728D3A09300194373 /* HomeViewController.swift in Sources */,
-				86E2A29528D3A09300194373 /* RecentsCollectionViewCell.swift in Sources */,
+				27EA1C4928DA4BB40011EED3 /* OnboardingViewController.swift in Sources */,
+				27EA1C5928DA4BD30011EED3 /* view.swift in Sources */,
+				27EA1C1E28DA4B2A0011EED3 /* SongAPI.swift in Sources */,
+				27EA1C6828DA4C0D0011EED3 /* PlaylistsCollectionViewCell.swift in Sources */,
+				27EA1C5628DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift in Sources */,
 				863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */,
-				8670E6B028C3E43D00D3A2F3 /* OnboardingPageThreeViewController.swift in Sources */,
-				8670E6B428C3E43D00D3A2F3 /* OnboardingPageTwoViewController.swift in Sources */,
-				C028887F28D3A3BC002BEA6C /* RestByMood+Restaurants.swift in Sources */,
-				8670E6B128C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */,
-				863376A528C3AF360031784D /* OnboardingViewController.swift in Sources */,
-				86E2A29B28D4E1EA00194373 /* FavoritesCollectionViewCell.swift in Sources */,
+				27EA1C4428DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */,
+				27EA1C4728DA4BB40011EED3 /* OnboardingPageThreeViewController.swift in Sources */,
+				27EA1C5128DA4BC50011EED3 /* RecentsCollectionViewCell.swift in Sources */,
+				27EA1C5428DA4BC50011EED3 /* FavoritesCollectionViewCell.swift in Sources */,
+				27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */,
+				27EA1C5B28DA4BED0011EED3 /* ChooseMethodViewController.swift in Sources */,
 				863376A128C3AF360031784D /* AppDelegate.swift in Sources */,
-				86E2A29328D3A09300194373 /* DragView+UICollectionViewDelegate.swift in Sources */,
-				86E2A29228D3A09300194373 /* DragView+UICollectionViewDataSource.swift in Sources */,
-				863376BC28C3B3810031784D /* view.swift in Sources */,
-				C028887E28D3A3BC002BEA6C /* RestByMood.swift in Sources */,
-				273B649628D509E000A2371B /* SongAPI.swift in Sources */,
-				8670E6B328C3E43D00D3A2F3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
+				27EA1C4528DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
+				27EA1C4628DA4BB40011EED3 /* OnboardingPageTwoViewController.swift in Sources */,
+				27EA1C6928DA4C0D0011EED3 /* ChoiceView+UICollectionViewDataSource.swift in Sources */,
+				27EA1C5328DA4BC50011EED3 /* HomeViewController.swift in Sources */,
+				27EA1C5728DA4BC50011EED3 /* DragView.swift in Sources */,
+				27EA1C4828DA4BB40011EED3 /* OnboardingPageOneViewController.swift in Sources */,
+				27EA1C5528DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift in Sources */,
+				27EA1C1F28DA4B2A0011EED3 /* RestByMood+Restaurants.swift in Sources */,
+				27EA1C6528DA4C0D0011EED3 /* ArtistsCollectionViewCell.swift in Sources */,
+				27EA1C6428DA4C0D0011EED3 /* AlbunsCollectionViewCell.swift in Sources */,
+				27EA1C5228DA4BC50011EED3 /* DragViewDelegate.swift in Sources */,
+				27EA1C6628DA4C0D0011EED3 /* ChoiceViewController.swift in Sources */,
+				27EA1C6728DA4C0D0011EED3 /* ChoiceView+UICollectionViewDelegate.swift in Sources */,
+				27EA1C5D28DA4BFF0011EED3 /* LoadingPageViewController.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
