@@ -24,6 +24,60 @@ class LoadingPageViewController: UIViewController {
         return imgV
     }()
     
+    private lazy var bubbleImg1: UIImageView = {
+        let img = UIImage(named: "firstbubbleImage")
+        let imgView = UIImageView(image: img)
+        imgView.frame = CGRect(x: -100, y: 50, width: 83, height: 83)
+        
+        
+        return imgView
+    }()
+    
+    private lazy var bubbleImg2: UIImageView = {
+        let img = UIImage(named: "secondbubbleImage")
+        let imgView = UIImageView(image: img)
+        imgView.frame = CGRect(x: -100, y: 200, width: 83, height: 83)
+        
+        
+        return imgView
+    }()
+    
+    private lazy var bubbleImg3: UIImageView = {
+        let img = UIImage(named: "thirdbubbleImage")
+        let imgView = UIImageView(image: img)
+        imgView.frame = CGRect(x: -100, y: 300, width: 83, height: 83)
+        
+        
+        return imgView
+    }()
+    
+    private lazy var bubbleImg4: UIImageView = {
+        let img = UIImage(named: "firstbubbleImage")
+        let imgView = UIImageView(image: img)
+        imgView.frame = CGRect(x: -100, y: 450, width: 83, height: 83)
+        
+        
+        return imgView
+    }()
+    
+    private lazy var bubbleImg5: UIImageView = {
+        let img = UIImage(named: "secondbubbleImage")
+        let imgView = UIImageView(image: img)
+        imgView.frame = CGRect(x: -100, y: 550, width: 83, height: 83)
+        
+        
+        return imgView
+    }()
+    
+    private lazy var bubbleImg6: UIImageView = {
+        let img = UIImage(named: "thirdbubbleImage")
+        let imgView = UIImageView(image: img)
+        imgView.frame = CGRect(x: -100, y: 650, width: 83, height: 83)
+        
+        
+        return imgView
+    }()
+    
     private lazy var loadingTitle: UILabel = {
         let label = UILabel()
         label.text = "Calculando..."
@@ -47,19 +101,60 @@ class LoadingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        
         setupViewAttributes()
         setupViewHierarchy()
         setupLayout()
+        
         //setupAnimation()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        view.addSubview(bubbleImg1)
+        view.addSubview(bubbleImg2)
+        view.addSubview(bubbleImg3)
+        view.addSubview(bubbleImg4)
+        view.addSubview(bubbleImg5)
+        view.addSubview(bubbleImg6)
+        
+        animateBubble(aView: self.bubbleImg1)
+        animateBubble(aView: self.bubbleImg2)
+        animateBubble(aView: self.bubbleImg3)
+        animateBubble(aView: self.bubbleImg4)
+        animateBubble(aView: self.bubbleImg5)
+        animateBubble(aView: self.bubbleImg6)
+        
+        view.bringSubviewToFront(labelsStackView)
+    }
+    
+    func moveBubble(mView: UIImageView) {
+       
+        let randomX = CGFloat.random(in: 200..<450)
+        let randomY = CGFloat.random(in: -60..<60)
+        
+        mView.center.x = mView.center.x + randomX
+        mView.center.y = mView.center.y + randomY
+    }
+    
+    func animateBubble(aView: UIImageView) {
+        let duration = Double.random(in: 2..<8)
+        
+        UIImageView.animate(withDuration: duration){
+            self.moveBubble(mView: aView)
+        }
+    }
+    
     
     func setupViewHierarchy(){
         self.view.addSubview(loadingBG)
         
-        for i in 0...numberOfbubbles{
-            view.addSubview(bubblesImages[i])
-            view.bringSubviewToFront(bubblesImages[i])
-        }
+//        for i in 0...numberOfbubbles{
+//            view.addSubview(bubblesImages[i])
+//            view.bringSubviewToFront(bubblesImages[i])
+//        }
         
         self.view.addSubview(labelsStackView)
         
@@ -79,23 +174,23 @@ class LoadingPageViewController: UIViewController {
         labelsStackView.distribution = .fill
         labelsStackView.spacing = 0
         
-        for i in 0...numberOfbubbles{
-            let imgV = UIImageView()
-            let buff = Double.random(in: -60.00...60.00)
-            if(i % 3 == 0){
-                imgV.image = UIImage(named: "firstbubbleImage")
-                imgV.frame = CGRect(x: Double(i)*self.view.frame.width/6, y: Double(i)*self.view.frame.height/6 + buff, width: 83, height: 83)
-                bubblesImages.append(imgV)
-            }else if(i % 3 == 1){
-                imgV.image = UIImage(named: "secondbubbleImage")
-                imgV.frame = CGRect(x: Double(i)*self.view.frame.width/6, y: Double(i)*self.view.frame.height/6 + buff, width: 83, height: 83)
-                bubblesImages.append(imgV)
-            }else{
-                imgV.image = UIImage(named: "thirdbubbleImage")
-                imgV.frame = CGRect(x: Double(i)*self.view.frame.width/6, y: Double(i)*self.view.frame.height/6 + buff, width: 83, height: 83)
-                bubblesImages.append(imgV)
-            }
-        }
+//        for i in 0...numberOfbubbles{
+//            let imgV = UIImageView()
+//            let buff = Double.random(in: -60.00...60.00)
+//            if(i % 3 == 0){
+//                imgV.image = UIImage(named: "firstbubbleImage")
+//                imgV.frame = CGRect(x: Double(i)*self.view.frame.width/6, y: Double(i)*self.view.frame.height/6 + buff, width: 83, height: 83)
+//                bubblesImages.append(imgV)
+//            }else if(i % 3 == 1){
+//                imgV.image = UIImage(named: "secondbubbleImage")
+//                imgV.frame = CGRect(x: Double(i)*self.view.frame.width/6, y: Double(i)*self.view.frame.height/6 + buff, width: 83, height: 83)
+//                bubblesImages.append(imgV)
+//            }else{
+//                imgV.image = UIImage(named: "thirdbubbleImage")
+//                imgV.frame = CGRect(x: Double(i)*self.view.frame.width/6, y: Double(i)*self.view.frame.height/6 + buff, width: 83, height: 83)
+//                bubblesImages.append(imgV)
+//            }
+//        }
     }
     
     func setupLayout(){
