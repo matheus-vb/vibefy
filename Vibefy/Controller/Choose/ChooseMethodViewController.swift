@@ -218,7 +218,7 @@ class ChooseMethodViewController: UIViewController {
             inspoButton.leadingAnchor.constraint(equalTo: buttonsStackView.leadingAnchor)
         ])
     }
-    
+
     @objc func goToLoadingScreen(_ sender: UIButton) {
         let rootViewController = LoadingPageViewController()
         
@@ -229,7 +229,9 @@ class ChooseMethodViewController: UIViewController {
     
     @objc func goToSelectScreen(_ sender: UIButton) {
         let rootViewController = ChoiceViewController()
-        
+        rootViewController.artistCollectionView.reloadData()
+        rootViewController.albunsCollectionView.reloadData()
+        rootViewController.playlistsCollectionView.reloadData()
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .white
         navigationController?.pushViewController(rootViewController, animated: true)

@@ -9,6 +9,7 @@ import UIKit
 
 class LoadingPageViewController: UIViewController {
 
+    var duration: Double = 0
     let titleLabelContainer = UIView()
     let subTitleLabelContainer = UIView()
     let labelsStackView = UIStackView()
@@ -100,9 +101,9 @@ class LoadingPageViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        duration = Double.random(in: 2..<8)
+        let timer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(loadingScreen), userInfo: nil, repeats: false)
         self.navigationItem.setHidesBackButton(true, animated: true)
-        
         setupViewAttributes()
         setupViewHierarchy()
         setupLayout()
@@ -140,8 +141,6 @@ class LoadingPageViewController: UIViewController {
     }
     
     func animateBubble(aView: UIImageView) {
-        let duration = Double.random(in: 2..<8)
-        
         UIImageView.animate(withDuration: duration){
             self.moveBubble(mView: aView)
         }
@@ -221,5 +220,12 @@ class LoadingPageViewController: UIViewController {
             labelsStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -12),
             labelsStackView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 140*self.view.frame.height/812)
         ])
+    }
+    
+    @objc func loadingScreen(){
+        let rootViewController = VibeResultViewController()
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.pushViewController(rootViewController, animated: true)
     }
 }

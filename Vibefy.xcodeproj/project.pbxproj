@@ -34,6 +34,15 @@
 		27A3B82828DCCF82000C8AB9 /* ChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B82228DCCF82000C8AB9 /* ChoiceViewController.swift */; };
 		27A3B82928DCCF82000C8AB9 /* PlaylistsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B82328DCCF82000C8AB9 /* PlaylistsCollectionViewCell.swift */; };
 		27A3B82A28DCCF82000C8AB9 /* AlbunsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B82428DCCF82000C8AB9 /* AlbunsCollectionViewCell.swift */; };
+		27A3B82D28DCD25D000C8AB9 /* VibeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B82C28DCD25D000C8AB9 /* VibeResultViewController.swift */; };
+		27A3B82F28DCD28B000C8AB9 /* ResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B82E28DCD28B000C8AB9 /* ResultsTableViewCell.swift */; };
+		27A3B83628DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83128DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDelegate.swift */; };
+		27A3B83728DCD9F7000C8AB9 /* FiltrosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83228DCD9F7000C8AB9 /* FiltrosCollectionViewCell.swift */; };
+		27A3B83828DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83328DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDataSource.swift */; };
+		27A3B83928DCD9F7000C8AB9 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83428DCD9F7000C8AB9 /* DetailsViewController.swift */; };
+		27A3B83A28DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83528DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift */; };
+		27A3B83C28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */; };
+		27A3B83E28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */; };
 		27EA1C1F28DA4B2A0011EED3 /* RestByMood+Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */; };
 		27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */; };
 		27EA1C4428DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
@@ -85,6 +94,15 @@
 		27A3B82228DCCF82000C8AB9 /* ChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceViewController.swift; sourceTree = "<group>"; };
 		27A3B82328DCCF82000C8AB9 /* PlaylistsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistsCollectionViewCell.swift; sourceTree = "<group>"; };
 		27A3B82428DCCF82000C8AB9 /* AlbunsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbunsCollectionViewCell.swift; sourceTree = "<group>"; };
+		27A3B82C28DCD25D000C8AB9 /* VibeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeResultViewController.swift; sourceTree = "<group>"; };
+		27A3B82E28DCD28B000C8AB9 /* ResultsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewCell.swift; sourceTree = "<group>"; };
+		27A3B83128DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		27A3B83228DCD9F7000C8AB9 /* FiltrosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltrosCollectionViewCell.swift; sourceTree = "<group>"; };
+		27A3B83328DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DetailsViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		27A3B83428DCD9F7000C8AB9 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		27A3B83528DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
+		27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VibeResultViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VibeResultController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestByMood+Restaurants.swift"; sourceTree = "<group>"; };
 		27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestByMood.swift; sourceTree = "<group>"; };
 		27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
@@ -187,6 +205,29 @@
 			path = Song;
 			sourceTree = "<group>";
 		};
+		27A3B82B28DCD222000C8AB9 /* Vibe-Result */ = {
+			isa = PBXGroup;
+			children = (
+				27A3B82C28DCD25D000C8AB9 /* VibeResultViewController.swift */,
+				27A3B82E28DCD28B000C8AB9 /* ResultsTableViewCell.swift */,
+				27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */,
+				27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */,
+			);
+			path = "Vibe-Result";
+			sourceTree = "<group>";
+		};
+		27A3B83028DCD99C000C8AB9 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				27A3B83428DCD9F7000C8AB9 /* DetailsViewController.swift */,
+				27A3B83328DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDataSource.swift */,
+				27A3B83128DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDelegate.swift */,
+				27A3B83228DCD9F7000C8AB9 /* FiltrosCollectionViewCell.swift */,
+				27A3B83528DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		27EA1C3928DA4B840011EED3 /* Choice */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +328,8 @@
 		863376B928C3B17D0031784D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27A3B83028DCD99C000C8AB9 /* Details */,
+				27A3B82B28DCD222000C8AB9 /* Vibe-Result */,
 				27EA1C3D28DA4BA20011EED3 /* onBoarding */,
 				27EA1C3C28DA4B9B0011EED3 /* Home */,
 				27EA1C3B28DA4B940011EED3 /* Choose */,
@@ -441,11 +484,14 @@
 				27EA1C4428DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */,
 				27A3B81628DCCEFF000C8AB9 /* GenreAttributes.swift in Sources */,
 				27A3B80528DCCEE1000C8AB9 /* AlbumResponse.swift in Sources */,
+				27A3B83728DCD9F7000C8AB9 /* FiltrosCollectionViewCell.swift in Sources */,
 				27EA1C4728DA4BB40011EED3 /* OnboardingPageThreeViewController.swift in Sources */,
 				27EA1C5128DA4BC50011EED3 /* RecentsCollectionViewCell.swift in Sources */,
+				27A3B83928DCD9F7000C8AB9 /* DetailsViewController.swift in Sources */,
 				27A3B81028DCCEF8000C8AB9 /* Artist.swift in Sources */,
 				27A3B80328DCCEE1000C8AB9 /* AlbumArtWork.swift in Sources */,
 				27A3B82928DCCF82000C8AB9 /* PlaylistsCollectionViewCell.swift in Sources */,
+				27A3B83E28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift in Sources */,
 				27EA1C5428DA4BC50011EED3 /* FavoritesCollectionViewCell.swift in Sources */,
 				27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */,
 				27A3B80D28DCCEEC000C8AB9 /* ArtistInfo.swift in Sources */,
@@ -459,11 +505,15 @@
 				27A3B81D28DCCF09000C8AB9 /* SongResponse.swift in Sources */,
 				863376A128C3AF360031784D /* AppDelegate.swift in Sources */,
 				27EA1C4528DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
+				27A3B82F28DCD28B000C8AB9 /* ResultsTableViewCell.swift in Sources */,
+				27A3B82D28DCD25D000C8AB9 /* VibeResultViewController.swift in Sources */,
 				27EA1C4628DA4BB40011EED3 /* OnboardingPageTwoViewController.swift in Sources */,
 				27A3B82528DCCF82000C8AB9 /* ArtistsCollectionViewCell.swift in Sources */,
 				27A3B81128DCCEF8000C8AB9 /* ArtistResponse.swift in Sources */,
 				27EA1C5328DA4BC50011EED3 /* HomeViewController.swift in Sources */,
 				27A3B80A28DCCEEC000C8AB9 /* ArtistInfoAttributes.swift in Sources */,
+				27A3B83828DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDataSource.swift in Sources */,
+				27A3B83C28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift in Sources */,
 				27A3B82728DCCF82000C8AB9 /* ChoiceView+UICollectionViewDelegate.swift in Sources */,
 				27EA1C5728DA4BC50011EED3 /* DragView.swift in Sources */,
 				27EA1C4828DA4BB40011EED3 /* OnboardingPageOneViewController.swift in Sources */,
@@ -476,7 +526,9 @@
 				27A3B81528DCCEFF000C8AB9 /* Genre.swift in Sources */,
 				27EA1C5228DA4BC50011EED3 /* DragViewDelegate.swift in Sources */,
 				27EA1C5D28DA4BFF0011EED3 /* LoadingPageViewController.swift in Sources */,
+				27A3B83A28DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift in Sources */,
 				27A3B7FC28DCCED6000C8AB9 /* PlaylistAttributes.swift in Sources */,
+				27A3B83628DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,
 				863376A328C3AF360031784D /* SceneDelegate.swift in Sources */,
 				27A3B82828DCCF82000C8AB9 /* ChoiceViewController.swift in Sources */,
 			);
