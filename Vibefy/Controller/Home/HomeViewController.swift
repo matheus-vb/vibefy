@@ -7,6 +7,11 @@
 
 import UIKit
 import StoreKit
+
+var artistsAttributes = [ArtistInfoAttributes]()
+var albumsAttributes = [AlbumAttributes]()
+var playlistAttributes = [PlaylistAttributes]()
+
 class HomeViewController: UIViewController {
     
     let titleLabelContainer = UIView()
@@ -14,8 +19,6 @@ class HomeViewController: UIViewController {
     
     let stackView = UIStackView()
     let dragView = DragView()
-    
-    var songs = [Song]()
     
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
@@ -40,7 +43,7 @@ class HomeViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "ButtonHome"), for: .normal)
         button.layer.frame = CGRect(x: 0.0, y: 0.0, width: bgImageView.frame.width, height: bgImageView.frame.height)
         button.translatesAutoresizingMaskIntoConstraints = false
-        //button.addTarget(self, action: #selector(chamaAPI), for: .touchUpInside)
+       // button.addTarget(self, action: #selector(chamaAPI), for: .touchUpInside)
         return button
     }()
     
@@ -177,40 +180,8 @@ class HomeViewController: UIViewController {
     
     @objc func vibefyButton(_ sender: UIButton) {
         let rootViewController = ChooseMethodViewController()
-        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .white
         navigationController?.pushViewController(rootViewController, animated: true)
     }
-    
-//    @objc func chamaAPI(){
-//        let teste = AppleMusicAPI()
-//
-//        SKCloudServiceController.requestAuthorization { status in
-//            if status == .authorized {
-//                let api = AppleMusicAPI()
-//                api.getUserToken { userToken in
-//                    guard let userToken = userToken else {
-//                        return
-//                    }
-//
-//                    Task {
-//                        var Songs = await api.fetchStorefrontID(userToken: userToken)
-//                        self.songs = Songs
-//                        print(self.songs.count)
-//
-//                        print("--------------------")
-//
-//                        for song in self.songs {
-//                            print("\(song.attributes.name): \(song.attributes.artistName)")
-//                            for name in song.attributes.genreNames! {
-//                                print(name)
-//                            }
-//                            print("--------------------")
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
 }

@@ -11,7 +11,7 @@ class ArtistsCollectionViewCell: UICollectionViewCell {
     
     static let id = "ArtistsCell"
     
-    private lazy var artistImage: UIImageView = {
+    lazy var artistImage: UIImageView = {
         let img = UIImage(named: "secondbubbleImage")
         let imgV = UIImageView(image: img)
         imgV.frame = CGRect(x: 0 , y: 0, width: 100, height: 100)

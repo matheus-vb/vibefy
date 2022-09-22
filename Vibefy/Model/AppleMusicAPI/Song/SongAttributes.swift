@@ -10,6 +10,5 @@ import Foundation
 
 struct SongAttributes: Codable {
     let name: String
-    let artistName: String
-    let genreNames: [String]?
+    //let genreNames: [String]?
 }

@@ -7,8 +7,14 @@
 
 import UIKit
 import CoreLocation
+import StoreKit
 
 class OnboardingPageThreeViewController: UIViewController {
+    
+    var songs = [Song]()
+    var artists = [Artist]()
+    var albuns = [Album]()
+    var playlists = [Playlist]()
     
     let titleLabelContainer = UIView()
     let subtitleLabelContainer = UIView()
@@ -48,7 +54,8 @@ class OnboardingPageThreeViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(getLocation), for: .touchUpInside)
-        
+        button.addTarget(self, action: #selector(chamaAPI), for: .touchUpInside)
+
         return button
     }()
     
@@ -63,7 +70,7 @@ class OnboardingPageThreeViewController: UIViewController {
         button.layer.borderColor = UIColor(red: 238/255,green: 238/255, blue: 238/55, alpha: 1.0).cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didNotAllow), for: .touchUpInside)
-        
+        button.addTarget(self, action: #selector(chamaAPI), for: .touchUpInside)
         
         return button
     }()
@@ -306,6 +313,87 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("didUpdateLocation")
+    }
+
+    @objc func chamaAPI(){
+
+        
+        //Requisição dos Artistas
+        SKCloudServiceController.requestAuthorization { status in
+            artistsAttributes.removeAll()
+            if status == .authorized {
+                let api = AppleMusicAPI()
+                api.getUserToken { userToken in
+                    guard let userToken = userToken else {
+                        return
+                    }
+
+                    Task {
+                        var Artistas = await api.fetchArtists(userToken: userToken)
+                        self.artists = Artistas
+
+                        for val in Artistas {
+                            //print(val.id)
+                        }
+
+                        for val in Artistas{
+                            let info = await api.fetchArtistInfo(userToken: userToken, id: val.id)
+                            //print(info[0].attributes.artwork.url)
+                            artistsAttributes.append(ArtistInfoAttributes(name: info[0].attributes.name, url: info[0].attributes.artwork.url))
+                        }
+
+                        for val in artistsAttributes {
+                           // print(val.name)
+                           // print(val.artwork.url)
+                        }
+                    }
+                }
+            }
         }
 
+        // Requisição dos Albuns
+        SKCloudServiceController.requestAuthorization { status in
+            albumsAttributes.removeAll()
+            if status == .authorized {
+                let api = AppleMusicAPI()
+                api.getUserToken { userToken in
+                    guard let userToken = userToken else {
+                        return
+                    }
+
+                    Task {
+                        var Albuns = await api.fetchAlbuns(userToken: userToken)
+                        self.albuns = Albuns
+
+                        for val in Albuns {
+                            albumsAttributes.append(AlbumAttributes(genres: val.attributes.genreNames, name: val.attributes.name, artworkURL: val.attributes.artwork.url, artistName: val.attributes.artistName))
+                            print(val.attributes.name)
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Requisição das Playlists
+        SKCloudServiceController.requestAuthorization { status in
+            playlistAttributes.removeAll()
+            if status == .authorized {
+                let api = AppleMusicAPI()
+                api.getUserToken { userToken in
+                    guard let userToken = userToken else {
+                        return
+                    }
+                        
+                    Task {
+                        var Playlists = await api.fetchPlaylists(userToken: userToken)
+                        self.playlists = Playlists
+                        
+                        for val in Playlists {
+                            playlistAttributes.append(PlaylistAttributes(name: val.attributes.name))
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

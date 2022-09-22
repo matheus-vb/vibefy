@@ -15,7 +15,7 @@ class AlbunsCollectionViewCell: UICollectionViewCell {
     let labelStackView = UIStackView()
 
     
-    private lazy var albunsImage: UIImageView = {
+    lazy var albunsImage: UIImageView = {
         let img = UIImage(named: "amanita2")
         let imgV = UIImageView(image: img)
         imgV.frame = CGRect(x: 0 , y: 0, width: 186, height: 186)
@@ -24,7 +24,7 @@ class AlbunsCollectionViewCell: UICollectionViewCell {
         return imgV
     }()
     
-    private lazy var albumTitle: UILabel = {
+    lazy var albumTitle: UILabel = {
         let label = UILabel()
         let lightAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .regular)]
         let pieces = ["In Rainbows"]
@@ -37,7 +37,7 @@ class AlbunsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var artistiLabel: UILabel = {
+    lazy var artistiLabel: UILabel = {
         let label = UILabel()
         let lightAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .light)]
         let pieces = ["Radiohead"]
