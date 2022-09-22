@@ -11,6 +11,7 @@ class VibeResultViewController: UIViewController {
     let vibeContainer = UIView()
     let pretitleContainer = UIView()
     let resultsContainer = UIView()
+    let locaisLabelContainer = UIView()
     
     
     let upperStackView = UIStackView()
@@ -34,6 +35,18 @@ class VibeResultViewController: UIViewController {
         label.numberOfLines = 1
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var locaisLabel: UILabel = {
+        let label: UILabel = UILabel()
+        let text = "locais com sua vibe"
+        let textAttr = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .light)]
+        label.attributedText = NSMutableAttributedString(string: text, attributes: textAttr)
+        label.numberOfLines = 1
+        label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
     
@@ -82,12 +95,14 @@ class VibeResultViewController: UIViewController {
         view.addSubview(upperStackView)
 
         view.addSubview(upperStackView)
+        view.addSubview(locaisLabelContainer)
         view.addSubview(resultsContainer)
                 
         upperStackView.addArrangedSubview(pretitleContainer)
         upperStackView.addArrangedSubview(vibeContainer)
         
         resultsContainer.addSubview(resultsTableView)
+        locaisLabelContainer.addSubview(locaisLabel)
         pretitleContainer.addSubview(pretitleLabel)
         vibeContainer.addSubview(vibeLabel)
     }
@@ -104,7 +119,7 @@ class VibeResultViewController: UIViewController {
     func setupLayouts() {
         vibeContainer.translatesAutoresizingMaskIntoConstraints = false
         pretitleContainer.translatesAutoresizingMaskIntoConstraints = false
-        
+        locaisLabelContainer.translatesAutoresizingMaskIntoConstraints = false
         upperStackView.translatesAutoresizingMaskIntoConstraints = false
         resultsContainer.translatesAutoresizingMaskIntoConstraints = false
         
@@ -132,6 +147,20 @@ class VibeResultViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             pretitleContainer.heightAnchor.constraint(equalToConstant: 32)
+        ])
+        
+        NSLayoutConstraint.activate([
+            locaisLabelContainer.topAnchor.constraint(equalTo: upperStackView.bottomAnchor, constant: 60),
+            locaisLabelContainer.heightAnchor.constraint(equalToConstant: 38),
+            locaisLabelContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            locaisLabelContainer.widthAnchor.constraint(equalToConstant: self.view.frame.width)
+        ])
+        
+        NSLayoutConstraint.activate([
+            locaisLabel.leadingAnchor.constraint(equalTo: locaisLabelContainer.leadingAnchor, constant: 60),
+            locaisLabel.trailingAnchor.constraint(equalTo: locaisLabelContainer.trailingAnchor, constant: -70),
+            locaisLabel.topAnchor.constraint(equalTo: locaisLabelContainer.topAnchor),
+            locaisLabel.bottomAnchor.constraint(equalTo: locaisLabelContainer.bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([

@@ -43,6 +43,7 @@
 		27A3B83A28DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83528DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift */; };
 		27A3B83C28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */; };
 		27A3B83E28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */; };
+		27A3B84128DCE8D9000C8AB9 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B84028DCE8D9000C8AB9 /* ConfirmViewController.swift */; };
 		27EA1C1F28DA4B2A0011EED3 /* RestByMood+Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */; };
 		27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */; };
 		27EA1C4428DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
@@ -103,6 +104,7 @@
 		27A3B83528DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VibeResultViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VibeResultController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		27A3B84028DCE8D9000C8AB9 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestByMood+Restaurants.swift"; sourceTree = "<group>"; };
 		27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestByMood.swift; sourceTree = "<group>"; };
 		27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
@@ -228,6 +230,14 @@
 			path = Details;
 			sourceTree = "<group>";
 		};
+		27A3B83F28DCE8CF000C8AB9 /* Confirm */ = {
+			isa = PBXGroup;
+			children = (
+				27A3B84028DCE8D9000C8AB9 /* ConfirmViewController.swift */,
+			);
+			path = Confirm;
+			sourceTree = "<group>";
+		};
 		27EA1C3928DA4B840011EED3 /* Choice */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +338,7 @@
 		863376B928C3B17D0031784D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				27A3B83F28DCE8CF000C8AB9 /* Confirm */,
 				27A3B83028DCD99C000C8AB9 /* Details */,
 				27A3B82B28DCD222000C8AB9 /* Vibe-Result */,
 				27EA1C3D28DA4BA20011EED3 /* onBoarding */,
@@ -495,6 +506,7 @@
 				27EA1C5428DA4BC50011EED3 /* FavoritesCollectionViewCell.swift in Sources */,
 				27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */,
 				27A3B80D28DCCEEC000C8AB9 /* ArtistInfo.swift in Sources */,
+				27A3B84128DCE8D9000C8AB9 /* ConfirmViewController.swift in Sources */,
 				27A3B82628DCCF82000C8AB9 /* ChoiceView+UICollectionViewDataSource.swift in Sources */,
 				27EA1C5B28DA4BED0011EED3 /* ChooseMethodViewController.swift in Sources */,
 				27A3B81B28DCCF09000C8AB9 /* Song.swift in Sources */,

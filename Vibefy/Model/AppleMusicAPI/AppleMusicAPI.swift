@@ -16,7 +16,7 @@ var playlistResult = PlaylistResponse(data: [])
 var playlistInfoResult = PlaylistResponse(data: [])
 
 class AppleMusicAPI {
-    let developerToken = ""
+    let developerToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkpaODQ2VldWODcifQ.eyJpc3MiOiJMM1pXNVNBMzI4IiwiZXhwIjoxNjc4OTQ4NjM2LCJpYXQiOjE2NjMxODA2MzZ9.T_SPHZqFbqYRmomaKt5kiBDbyTo6FdPlu5abhxGexBEglV4RB0iNsJquuF0xOCTza3NrbmaiFvbjZSmeq4AfgA"
     
     func getUserToken() -> String {
         var userToken = String()

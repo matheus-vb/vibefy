@@ -148,7 +148,7 @@ class ChoiceViewController: UIViewController {
         artistLabelContainer.translatesAutoresizingMaskIntoConstraints = false
         albunsLabelContainer.translatesAutoresizingMaskIntoConstraints = false
         playlistsLabelContainer.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.contentSize = CGSize(width: self.view.frame.width, height: 812)
+        scrollView.contentSize = CGSize(width: self.view.frame.width, height: 720)
         
     }
     
@@ -165,7 +165,7 @@ class ChoiceViewController: UIViewController {
             scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 24)
+            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
