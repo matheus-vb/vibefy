@@ -21,9 +21,16 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 2
         label.textAlignment = .center
         label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var bgImage: UIImageView = {
+        let bg = UIImageView()
+        bg.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        return bg
     }()
 
     
@@ -35,8 +42,8 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
     }
     
     func setupViewHierarchy(){
+        addSubview(bgImage)
         addSubview(playlistLabelContainer)
-        
         playlistLabelContainer.addSubview(playlistTitle)
     }
     
@@ -58,10 +65,17 @@ class PlaylistsCollectionViewCell: UICollectionViewCell {
         ])
         
         NSLayoutConstraint.activate([
-            playlistTitle.topAnchor.constraint(equalTo: playlistLabelContainer.topAnchor, constant: 80),
-            playlistTitle.leadingAnchor.constraint(equalTo: playlistLabelContainer.leadingAnchor, constant: 10),
-            playlistTitle.trailingAnchor.constraint(equalTo: playlistLabelContainer.trailingAnchor, constant: -10),
-            playlistTitle.bottomAnchor.constraint(equalTo: playlistLabelContainer.bottomAnchor, constant: -80),
+            playlistTitle.topAnchor.constraint(equalTo: playlistLabelContainer.topAnchor),
+            playlistTitle.leadingAnchor.constraint(equalTo: playlistLabelContainer.leadingAnchor),
+            playlistTitle.trailingAnchor.constraint(equalTo: playlistLabelContainer.trailingAnchor),
+            playlistTitle.bottomAnchor.constraint(equalTo: playlistLabelContainer.bottomAnchor),
+        ])
+        
+        NSLayoutConstraint.activate([
+            bgImage.topAnchor.constraint(equalTo: self.topAnchor),
+            bgImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            bgImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            bgImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         ])
 
     }

@@ -43,6 +43,13 @@ extension ChoiceViewController: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaylistsCollectionViewCell.id, for: indexPath) as! PlaylistsCollectionViewCell
             Task{
+                if(indexPath.item % 3 == 0){
+                    cell.bgImage.image = UIImage(named: "grad1")
+                }else if(indexPath.item % 3 == 1){
+                    cell.bgImage.image = UIImage(named: "grad2")
+                }else{
+                    cell.bgImage.image = UIImage(named: "grad3")
+                }
                 cell.playlistTitle.text = playlistAttributes[indexPath.item].name
             }
             return cell

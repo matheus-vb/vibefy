@@ -25,7 +25,7 @@ class ChoiceViewController: UIViewController {
     
     lazy var artistLabel: UILabel = {
         let label: UILabel = UILabel()
-        let lightAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 28, weight: .light)]
+        let lightAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 32, weight: .light)]
         let pieces = ["Artistas"]
         let attributedPieces = NSMutableAttributedString(string: pieces[0], attributes: lightAttrs)
         label.attributedText = attributedPieces
@@ -94,7 +94,7 @@ class ChoiceViewController: UIViewController {
     lazy var playlistsCollectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         viewLayout.scrollDirection = .horizontal
-        viewLayout.itemSize = CGSize(width: 200, height: 244)
+        viewLayout.itemSize = CGSize(width: 186, height: 186)
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 371, height: 244), collectionViewLayout: viewLayout)
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 0)
         collectionView.showsHorizontalScrollIndicator = false
@@ -165,7 +165,7 @@ class ChoiceViewController: UIViewController {
             scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             scrollView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 48)
+            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 24)
         ])
         
         NSLayoutConstraint.activate([
