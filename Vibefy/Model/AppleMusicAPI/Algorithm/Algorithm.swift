@@ -25,7 +25,8 @@ class Algorithm {
     var countChaotic: Int = 0
     var countElegant: Int = 0
     
-    func calculateMood(genres: [String]) {
+    func calculateMood(genres: [String]) -> String {
+        print(genres)
         for genre in genres {
             getIndex(genreRaw: genre)
         }
@@ -44,18 +45,19 @@ class Algorithm {
 //        print("Nostalgic: \(countNostalgic)")
 //        print("Elegant: \(countElegant)")
 
-        getWinner()
+        let winner = getWinner()
+        return winner
     }
     
     func getIndex(genreRaw: String) {
         
         let genre = genreRaw.lowercased()
         
-        if (genre == "alternativo" || genre == "indie pop") {
+        if (genre == "alternativo" || genre == "indie pop" || genre == "alternative") {
             countNostalgic += 3
             countChill += 4
             countIntrospective += 3
-        } else if (genre == "rock" || genre == "pop/rock") {
+        } else if (genre == "rock" || genre == "pop/rock"  || genre == "hip-hop/rap") {
             countIntense += 4
             countNostalgic += 4
             countIntrospective += 2
@@ -119,8 +121,8 @@ class Algorithm {
             countRomantic += 3
             countChill += 4
         } else if (genre == "reggae") {
-            countNatural += 5
-            countChill += 4
+            countNatural += 2
+            countChill += 2
             countBeach += 4
             countSpiritual += 2
         }
@@ -129,8 +131,8 @@ class Algorithm {
        
     }
     
-    func getWinner() {
-        let list = [(countChill, "tranquila"), (countDance, "dançante"), (countBeach,"praieira"), (countElegant, "elegante"), (countIntense,"intensa"), (countChaotic,"caótica"), (countCheerful,"alegre"), (countVibrant,"vibrante"), (countNatural,"natural"), (countRomantic,"romântica"), (countSpiritual,"espirituosa"), (countNostalgic,"nostálgica"), (countIntrospective,"introspectiva")]
+    func getWinner() -> String{
+        let list = [(countChill, "tranquila"), (countDance, "dancante"), (countBeach,"praieira"), (countElegant, "elegante"), (countIntense,"intensa"), (countChaotic,"caotica"), (countCheerful,"alegre"), (countVibrant,"vibrante"), (countNatural,"natural"), (countRomantic,"romantica"), (countSpiritual,"espirituosa"), (countNostalgic,"nostalgica"), (countIntrospective,"introspectiva")]
         var winner_count: Int = 0
         var winner_name: String = ""
         for i in 0...12 {
@@ -139,8 +141,7 @@ class Algorithm {
                 winner_name = list[i].1
             }
         }
-        
-        //print(winner_name)
+        return winner_name
     }
 }
 /*

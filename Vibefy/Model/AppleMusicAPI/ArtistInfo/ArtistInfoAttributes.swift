@@ -12,9 +12,11 @@ struct ArtistInfoAttributes: Codable{
     
     var name: String
     var artwork: ArtistInfoAttributesArtWork
+    var genreNames: [String]
     
-    init(name: String, url: String) {
+    init(name: String, url: String, genreNames: [String]) {
         self.name = name
         self.artwork = ArtistInfoAttributesArtWork(url: url)
+        self.genreNames = genreNames
     }
 }

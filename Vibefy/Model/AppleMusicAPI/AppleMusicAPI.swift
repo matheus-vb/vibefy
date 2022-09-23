@@ -15,6 +15,7 @@ var albumResult = AlbumResponse(data: [])
 var playlistResult = PlaylistResponse(data: [])
 var playlistInfoResult = PlaylistResponse(data: [])
 var playlistGenreResult = PlaylistInfoResponse(data: [])
+var songResult = SongResponse(data: [])
 
 class AppleMusicAPI {
     let developerToken = ""
@@ -63,6 +64,39 @@ class AppleMusicAPI {
         
         return Data()
     }
+    
+    //    //MARK: - SONGS
+        func fetchSongs(userToken: String) async -> [Song] {
+            var storefrontID: String! = ""
+
+            let musicURL = URL(string: "https://api.music.apple.com/v1/me/recent/played/tracks")!
+            var musicRequest = URLRequest(url: musicURL)
+            musicRequest.httpMethod = "GET"
+            musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
+            musicRequest.addValue(userToken, forHTTPHeaderField: "Music-User-Token")
+
+            let semaphore = DispatchSemaphore(value: 0)
+
+            URLSession.shared.dataTask(with: musicRequest) { (data, response, error)  in
+                guard error == nil else { return }
+
+                do {
+                    let decoder = JSONDecoder()
+                    songResult = try decoder.decode(SongResponse.self, from: data!)
+                    print(songResult.data.count)
+                    semaphore.signal()
+
+                } catch {
+                    print (error)
+                }
+
+            }.resume()
+
+            semaphore.wait()
+            print("Count: \(songResult.data.count)")
+            return songResult.data
+
+        }
     
     //MARK: - ARTISTS
     
@@ -267,40 +301,6 @@ class AppleMusicAPI {
 //
 //    }
 //
-//    //MARK: - SONGS
-//
-//    func fetchSongs(userToken: String) async -> [Song] {
-//        var storefrontID: String! = ""
-//
-//        let musicURL = URL(string: "https://api.music.apple.com/v1/me/recent/played/tracks")!
-//        var musicRequest = URLRequest(url: musicURL)
-//        musicRequest.httpMethod = "GET"
-//        musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
-//        musicRequest.addValue(userToken, forHTTPHeaderField: "Music-User-Token")
-//
-//        let semaphore = DispatchSemaphore(value: 0)
-//
-//        URLSession.shared.dataTask(with: musicRequest) { (data, response, error)  in
-//            guard error == nil else { return }
-//
-//            do {
-//                let decoder = JSONDecoder()
-//                songResult = try decoder.decode(SongResponse.self, from: data!)
-//                print(songResult.data.count)
-//                semaphore.signal()
-//
-//            } catch {
-//                print (error)
-//            }
-//
-//        }.resume()
-//
-//        semaphore.wait()
-//        print("Count: \(songResult.data.count)")
-//        return songResult.data
-//
-//    }
-    
 //    
 //
     

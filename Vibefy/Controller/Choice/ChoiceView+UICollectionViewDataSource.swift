@@ -50,7 +50,7 @@ extension ChoiceViewController: UICollectionViewDataSource {
                 }else{
                     cell.bgImage.image = UIImage(named: "grad3")
                 }
-                cell.playlistTitle.text = playlistAttributes[indexPath.item].name
+                cell.playlistTitle.text = playlistAttributes[indexPath.item].attributes.name
             }
             return cell
         }

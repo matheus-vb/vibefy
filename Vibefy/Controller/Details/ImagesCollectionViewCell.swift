@@ -11,7 +11,7 @@ class ImagesCollectionViewCell: UICollectionViewCell {
  
     static let id = "ImagesCell"
     
-    private lazy var albunsImage: UIImageView = {
+    lazy var albunsImage: UIImageView = {
         let img = UIImage(named: "amanita2")
         let imgV = UIImageView(image: img)
         imgV.frame = CGRect(x: 0 , y: 0, width: 180, height: 112)

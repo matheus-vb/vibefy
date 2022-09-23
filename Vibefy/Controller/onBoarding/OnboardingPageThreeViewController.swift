@@ -327,7 +327,20 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
                     guard let userToken = userToken else {
                         return
                     }
-
+                    
+                    Task {
+                        var Songs = await api.fetchSongs(userToken:userToken)
+                        self.songs = Songs
+                        print("---------------------------------------")
+                        for val in Songs {
+                            songsAttributes.append(SongAttributes(name: val.attributes.name, genreNames: val.attributes.genreNames))
+                        }
+                        for key in Songs{
+                            print(key.attributes.genreNames)
+                        }
+                        print("---------------------------------------")
+                    }
+                    
                     Task {
                         var Artistas = await api.fetchArtists(userToken: userToken)
                         self.artists = Artistas
@@ -339,7 +352,7 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
                         for val in Artistas{
                             let info = await api.fetchArtistInfo(userToken: userToken, id: val.id)
                             //print(info[0].attributes.artwork.url)
-                            artistsAttributes.append(ArtistInfoAttributes(name: info[0].attributes.name, url: info[0].attributes.artwork.url))
+                            artistsAttributes.append(ArtistInfoAttributes(name: info[0].attributes.name, url: info[0].attributes.artwork.url, genreNames: info[0].attributes.genreNames))
                         }
 
                         for val in artistsAttributes {
@@ -354,7 +367,6 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
 
                         for val in Albuns {
                             albumsAttributes.append(AlbumAttributes(genres: val.attributes.genreNames, name: val.attributes.name, artworkURL: val.attributes.artwork.url, artistName: val.attributes.artistName))
-                            print(val.attributes.name)
                         }
                     }
                     print("asdasdasdasdsadasdasdasdasdasdadas")
@@ -364,7 +376,7 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
                         self.playlists = Playlists
                         
                         for val in Playlists {
-                            playlistAttributes.append(PlaylistAttributes(name: val.attributes.name))
+                            playlistAttributes.append(Playlist(id: val.id, nameP: val.attributes.name))
                         }
                         
                         var playlistInfoAttributesTemp: [PlaylistInfoAttributes] = []
@@ -373,7 +385,6 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
                             //print(info[0].attributes.artwork.url)
                             for key in info{
                                 playlistInfoAttributesTemp.append(PlaylistInfoAttributes(genreNames: key.attributes.genreNames, name: key.attributes.name))
-                                print(key.attributes.name)
                             }
                         }
                         for val in playlistInfoAttributesTemp{

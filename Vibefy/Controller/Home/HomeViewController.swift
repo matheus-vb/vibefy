@@ -9,8 +9,9 @@ import UIKit
 import StoreKit
 
 var artistsAttributes = [ArtistInfoAttributes]()
+var songsAttributes = [SongAttributes]()
 var albumsAttributes = [AlbumAttributes]()
-var playlistAttributes = [PlaylistAttributes]()
+var playlistAttributes = [Playlist]()
 var playlistInfoAttributes = [String]()
 var vibeGenres = [String]()
 

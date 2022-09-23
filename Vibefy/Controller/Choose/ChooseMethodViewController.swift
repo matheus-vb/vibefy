@@ -92,6 +92,12 @@ class ChooseMethodViewController: UIViewController {
         setupViewsLayout()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        result.removeAll()
+    }
+    
     func setupHierarchy() {
         view.addSubview(choiceBG)
         view.addSubview(completeStackView)
@@ -218,9 +224,31 @@ class ChooseMethodViewController: UIViewController {
             inspoButton.leadingAnchor.constraint(equalTo: buttonsStackView.leadingAnchor)
         ])
     }
-
+    
     @objc func goToLoadingScreen(_ sender: UIButton) {
+        result.removeAll()
         let rootViewController = LoadingPageViewController()
+        let calculadora = Algorithm()
+        var recentSongsGenres: [String] = []
+        for val in songsAttributes{
+            for key in val.genreNames{
+                recentSongsGenres.append(key)
+            }
+        }
+        let moodCalculado = calculadora.calculateMood(genres: recentSongsGenres)
+        let restByMood = RestByMoodFunc()
+        let allRestaurantes = restByMood.restaurants()
+        var sugestoes: [RestByMood] = []
+        for val in allRestaurantes{
+            if(val.mood == moodCalculado){
+                print("CHEGEUHGEUHGEUHGHUEG")
+                sugestoes = val.suggestions
+            }
+        }
+        
+        result = sugestoes
+        bgImage = "BG \(moodCalculado)"
+        vibeName = moodCalculado
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.tintColor = .white

@@ -22,7 +22,7 @@ class FiltrosCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var filtroLabel: UILabel = {
+    lazy var filtroLabel: UILabel = {
         let label: UILabel = UILabel()
         let normalAttrs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .regular)]
         let pieces = ["sem glúten"]

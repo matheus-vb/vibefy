@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import CoreData
+
+var restauranteSelecionado: RestByMood = RestByMood(name: "", type: "", price: "", rating: "", address: "", bairro: "", maskImage: UIImage(), backImage: nil, filters: [""], drinks: true)
 
 class DetailsViewController: UIViewController {
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    //let rest: RestByMood = RestByMood()
+    
     let labelStack = UIStackView()
     let wideStack = UIStackView()
     let topFullStack = UIStackView()
@@ -58,13 +65,14 @@ class DetailsViewController: UIViewController {
         button.contentMode = .top
         button.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTouch), for: .touchUpInside)
         return button
     }()
     
     private lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Casa Bacurau"
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.numberOfLines = 0
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +83,7 @@ class DetailsViewController: UIViewController {
     private lazy var subLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Bar  •  $$$"
-        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         label.numberOfLines = 0
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -86,7 +94,7 @@ class DetailsViewController: UIViewController {
     private lazy var endLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Várzea, Rua Medeiros 1432"
-        label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .light)
         label.numberOfLines = 0
         label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -99,7 +107,7 @@ class DetailsViewController: UIViewController {
         label.text = "3.8"
         label.font = UIFont.systemFont(ofSize: 22, weight: .regular)
         label.numberOfLines = 0
-        label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        label.textColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 0)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
@@ -161,7 +169,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupHierarchy()
         setupAttributes()
         setupLayout()
@@ -226,11 +234,18 @@ class DetailsViewController: UIViewController {
         imagesLabelContainer.translatesAutoresizingMaskIntoConstraints = false
         favButton.translatesAutoresizingMaskIntoConstraints = false
         filtrosCollection.translatesAutoresizingMaskIntoConstraints = false
+        
+        detailsBG.image = UIImage(named: bgImage)
+        logoImage.image = restauranteSelecionado.maskImage
+        self.titleLabel.text = restauranteSelecionado.name
+        self.subLabel.text = "\(restauranteSelecionado.type)  •  \(restauranteSelecionado.price)"
+        self.endLabel.text = restauranteSelecionado.address
+        //self.ratingLabel.text = restauranteSelecionado.rating
     }
     
     func setupLayout() {
         
-        topFullStack.frame = CGRect(x: 0, y: (157/812)*self.view.frame.height, width: self.view.frame.width, height: 301)
+        topFullStack.frame = CGRect(x: 0, y: 16, width: self.view.frame.width, height: 301)
         
         NSLayoutConstraint.activate([
             scrollView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -330,4 +345,42 @@ class DetailsViewController: UIViewController {
             imagesCollection.heightAnchor.constraint(equalToConstant: 112)
         ])
     }
+    
+
+    @objc func didTouch(){
+        print("cocococococo")
+    }
+
+
+//    func createItem(rest: RestByMood) {
+//        let new = RestsItem(context: context)
+//
+//        new.name = rest.name
+//        new.type = rest.type
+//        new.address = rest.address
+//        new.mood = rest.mood
+//        new.backImage = rest.backImage
+//        new.maskImage = rest.maskImage
+//        new.drinks = rest.drinks
+//        new.filter = rest.filters[0]
+//        new.price = rest.price
+//        new.rating = rest.rating
+//
+//        do {
+//            try context.save()
+//        } catch {
+//            print(error)
+//        }
+//    }
+//
+//    func removeItem(item: RestsItem) {
+//        context.delete(item)
+//
+//        do {
+//            try context.save()
+//        } catch {
+//            print(error)
+//        }
+//    }
+//
 }

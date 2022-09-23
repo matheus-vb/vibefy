@@ -7,6 +7,10 @@
 
 import UIKit
 
+var result: [RestByMood] = []
+var bgImage: String = ""
+var vibeName: String = ""
+
 class VibeResultViewController: UIViewController {
     let vibeContainer = UIView()
     let pretitleContainer = UIView()
@@ -50,7 +54,7 @@ class VibeResultViewController: UIViewController {
         return label
     }()
     
-    private lazy var vibeLabel: UILabel = {
+    lazy var vibeLabel: UILabel = {
         let label: UILabel = UILabel()
         let text = "vibrante"
         let textAttr = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 40, weight: .regular)]
@@ -61,7 +65,7 @@ class VibeResultViewController: UIViewController {
         return label
     }()
     
-    private lazy var vibeBG: UIImageView = {
+    lazy var vibeBG: UIImageView = {
         let imageName = "Escolha.png"
         let image = UIImage(named: imageName)
         let imageView = UIImageView(image: image ?? UIImage())
@@ -78,7 +82,6 @@ class VibeResultViewController: UIViewController {
         navigationController?.viewControllers.remove(at: previousViewControllerIndex)
         
         setupTableView()
-        
         setupHierarchy()
         setupAttributes()
         setupLayouts()
@@ -113,6 +116,9 @@ class VibeResultViewController: UIViewController {
         upperStackView.alignment = .fill
         upperStackView.distribution = .fill
         upperStackView.spacing = 24
+        
+        vibeBG.image = UIImage(named: bgImage)
+        vibeLabel.text = vibeName
         
     }
     
