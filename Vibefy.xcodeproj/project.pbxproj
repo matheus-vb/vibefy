@@ -69,6 +69,7 @@
 		863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 863376A928C3AF360031784D /* Vibefy.xcdatamodeld */; };
 		863376AD28C3AF370031784D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863376AC28C3AF370031784D /* Assets.xcassets */; };
 		863376B028C3AF370031784D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863376AE28C3AF370031784D /* LaunchScreen.storyboard */; };
+		8646304E28DD4C9200713BCF /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646304D28DD4C9200713BCF /* Algorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +136,7 @@
 		863376AC28C3AF370031784D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		863376AF28C3AF370031784D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		863376B128C3AF370031784D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8646304D28DD4C9200713BCF /* Algorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		94251877188062E6D956B00B /* Pods-Vibefy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.release.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.release.xcconfig"; sourceTree = "<group>"; };
 		95296DB9EF7D2E712D1C4D2B /* Pods-Vibefy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vibefy.debug.xcconfig"; path = "Target Support Files/Pods-Vibefy/Pods-Vibefy.debug.xcconfig"; sourceTree = "<group>"; };
 		ECDE054F7FEF20FE4AD9B279 /* Pods_Vibefy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vibefy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +381,7 @@
 		8646303028DB5FC100713BCF /* AppleMusicAPI */ = {
 			isa = PBXGroup;
 			children = (
+				27A3B7F028DCCE4B000C8AB9 /* AppleMusicAPI.swift */,
 				27D7CE5528DCFB70006DBD0D /* PlaylistInfo */,
 				27A3B7F728DCCE8E000C8AB9 /* Song */,
 				27A3B7F628DCCE82000C8AB9 /* Genre */,
@@ -386,9 +389,17 @@
 				27A3B7F428DCCE68000C8AB9 /* ArtistInfo */,
 				27A3B7F328DCCE62000C8AB9 /* Album */,
 				27A3B7F228DCCE59000C8AB9 /* Playlist */,
-				27A3B7F028DCCE4B000C8AB9 /* AppleMusicAPI.swift */,
+				8646304F28DD4C9800713BCF /* Algorithm */,
 			);
 			path = AppleMusicAPI;
+			sourceTree = "<group>";
+		};
+		8646304F28DD4C9800713BCF /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				8646304D28DD4C9200713BCF /* Algorithm.swift */,
+			);
+			path = Algorithm;
 			sourceTree = "<group>";
 		};
 		A474B913F3E0E4DB7F12E0D2 /* Frameworks */ = {
@@ -553,6 +564,7 @@
 				27D7CE5B28DCFC13006DBD0D /* PlaylistInfoAttributes.swift in Sources */,
 				27A3B80428DCCEE1000C8AB9 /* AlbumAttributes.swift in Sources */,
 				27A3B80B28DCCEEC000C8AB9 /* ArtistInfoAttributesArtWork.swift in Sources */,
+				8646304E28DD4C9200713BCF /* Algorithm.swift in Sources */,
 				27A3B81728DCCEFF000C8AB9 /* GenreResponse.swift in Sources */,
 				27A3B81528DCCEFF000C8AB9 /* Genre.swift in Sources */,
 				27EA1C5228DA4BC50011EED3 /* DragViewDelegate.swift in Sources */,
@@ -702,7 +714,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V8K8MHSNH4;
+				DEVELOPMENT_TEAM = L3ZW5SA328;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vibefy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -730,7 +742,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V8K8MHSNH4;
+				DEVELOPMENT_TEAM = L3ZW5SA328;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Vibefy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
