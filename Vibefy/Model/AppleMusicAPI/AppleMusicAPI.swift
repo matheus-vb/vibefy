@@ -14,9 +14,10 @@ var artistInfoResult = ArtistInfoResponse(data: [])
 var albumResult = AlbumResponse(data: [])
 var playlistResult = PlaylistResponse(data: [])
 var playlistInfoResult = PlaylistResponse(data: [])
+var playlistGenreResult = PlaylistInfoResponse(data: [])
 
 class AppleMusicAPI {
-    let developerToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IkpaODQ2VldWODcifQ.eyJpc3MiOiJMM1pXNVNBMzI4IiwiZXhwIjoxNjc4OTQ4NjM2LCJpYXQiOjE2NjMxODA2MzZ9.T_SPHZqFbqYRmomaKt5kiBDbyTo6FdPlu5abhxGexBEglV4RB0iNsJquuF0xOCTza3NrbmaiFvbjZSmeq4AfgA"
+    let developerToken = ""
     
     func getUserToken() -> String {
         var userToken = String()
@@ -197,6 +198,40 @@ class AppleMusicAPI {
         return playlistResult.data
 
     }
+    
+    func fetchPlaylistsInfo(userToken: String, id: String) async -> [PlaylistInfo] {
+        var storefrontID: String! = ""
+        
+        let musicURL = URL(string: "https://api.music.apple.com/v1/me/library/playlists/\(id)/tracks")!
+        var musicRequest = URLRequest(url: musicURL)
+        musicRequest.httpMethod = "GET"
+        musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")
+        musicRequest.addValue(userToken, forHTTPHeaderField: "Music-User-Token")
+                
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        URLSession.shared.dataTask(with: musicRequest) { (data, response, error)  in
+            guard error == nil else { return }
+            
+            do {
+                let decoder = JSONDecoder()
+                playlistGenreResult = try decoder.decode(PlaylistInfoResponse.self, from: data!)
+                print(playlistGenreResult.data.count)
+                semaphore.signal()
+                
+            } catch {
+                print (error)
+            }
+
+        }.resume()
+        
+        semaphore.wait()
+        print("Count: \(playlistGenreResult.data.count)")
+        return playlistGenreResult.data
+
+    }
+    
+    
     
     //MARK: - STANDARD
     

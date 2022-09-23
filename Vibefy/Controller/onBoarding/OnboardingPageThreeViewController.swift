@@ -347,20 +347,7 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
                            // print(val.artwork.url)
                         }
                     }
-                }
-            }
-        }
-
-        // Requisição dos Albuns
-        SKCloudServiceController.requestAuthorization { status in
-            albumsAttributes.removeAll()
-            if status == .authorized {
-                let api = AppleMusicAPI()
-                api.getUserToken { userToken in
-                    guard let userToken = userToken else {
-                        return
-                    }
-
+                    
                     Task {
                         var Albuns = await api.fetchAlbuns(userToken: userToken)
                         self.albuns = Albuns
@@ -370,26 +357,29 @@ extension OnboardingPageThreeViewController: CLLocationManagerDelegate {
                             print(val.attributes.name)
                         }
                     }
-                }
-            }
-        }
-        
-        // Requisição das Playlists
-        SKCloudServiceController.requestAuthorization { status in
-            playlistAttributes.removeAll()
-            if status == .authorized {
-                let api = AppleMusicAPI()
-                api.getUserToken { userToken in
-                    guard let userToken = userToken else {
-                        return
-                    }
-                        
+                    print("asdasdasdasdsadasdasdasdasdasdadas")
+
                     Task {
                         var Playlists = await api.fetchPlaylists(userToken: userToken)
                         self.playlists = Playlists
                         
                         for val in Playlists {
                             playlistAttributes.append(PlaylistAttributes(name: val.attributes.name))
+                        }
+                        
+                        var playlistInfoAttributesTemp: [PlaylistInfoAttributes] = []
+                        for val in Playlists{
+                            let info = await api.fetchPlaylistsInfo(userToken: userToken, id: val.id)
+                            //print(info[0].attributes.artwork.url)
+                            for key in info{
+                                playlistInfoAttributesTemp.append(PlaylistInfoAttributes(genreNames: key.attributes.genreNames, name: key.attributes.name))
+                                print(key.attributes.name)
+                            }
+                        }
+                        for val in playlistInfoAttributesTemp{
+                            for key in val.genreNames{
+                                playlistInfoAttributes.append(key)
+                            }
                         }
                     }
                 }

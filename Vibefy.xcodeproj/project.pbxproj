@@ -44,6 +44,9 @@
 		27A3B83C28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */; };
 		27A3B83E28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */; };
 		27A3B84128DCE8D9000C8AB9 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A3B84028DCE8D9000C8AB9 /* ConfirmViewController.swift */; };
+		27D7CE5728DCFB84006DBD0D /* PlaylistInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7CE5628DCFB84006DBD0D /* PlaylistInfoResponse.swift */; };
+		27D7CE5928DCFBB0006DBD0D /* PlaylistInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7CE5828DCFBB0006DBD0D /* PlaylistInfo.swift */; };
+		27D7CE5B28DCFC13006DBD0D /* PlaylistInfoAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D7CE5A28DCFC13006DBD0D /* PlaylistInfoAttributes.swift */; };
 		27EA1C1F28DA4B2A0011EED3 /* RestByMood+Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */; };
 		27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */; };
 		27EA1C4428DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */; };
@@ -105,6 +108,9 @@
 		27A3B83B28DCDA1A000C8AB9 /* VibeResultViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VibeResultViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		27A3B83D28DCDA4C000C8AB9 /* VibeResultController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VibeResultController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		27A3B84028DCE8D9000C8AB9 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		27D7CE5628DCFB84006DBD0D /* PlaylistInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfoResponse.swift; sourceTree = "<group>"; };
+		27D7CE5828DCFBB0006DBD0D /* PlaylistInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfo.swift; sourceTree = "<group>"; };
+		27D7CE5A28DCFC13006DBD0D /* PlaylistInfoAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInfoAttributes.swift; sourceTree = "<group>"; };
 		27EA1C1C28DA4B2A0011EED3 /* RestByMood+Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestByMood+Restaurants.swift"; sourceTree = "<group>"; };
 		27EA1C1D28DA4B2A0011EED3 /* RestByMood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestByMood.swift; sourceTree = "<group>"; };
 		27EA1C3E28DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OnboardingViewController+UIPageViewControllerDataSource.swift"; sourceTree = "<group>"; };
@@ -238,6 +244,16 @@
 			path = Confirm;
 			sourceTree = "<group>";
 		};
+		27D7CE5528DCFB70006DBD0D /* PlaylistInfo */ = {
+			isa = PBXGroup;
+			children = (
+				27D7CE5628DCFB84006DBD0D /* PlaylistInfoResponse.swift */,
+				27D7CE5828DCFBB0006DBD0D /* PlaylistInfo.swift */,
+				27D7CE5A28DCFC13006DBD0D /* PlaylistInfoAttributes.swift */,
+			);
+			path = PlaylistInfo;
+			sourceTree = "<group>";
+		};
 		27EA1C3928DA4B840011EED3 /* Choice */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +379,7 @@
 		8646303028DB5FC100713BCF /* AppleMusicAPI */ = {
 			isa = PBXGroup;
 			children = (
+				27D7CE5528DCFB70006DBD0D /* PlaylistInfo */,
 				27A3B7F728DCCE8E000C8AB9 /* Song */,
 				27A3B7F628DCCE82000C8AB9 /* Genre */,
 				27A3B7F528DCCE76000C8AB9 /* Artist */,
@@ -506,6 +523,7 @@
 				27EA1C5428DA4BC50011EED3 /* FavoritesCollectionViewCell.swift in Sources */,
 				27EA1C2028DA4B2A0011EED3 /* RestByMood.swift in Sources */,
 				27A3B80D28DCCEEC000C8AB9 /* ArtistInfo.swift in Sources */,
+				27D7CE5928DCFBB0006DBD0D /* PlaylistInfo.swift in Sources */,
 				27A3B84128DCE8D9000C8AB9 /* ConfirmViewController.swift in Sources */,
 				27A3B82628DCCF82000C8AB9 /* ChoiceView+UICollectionViewDataSource.swift in Sources */,
 				27EA1C5B28DA4BED0011EED3 /* ChooseMethodViewController.swift in Sources */,
@@ -532,12 +550,14 @@
 				27EA1C5528DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift in Sources */,
 				27EA1C1F28DA4B2A0011EED3 /* RestByMood+Restaurants.swift in Sources */,
 				27A3B80C28DCCEEC000C8AB9 /* ArtistInfoResponse.swift in Sources */,
+				27D7CE5B28DCFC13006DBD0D /* PlaylistInfoAttributes.swift in Sources */,
 				27A3B80428DCCEE1000C8AB9 /* AlbumAttributes.swift in Sources */,
 				27A3B80B28DCCEEC000C8AB9 /* ArtistInfoAttributesArtWork.swift in Sources */,
 				27A3B81728DCCEFF000C8AB9 /* GenreResponse.swift in Sources */,
 				27A3B81528DCCEFF000C8AB9 /* Genre.swift in Sources */,
 				27EA1C5228DA4BC50011EED3 /* DragViewDelegate.swift in Sources */,
 				27EA1C5D28DA4BFF0011EED3 /* LoadingPageViewController.swift in Sources */,
+				27D7CE5728DCFB84006DBD0D /* PlaylistInfoResponse.swift in Sources */,
 				27A3B83A28DCD9F7000C8AB9 /* ImagesCollectionViewCell.swift in Sources */,
 				27A3B7FC28DCCED6000C8AB9 /* PlaylistAttributes.swift in Sources */,
 				27A3B83628DCD9F7000C8AB9 /* DetailsViewController+CollectionViewDelegate.swift in Sources */,

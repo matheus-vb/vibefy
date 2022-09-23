@@ -11,6 +11,7 @@ import StoreKit
 var artistsAttributes = [ArtistInfoAttributes]()
 var albumsAttributes = [AlbumAttributes]()
 var playlistAttributes = [PlaylistAttributes]()
+var playlistInfoAttributes = [String]()
 
 class HomeViewController: UIViewController {
     
