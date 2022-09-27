@@ -36,9 +36,12 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         imageOne.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        
+
         
     }
+    func setupCell(image: UIImage) {
+            imageOne.image = image
+        }
     
 
     

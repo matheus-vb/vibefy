@@ -9,6 +9,9 @@ import UIKit
 import CoreData
 
 var restauranteSelecionado: RestByMood = RestByMood(name: "", type: "", price: "", rating: "", address: "", bairro: "", maskImage: UIImage(), backImage: nil, filters: [""], drinks: true)
+var recentlySeen: [RestByMood] = []
+var favRestaurants = [RestsItem]()
+let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 class DetailsViewController: UIViewController {
 
@@ -28,6 +31,12 @@ class DetailsViewController: UIViewController {
     let ratingLabelContainer = UIView()
     let logoImageContainer = UIView()
     let favButtonContainer = UIView()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        recentlySeen.append(restauranteSelecionado)
+    }
     
     private lazy var detailsBG: UIImageView = {
         let imageName = "BGdetails.png"
@@ -345,11 +354,48 @@ class DetailsViewController: UIViewController {
             imagesCollection.heightAnchor.constraint(equalToConstant: 112)
         ])
     }
-    
 
     @objc func didTouch(){
-        print("cocococococo")
+            createItem(name: restauranteSelecionado.name, mood: vibeName)
+            saveModels()
+            printAll()
+        }
+
+    func printAll() {
+            do {
+                let favRests = try context.fetch(RestsItem.fetchRequest())
+                
+                for rest in favRests {
+                    print("\(rest.name), \(rest.mood)")
+                }
+                
+                
+            } catch {
+                print(error)
+            }
     }
+        
+    func saveModels() {
+        do {
+            favRestaurants = try context.fetch(RestsItem.fetchRequest())
+        } catch {
+            print(error)
+        }
+    }
+    
+    func createItem(name: String, mood: String) {
+        let new = RestsItem(context: context)
+        
+        new.mood = mood
+        new.name = name
+        
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
+    }
+    
 
 
 //    func createItem(rest: RestByMood) {

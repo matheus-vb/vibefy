@@ -41,9 +41,9 @@ class HomeViewController: UIViewController {
     
     private lazy var homeButton: UIButton = {
         let button = UIButton()
-        let bgImage = UIImage(named: "ButtonHome")
+        let bgImage = UIImage(named: "homeButton")
         let bgImageView = UIImageView(image: bgImage)
-        button.setBackgroundImage(UIImage(named: "ButtonHome"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "homeButton"), for: .normal)
         button.layer.frame = CGRect(x: 0.0, y: 0.0, width: bgImageView.frame.width, height: bgImageView.frame.height)
         button.translatesAutoresizingMaskIntoConstraints = false
        // button.addTarget(self, action: #selector(chamaAPI), for: .touchUpInside)
@@ -73,6 +73,12 @@ class HomeViewController: UIViewController {
         gestureRegocnizer.cancelsTouchesInView = false
         dragView.addGestureRecognizer(gestureRegocnizer)
         setupLayout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        dragView.recentsCollectionView.reloadData()
+        dragView.favoritesCollectionView.reloadData()
+        print(favRestaurants.count)
     }
 
     

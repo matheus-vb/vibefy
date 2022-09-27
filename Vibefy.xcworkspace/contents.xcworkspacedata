@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RestsItem+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:RestsItem+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Vibefy.xcodeproj">
    </FileRef>
    <FileRef

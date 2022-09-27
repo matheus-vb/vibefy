@@ -10,8 +10,9 @@ import UIKit
 class RecentsCollectionViewCell: UICollectionViewCell {
     
     static let id = "RecentsCell"
+    var tapped = false
     
-    private lazy var homeButton: UIButton = {
+     lazy var homeButton: UIButton = {
         let button = UIButton()
         let bgImage = UIImage(named: "favorite")
         let bgImageView = UIImageView(image: bgImage)
@@ -23,16 +24,16 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    private lazy var imageOne: UIImageView = {
+    lazy var imageOne: UIImageView = {
         let img = UIImage(named: "liamba")
         let imgV = UIImageView(image: img)
         imgV.frame = CGRect(x: 0 , y: 0, width: 100, height: 100)
         imgV.translatesAutoresizingMaskIntoConstraints = false
-        imgV.contentMode = .scaleAspectFit
+        imgV.contentMode = .scaleAspectFill
         return imgV
     }()
     
-    private lazy var titleLabel: UILabel = {
+     lazy var titleLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Liamba"
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
@@ -43,7 +44,7 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var subLabel: UILabel = {
+     lazy var subLabel: UILabel = {
         let label: UILabel = UILabel()
         label.text = "Drinks e bar"
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
@@ -54,7 +55,7 @@ class RecentsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var favImg: UIImageView = {
+     lazy var favImg: UIImageView = {
         let img = UIImage(named: "favorite")
         let imgV = UIImageView(image: img)
         imgV.translatesAutoresizingMaskIntoConstraints = false
@@ -105,9 +106,16 @@ class RecentsCollectionViewCell: UICollectionViewCell {
 //        }
 //    }
     
-    @objc func tapFavorite() {
-        print("OOOOi")
-        homeButton.setImage(UIImage(named: "favoriteFill"), for: .normal)
+    @objc func tapFavorite(sender: UIButton) {
+        if tapped == false {
+                    sender.setImage(UIImage(named: "favoriteFill"), for: .normal)
+                    tapped = true
+                }
+                else {
+                    sender.setImage(UIImage(named: "favorite"), for: .normal)
+                    tapped = false
+                }
+
     }
     
     

@@ -65,6 +65,7 @@
 		27EA1C5B28DA4BED0011EED3 /* ChooseMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */; };
 		27EA1C5D28DA4BFF0011EED3 /* LoadingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */; };
 		27F848A128DDF9D300A50575 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F848A028DDF9D300A50575 /* Mood.swift */; };
+		27F848A328DE1BD300A50575 /* RestsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F848A228DE1BD300A50575 /* RestsItem.swift */; };
 		863376A128C3AF360031784D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A028C3AF360031784D /* AppDelegate.swift */; };
 		863376A328C3AF360031784D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863376A228C3AF360031784D /* SceneDelegate.swift */; };
 		863376AB28C3AF360031784D /* Vibefy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 863376A928C3AF360031784D /* Vibefy.xcdatamodeld */; };
@@ -131,6 +132,7 @@
 		27EA1C5A28DA4BED0011EED3 /* ChooseMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMethodViewController.swift; sourceTree = "<group>"; };
 		27EA1C5C28DA4BFF0011EED3 /* LoadingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingPageViewController.swift; sourceTree = "<group>"; };
 		27F848A028DDF9D300A50575 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		27F848A228DE1BD300A50575 /* RestsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestsItem.swift; sourceTree = "<group>"; };
 		8633769D28C3AF360031784D /* Vibefy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vibefy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863376A028C3AF360031784D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863376A228C3AF360031784D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				863376BA28C3B2160031784D /* SupportingFiles */,
 				863376B928C3B17D0031784D /* Controller */,
 				863376B728C3B1710031784D /* Model */,
+				27F848A228DE1BD300A50575 /* RestsItem.swift */,
 			);
 			path = Vibefy;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				27EA1C4528DA4BB40011EED3 /* OnboardingViewController+UIPageViewControllerDelegate.swift in Sources */,
 				27A3B82F28DCD28B000C8AB9 /* ResultsTableViewCell.swift in Sources */,
 				27A3B82D28DCD25D000C8AB9 /* VibeResultViewController.swift in Sources */,
+				27F848A328DE1BD300A50575 /* RestsItem.swift in Sources */,
 				27EA1C4628DA4BB40011EED3 /* OnboardingPageTwoViewController.swift in Sources */,
 				27A3B82528DCCF82000C8AB9 /* ArtistsCollectionViewCell.swift in Sources */,
 				27A3B81128DCCEF8000C8AB9 /* ArtistResponse.swift in Sources */,

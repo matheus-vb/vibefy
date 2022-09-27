@@ -17,7 +17,6 @@ class VibeResultViewController: UIViewController {
     let resultsContainer = UIView()
     let locaisLabelContainer = UIView()
     
-    
     let upperStackView = UIStackView()
     
     var resultsTableView: UITableView = {
