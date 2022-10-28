@@ -292,9 +292,6 @@
 		27EA1C3C28DA4B9B0011EED3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				27EA1C5028DA4BC50011EED3 /* DragView.swift */,
-				27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */,
-				27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */,
 				27EA1C4B28DA4BC50011EED3 /* DragViewDelegate.swift */,
 				27EA1C4D28DA4BC50011EED3 /* FavoritesCollectionViewCell.swift */,
 				27EA1C4C28DA4BC50011EED3 /* HomeViewController.swift */,
@@ -337,6 +334,7 @@
 		8633769F28C3AF360031784D /* Vibefy */ = {
 			isa = PBXGroup;
 			children = (
+				86BC6C39290BA7D700339778 /* View */,
 				863376A028C3AF360031784D /* AppDelegate.swift */,
 				863376A228C3AF360031784D /* SceneDelegate.swift */,
 				863376B128C3AF370031784D /* Info.plist */,
@@ -406,6 +404,16 @@
 				8646304D28DD4C9200713BCF /* Algorithm.swift */,
 			);
 			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		86BC6C39290BA7D700339778 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27EA1C5028DA4BC50011EED3 /* DragView.swift */,
+				27EA1C4E28DA4BC50011EED3 /* DragView+UICollectionViewDataSource.swift */,
+				27EA1C4F28DA4BC50011EED3 /* DragView+UICollectionViewDelegate.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A474B913F3E0E4DB7F12E0D2 /* Frameworks */ = {
